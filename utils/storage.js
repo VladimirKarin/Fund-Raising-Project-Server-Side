@@ -11,7 +11,7 @@ function getUsers() {
 }
 
 function setUsers(users) {
-    setData(users, users);
+    setData(users, 'users');
 }
 
 function getIdeas() {
@@ -21,7 +21,7 @@ function getIdeas() {
 }
 
 function setIdeas(ideas) {
-    setData(ideas, ideas);
+    setData(ideas, 'ideas');
 }
 
 function getDonations() {
@@ -31,7 +31,7 @@ function getDonations() {
 }
 
 function setDonations(donations) {
-    setData(donations, donations);
+    setData(donations, 'donations');
 }
 
 
