@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-function setData(data) {
-    fs.writeFileSync(`./data/${data}.json`, JSON.stringify(data), 'utf-8');
+function setData(data, fileName) {
+    fs.writeFileSync(`./data/${fileName}.json`, JSON.stringify(data), 'utf-8');
 }
 
 function getUsers() {
@@ -11,7 +11,7 @@ function getUsers() {
 }
 
 function setUsers(users) {
-    setData(users);
+    setData(users, users);
 }
 
 function getIdeas() {
@@ -21,7 +21,7 @@ function getIdeas() {
 }
 
 function setIdeas(ideas) {
-    setData(ideas);
+    setData(ideas, ideas);
 }
 
 function getDonations() {
@@ -31,7 +31,7 @@ function getDonations() {
 }
 
 function setDonations(donations) {
-    setData(donations);
+    setData(donations, donations);
 }
 
 
