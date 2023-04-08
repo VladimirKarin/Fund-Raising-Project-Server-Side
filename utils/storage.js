@@ -11,7 +11,7 @@ function getData(fileName) {
 }
 
 function getUsers() {
-    getData('users')
+    return getData('users');
 }
 
 function setUsers(users) {
@@ -19,7 +19,7 @@ function setUsers(users) {
 }
 
 function getIdeas() {
-    getData('ideas')
+    return getData('ideas');
 }
 
 function setIdeas(ideas) {
@@ -27,7 +27,7 @@ function setIdeas(ideas) {
 }
 
 function getDonations() {
-    getData('donations')
+    return getData('donations');
 }
 
 function setDonations(donations) {
