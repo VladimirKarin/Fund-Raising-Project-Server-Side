@@ -7,10 +7,10 @@ function deleteUser(userId) {
     const userToDelete = users.find(user => userId === user.id);
 
     if (userToDelete.role === 'admin') {
-        console.log(`You cant't delete "Admin". `);
-
-    } else {
-        let updatedUsers = users.filter(user => userId !== user.id);
-        setUsers(updatedUsers);
+        throw new Error(`You cant't delete "Admin". `);
     }
+
+    let updatedUsers = users.filter(user => userId !== user.id);
+    setUsers(updatedUsers);
+
 }
