@@ -4,10 +4,14 @@ function setData(data, fileName) {
     fs.writeFileSync(`./data/${fileName}.json`, JSON.stringify(data), 'utf-8');
 }
 
-function getUsers() {
-    const jsonData = fs.readFileSync('./data/users.json', 'utf-8');
+function getData(fileName) {
+    const jsonData = fs.readFileSync(`./data/${fileName}.json`, 'utf-8');
     const jsData = JSON.parse(jsonData);
     return jsData;
+}
+
+function getUsers() {
+    getData('users')
 }
 
 function setUsers(users) {
@@ -15,9 +19,7 @@ function setUsers(users) {
 }
 
 function getIdeas() {
-    const jsonData = fs.readFileSync('./data/ideas.json', 'utf-8');
-    const jsData = JSON.parse(jsonData);
-    return jsData;
+    getData('ideas')
 }
 
 function setIdeas(ideas) {
@@ -25,9 +27,7 @@ function setIdeas(ideas) {
 }
 
 function getDonations() {
-    const jsonData = fs.readFileSync('./data/donations.json', 'utf-8');
-    const jsData = JSON.parse(jsonData);
-    return jsData;
+    getData('donations')
 }
 
 function setDonations(donations) {
