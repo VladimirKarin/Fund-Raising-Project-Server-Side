@@ -16,8 +16,8 @@ function getIdeas() {
     return jsData;
 }
 
-function setIdeas(users) {
-    fs.writeFileSync('./data/ideas.json', JSON.stringify(users), 'utf-8');
+function setIdeas(ideas) {
+    fs.writeFileSync('./data/ideas.json', JSON.stringify(ideas), 'utf-8');
 }
 
 function getDonations() {
@@ -26,8 +26,8 @@ function getDonations() {
     return jsData;
 }
 
-function setDonations(users) {
-    fs.writeFileSync('./data/donations.json', JSON.stringify(users), 'utf-8');
+function setDonations(donations) {
+    fs.writeFileSync('./data/donations.json', JSON.stringify(donations), 'utf-8');
 }
 
 
