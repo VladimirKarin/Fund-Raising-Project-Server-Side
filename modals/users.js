@@ -16,15 +16,15 @@ const { getUsers, setUsers } = require('./utils/storage.js');
 
 
 
-function deleteUser(id) {
+function deleteUser(userId) {
     let users = getUsers();
-    const userToDelete = users.find(user => id === user.id);
+    const userToDelete = users.find(user => userId === user.id);
 
     if (userToDelete.role === 'admin') {
         console.log(`You cant't delete "Admin". `);
 
     } else {
-        let updatedUsers = users.filter(user => id !== user.id);
+        let updatedUsers = users.filter(user => userId !== user.id);
         setUsers(updatedUsers);
     }
 }
