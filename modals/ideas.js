@@ -1,7 +1,5 @@
 const { v4 } = require('uuid');
 
-const { getIdeas, setIdeas } = require('./utils/storage.js');
-
 function createIdea(header, description, askedSum, userId) {
     const newIdea = {};
     newIdea.id = v4();
