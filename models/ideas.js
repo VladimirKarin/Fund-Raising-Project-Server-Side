@@ -1,4 +1,5 @@
 const { v4 } = require('uuid');
+const { getIdeas, setIdeas } = require('./utils/storage.js');
 
 function createIdea(header, description, askedSum, userId) {
     const newIdea = {};
@@ -13,7 +14,15 @@ function createIdea(header, description, askedSum, userId) {
     return newUser;
 }
 
-module.exports = {
-    createIdea
+function deleteIdea(ideaId) {
+    let ideas = getIdeas();
 
+    let updatedIdeas = ideas.filter(idea => ideaId !== idea.id);
+
+    setIdeas(updatedIdeas);
+}
+
+module.exports = {
+    deleteIdea,
+    createIdea
 }
