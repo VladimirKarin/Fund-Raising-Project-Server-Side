@@ -20,6 +20,8 @@
     "homepage": "https://github.com/VladimirKarin/Fund-Raising-Project-Server-Side#readme",
     "dependencies": {
         "express": "^4.18.2",
-        "nodemon": "^2.0.22"
+        "md5": "^2.3.0",
+        "nodemon": "^2.0.22",
+        "uuid": "^9.0.0"
     }
 }
