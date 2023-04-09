@@ -1,6 +1,5 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
-
 const { getUsers, setUsers } = require('./utils/storage.js');
 
 function createUser(userName, password, firstName, lastName) {
