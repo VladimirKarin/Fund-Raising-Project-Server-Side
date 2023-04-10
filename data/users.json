@@ -18,15 +18,5 @@
         "lastName": "Yoda",
         "session": null,
         "role": "admin"
-    },
-    {
-        "id": "6e80f509-9a60-4e96-81ee-0aaa688ed10c",
-        "picture": "./img/default_userpic.webp",
-        "userName": "DVader",
-        "password": "d9b1d7db4cd6e70935368a1efb10e377",
-        "firstName": "Darth",
-        "lastName": "Vader",
-        "session": null,
-        "role": "user"
     }
 ]
