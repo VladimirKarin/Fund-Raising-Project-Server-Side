@@ -34,7 +34,6 @@ function setDonations(donations) {
     setData(donations, 'donations');
 }
 
-
 module.exports = {
     getUsers,
     setUsers,
@@ -42,4 +41,4 @@ module.exports = {
     setIdeas,
     getDonations,
     setDonations,
-}
+};
