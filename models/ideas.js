@@ -1,7 +1,9 @@
 const { v4 } = require('uuid');
-const { getIdeas, setIdeas } = require('./utils/storage.js');
+const { getIdeas, setIdeas } = require('../utils/storage');
 
 function createIdea(header, description, askedSum, userId) {
+    let ideas = getIdeas();
+
     const newIdea = {};
     newIdea.id = v4();
     newIdea.picture = './img/default_idea.png';
@@ -11,8 +13,10 @@ function createIdea(header, description, askedSum, userId) {
     newIdea.userId = userId;
     newIdea.approve = 'pending';
 
-    return newUser;
+    const newIdeas = [...ideas, newIdea];
+    return setIdeas(newIdeas);
 }
+
 
 function deleteIdea(ideaId) {
     let ideas = getIdeas();
