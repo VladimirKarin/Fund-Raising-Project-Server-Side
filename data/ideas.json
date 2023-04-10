@@ -1,1 +1,29 @@
-[]
+[
+    {
+        "id": "1c3c007b-3a26-43a4-84a9-304f375ea52a",
+        "picture": "./img/default_idea.png",
+        "header": "Attention!",
+        "description": "New mega idea is comming",
+        "askedSum": "10000",
+        "userId": "45ff012c-be0d-487e-9b9d-7f53471821b0",
+        "approve": "pending"
+    },
+    {
+        "id": "c1ca74ae-c42d-4b51-b814-2edcd8af35ec",
+        "picture": "./img/default_idea.png",
+        "header": "New Brains",
+        "description": "Think about having a spare pair of new brains",
+        "askedSum": "20000",
+        "userId": "e6328604-cd5b-46ff-920d-ea6c91e5eb88",
+        "approve": "pending"
+    },
+    {
+        "id": "6f871b10-9462-4ead-b3a3-c63505e0f5c1",
+        "picture": "./img/default_idea.png",
+        "header": "New Brains",
+        "description": "Think about having a spare pair of new brains",
+        "askedSum": "20000",
+        "userId": "e6328604-cd5b-46ff-920d-ea6c91e5eb88",
+        "approve": "pending"
+    }
+]
