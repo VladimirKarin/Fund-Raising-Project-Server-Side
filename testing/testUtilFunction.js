@@ -1,9 +1,9 @@
 /* Testing App */
 
-const { createUser, deleteUser } = require('./models/users');
+const { createUser, deleteUser } = require('../models/users');
 // const { createUser } = require('./models/users.js');
-const { createDonation } = require('./models/donations');
-const { createIdea, deleteIdea } = require('./models/ideas');
+const { createDonation } = require('../models/donations');
+const { createIdea, deleteIdea } = require('../models/ideas');
 
 //FR-31 testin user creation function
 
@@ -29,15 +29,15 @@ deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
 
 //FR-36 testing create donation function
 
-createDonation(
-    'Master',
-    '5000',
-    '45ff012c-be0d-487e-9b9d-7f53471821b0',
-    'c1ca74ae-c42d-4b51-b814-2edcd8af35ec'
-);
+// createDonation(
+//     'Master',
+//     '5000',
+//     '45ff012c-be0d-487e-9b9d-7f53471821b0',
+//     'c1ca74ae-c42d-4b51-b814-2edcd8af35ec'
+// );
 
 //FR-26 testing idea update function
-updateIdea('333e02ba-8e79-472f-8441-a4da39884253', 'askedSum', 50);
+// updateIdea('333e02ba-8e79-472f-8441-a4da39884253', 'askedSum', 50);
 // createIdea(
 //     'header2',
 //     'description2',

@@ -3,7 +3,6 @@ const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
 
 function createUser(userName, password, firstName, lastName) {
-
     let users = getUsers();
     const newUser = {};
     newUser.id = v4();
@@ -16,7 +15,9 @@ function createUser(userName, password, firstName, lastName) {
     newUser.role = 'user';
 
     const newUsers = [...users, newUser];
-    return setUsers(newUsers);
+    setUsers(newUsers);
+
+    return newUser.id;
 }
 
 function deleteUser(userId) {

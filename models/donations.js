@@ -12,7 +12,7 @@ function createDonation(firstName, sum, userId, ideaId) {
     newDonation.ideaId = ideaId;
 
     const newDonations = [...donations, newDonation];
-    return setDonations(newDonations);
+    setDonations(newDonations);
 }
 
 module.exports = {
