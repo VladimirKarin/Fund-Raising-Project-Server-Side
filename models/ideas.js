@@ -1,6 +1,7 @@
 const { v4 } = require('uuid');
 const { getIdeas, setIdeas } = require('../utils/storage');
 
+
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
 
@@ -17,6 +18,29 @@ function createIdea(header, description, askedSum, userId) {
     return setIdeas(newIdeas);
 }
 
+function updateIdea(ideaId, key, value) {
+    let ideas = getIdeas();
+
+    const idea = ideas.find((idea) => ideaId === idea.id);
+
+    const updatedIdea = {
+        ...idea,
+        [key]: value,
+    };
+
+    function reduceFunction(previousValue, idea) {
+        if (idea.id === ideaId) {
+            return [...previousValue, updatedIdea];
+        }
+        return [...previousValue, idea];
+    }
+
+    const initialReduceValue = [];
+    const updatedIdeas = ideas.reduce(reduceFunction, initialReduceValue);
+
+    setIdeas(updatedIdeas);
+
+}
 
 function deleteIdea(ideaId) {
     let ideas = getIdeas();
@@ -28,5 +52,6 @@ function deleteIdea(ideaId) {
 
 module.exports = {
     createIdea,
-    deleteIdea,
+    updateIdea,
+    deleteIdea
 };

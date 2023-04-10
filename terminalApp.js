@@ -1,4 +1,5 @@
 /* Testing App */
+
 const { createUser, deleteUser } = require('./models/users');
 // const { createUser } = require('./models/users.js');
 const { createDonation } = require('./models/donations');
@@ -35,3 +36,11 @@ createDonation(
     'c1ca74ae-c42d-4b51-b814-2edcd8af35ec'
 );
 
+//FR-26 testing idea update function
+updateIdea('333e02ba-8e79-472f-8441-a4da39884253', 'askedSum', 50);
+// createIdea(
+//     'header2',
+//     'description2',
+//     20,
+//     'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
+// );
