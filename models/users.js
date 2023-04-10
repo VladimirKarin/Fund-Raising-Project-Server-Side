@@ -14,7 +14,7 @@ function createUser(userName, password, firstName, lastName) {
     newUser.session = null;
     newUser.role = 'user';
 
-    return newUser;
+    setUsers(newUser);
 }
 
 function deleteUser(userId) {
