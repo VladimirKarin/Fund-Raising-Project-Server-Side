@@ -1,11 +1,10 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
-
 const { getUsers, setUsers } = require('../utils/storage');
 
 function createUser(userName, password, firstName, lastName) {
-    let users = getUsers();
 
+    let users = getUsers();
     const newUser = {};
     newUser.id = v4();
     newUser.picture = './img/default_userpic.webp';
@@ -23,6 +22,7 @@ function createUser(userName, password, firstName, lastName) {
 function deleteUser(userId) {
     let users = getUsers();
     const userToDelete = users.find((user) => userId === user.id);
+
     if (userToDelete.role === 'admin') {
         throw new Error(`You cant't delete "Admin". `);
     }
