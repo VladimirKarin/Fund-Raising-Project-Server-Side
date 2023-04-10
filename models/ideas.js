@@ -21,7 +21,7 @@ function updateIdea(ideaId, idea) {
 
     const updateIdeas = ideas.reduse((updateIdeas, idea) => {
         if (idea.id === ideaId) {
-            return [updateIdeas, updateIdea];
+            return [...updateIdeas, updateIdea];
         }
         return [...updateIdeas, idea];
     }, []);
