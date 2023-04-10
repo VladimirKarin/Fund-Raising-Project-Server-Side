@@ -17,6 +17,7 @@ function createIdea(header, description, askedSum, userId) {
     return setIdeas(newIdeas);
 }
 
+
 function deleteIdea(ideaId) {
     let ideas = getIdeas();
 

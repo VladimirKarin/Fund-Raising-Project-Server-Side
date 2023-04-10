@@ -1,13 +1,19 @@
 /* Testing App */
+const { createUser, deleteUser } = require('./models/users');
 // const { createUser } = require('./models/users.js');
 const { createDonation } = require('./models/donations');
 const { createIdea, deleteIdea } = require('./models/ideas');
 
 //FR-31 testin user creation function
 
+// createUser('DVader', '202cb962ac59075b964b07152d234b70', 'Darth', 'Vader');
 // console.log(createUser('masterYoda', '202cb962ac59075b964b07152d234b70', 'Master', 'Yoda'));
 
-//FR 33-- testin idea creation function
+//FR-32 test delete user function
+
+deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
+
+//FR 33-- testing idea creation function
 
 // createIdea(
 //     'New Brains2',
@@ -28,3 +34,4 @@ createDonation(
     '45ff012c-be0d-487e-9b9d-7f53471821b0',
     'c1ca74ae-c42d-4b51-b814-2edcd8af35ec'
 );
+
