@@ -1,8 +1,10 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
-const { getUsers, setUsers } = require('../utils/storage.js');
+const { getUsers, setUsers } = require('../utils/storage');
 
 function createUser(userName, password, firstName, lastName) {
+
+    let users = getUsers();
     const newUser = {};
     newUser.id = v4();
     newUser.picture = './img/default_userpic.webp';
@@ -13,7 +15,8 @@ function createUser(userName, password, firstName, lastName) {
     newUser.session = null;
     newUser.role = 'user';
 
-    return newUser;
+    const newUsers = [...users, newUser];
+    return setUsers(newUsers);
 }
 
 function deleteUser(userId) {

@@ -1,5 +1,6 @@
 const { v4 } = require('uuid');
-const { getIdeas, setIdeas } = require('../utils/storage.js');
+const { getIdeas, setIdeas } = require('../utils/storage');
+
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -38,6 +39,7 @@ function updateIdea(ideaId, key, value) {
     const updatedIdeas = ideas.reduce(reduceFunction, initialReduceValue);
 
     setIdeas(updatedIdeas);
+
 }
 
 function deleteIdea(ideaId) {
@@ -51,5 +53,5 @@ function deleteIdea(ideaId) {
 module.exports = {
     createIdea,
     updateIdea,
-    deleteIdea,
+    deleteIdea
 };

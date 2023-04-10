@@ -2,9 +2,9 @@
     {
         "id": "1c3c007b-3a26-43a4-84a9-304f375ea52a",
         "picture": "./img/default_idea.png",
-        "header": "UPDATE ATTENTION! WOW",
+        "header": "Attention!",
         "description": "New mega idea is comming",
-        "askedSum": 20000,
+        "askedSum": "10000",
         "userId": "45ff012c-be0d-487e-9b9d-7f53471821b0",
         "approve": "pending"
     },
@@ -31,7 +31,7 @@
         "picture": "./img/default_idea.png",
         "header": "SIMPLY AWESOME HEADER! NEW",
         "description": "ALL NEW MEGA COOL DESCRIPTION. JUST BUY IT.",
-        "askedSum": 50,
+        "askedSum": "20000",
         "userId": "e6328604-cd5b-46ff-920d-ea6c91e5eb88",
         "approve": "pending"
     }
