@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "id": "e6328604-cd5b-46ff-920d-ea6c91e5eb88",
+        "picture": "./img/default_userpic.webp",
+        "userName": "LSkywalker",
+        "password": "d9b1d7db4cd6e70935368a1efb10e377",
+        "firstName": "Luke",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "45ff012c-be0d-487e-9b9d-7f53471821b0",
+        "picture": "./img/default_userpic.webp",
+        "userName": "MasterYoda",
+        "password": "d9b1d7db4cd6e70935368a1efb10e377",
+        "firstName": "Master",
+        "lastName": "Yoda",
+        "session": null,
+        "role": "admin"
+    },
+    {
+        "id": "6e80f509-9a60-4e96-81ee-0aaa688ed10c",
+        "picture": "./img/default_userpic.webp",
+        "userName": "DVader",
+        "password": "d9b1d7db4cd6e70935368a1efb10e377",
+        "firstName": "Darth",
+        "lastName": "Vader",
+        "session": null,
+        "role": "user"
+    }
+]
