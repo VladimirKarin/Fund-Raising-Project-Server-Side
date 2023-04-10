@@ -2,6 +2,8 @@ const { v4 } = require('uuid');
 const { getIdeas, setIdeas } = require('../utils/storage.js');
 
 function createIdea(header, description, askedSum, userId) {
+    let ideas = getIdeas();
+
     const newIdea = {};
     newIdea.id = v4();
     newIdea.picture = './img/default_idea.png';
@@ -11,26 +13,30 @@ function createIdea(header, description, askedSum, userId) {
     newIdea.userId = userId;
     newIdea.approve = 'pending';
 
-    return newUser;
+    const newIdeas = [...ideas, newIdea];
+    return setIdeas(newIdeas);
 }
 
 function updateIdea(ideaId, key, value) {
     let ideas = getIdeas();
-    console.log(ideas);
 
     const idea = ideas.find((idea) => ideaId === idea.id);
 
-    idea[key] = value;
     const updatedIdea = {
         ...idea,
+        [key]: value,
     };
 
-    const updatedIdeas = ideas.reduce((updatedIdeas, idea) => {
+    function reduceFunction(previousValue, idea) {
         if (idea.id === ideaId) {
-            return [...updatedIdeas, updatedIdea];
+            return [...previousValue, updatedIdea];
         }
-        return [updatedIdeas, idea];
-    });
+        return [...previousValue, idea];
+    }
+
+    const initialReduceValue = [];
+    const updatedIdeas = ideas.reduce(reduceFunction, initialReduceValue);
+
     setIdeas(updatedIdeas);
 }
 

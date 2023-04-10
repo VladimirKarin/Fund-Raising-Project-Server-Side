@@ -1,5 +1,6 @@
 /* Testing App */
-const { updateIdea } = require('./models/ideas.js');
+const { updateIdea, createIdea } = require('./models/ideas.js');
+
 // const { createUser } = require('./models/users.js');
 
 //FR-31 testin user creation function
@@ -7,8 +8,10 @@ const { updateIdea } = require('./models/ideas.js');
 // console.log(createUser('masterYoda', '202cb962ac59075b964b07152d234b70', 'Master', 'Yoda')); up
 
 //FR-26 testing idea update function
-updateIdea(
-    '1c3c007b-3a26-43a4-84a9-304f375ea52a',
-    'header',
-    'UPDATE ATTENTION! WOW'
-);
+updateIdea('333e02ba-8e79-472f-8441-a4da39884253', 'askedSum', 50);
+// createIdea(
+//     'header2',
+//     'description2',
+//     20,
+//     'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
+// );
