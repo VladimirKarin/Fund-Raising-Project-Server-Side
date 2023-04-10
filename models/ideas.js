@@ -39,5 +39,5 @@ function deleteIdea(ideaId) {
 module.exports = {
     createIdea,
     updateIdea,
-    deleteIdea,
+    deleteIdea
 };
