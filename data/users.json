@@ -18,5 +18,25 @@
         "lastName": "Yoda",
         "session": null,
         "role": "admin"
+    },
+    {
+        "id": "55bf3a91-c128-4959-87d6-362622db8ad3",
+        "picture": "./img/default_userpic.webp",
+        "userName": "DVader",
+        "password": "7363a0d0604902af7b70b271a0b96480",
+        "firstName": "Darth",
+        "lastName": "Vader",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "84281579-6c75-4711-bcfb-8be792060b49",
+        "picture": "./img/default_userpic.webp",
+        "userName": "DVader",
+        "password": "7363a0d0604902af7b70b271a0b96480",
+        "firstName": "Darth",
+        "lastName": "Vader",
+        "session": null,
+        "role": "user"
     }
 ]
