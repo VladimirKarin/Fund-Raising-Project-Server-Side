@@ -1,1 +1,29 @@
-[]
+[
+    {
+        "id": "9e497ee4-a163-4ae4-98cb-af15f9fef658",
+        "picture": "./img/default_idea.png",
+        "header": "Idea 1",
+        "description": "Idea 1 Description 1 ",
+        "askedSum": 100,
+        "userId": "84281579-6c75-4711-bcfb-8be792060b49",
+        "approve": "pending"
+    },
+    {
+        "id": "4cb1eb80-42b0-4688-a403-b9428000933a",
+        "picture": "./img/default_idea.png",
+        "header": "Idea 2",
+        "description": "Idea 2 Description 2 ",
+        "askedSum": 100,
+        "userId": "84281579-6c75-4711-bcfb-8be792060b49",
+        "approve": "pending"
+    },
+    {
+        "id": "6f93e6bd-8f2c-4159-98d2-90c205ade959",
+        "picture": "./img/default_idea.png",
+        "header": "Idea 3",
+        "description": "Idea 3 Description 3 ",
+        "askedSum": 100,
+        "userId": "84281579-6c75-4711-bcfb-8be792060b49",
+        "approve": "pending"
+    }
+]
