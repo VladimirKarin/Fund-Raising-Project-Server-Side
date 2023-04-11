@@ -1,5 +1,5 @@
 const { v4 } = require('uuid');
-const { getIdeas, setIdeas } = require('../utils/storage');
+const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -49,8 +49,44 @@ function deleteIdea(ideaId) {
     setIdeas(updatedIdeas);
 }
 
+function getAllIdeas() {
+    const ideas = getIdeas(); //Get all ideas
+    const donations = getDonations(); //Get all donation
+
+    const ideasWithDonations = ideas.reduce((updatedIdeas, idea) => {
+        // Transforming ideas without donations to ideas with donations.
+
+        const donationsForThisIdea = donations.filter((donation) => {
+            console.log(donation);
+            console.log(idea.id);
+            return donation.ideaId === idea.id; //filtering donations for the certain idea.
+        });
+        console.log(donationsForThisIdea);
+
+        const totalDonationSum = donationsForThisIdea.reduce(
+            //Transforming donation list (with different sums) to donation list with one sum, for certain idea.
+            (totalSum, currentDonation) => {
+                return totalSum + currentDonation.sum;
+            },
+            0
+        );
+
+        const updatedIdea = {
+            //Updating idea object with idea, all the donations for this idea and total sum of those donations.
+            ...idea,
+            donations: donationsForThisIdea,
+            totalDonationSum,
+        };
+
+        return [...updatedIdeas, updatedIdea]; //updating idea list, by adding new updated idea.
+    }, []);
+
+    return ideasWithDonations;
+}
+
 module.exports = {
     createIdea,
     updateIdea,
     deleteIdea,
+    getAllIdeas,
 };

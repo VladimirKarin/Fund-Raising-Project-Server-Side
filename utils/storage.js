@@ -5,7 +5,7 @@ function setData(data, fileName) {
 }
 
 function getData(fileName) {
-    const jsonData = fs.readFileSync(`../data/${fileName}.json`, 'utf-8');
+    const jsonData = fs.readFileSync(`./data/${fileName}.json`, 'utf-8');
     const jsData = JSON.parse(jsonData);
     return jsData;
 }

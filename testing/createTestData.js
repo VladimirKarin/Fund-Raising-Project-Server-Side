@@ -14,10 +14,10 @@ function createTestData() {
     const ideaId2 = createIdea('Idea 2', 'Idea 2 Description 2 ', 100, userId);
     createIdea('Idea 3', 'Idea 3 Description 3 ', 100, userId);
 
-    createDonation('Darth', 20, ideaId1, userId);
-    createDonation('Darth', 10, ideaId1, userId);
-    createDonation('Darth', 5, ideaId1, userId);
-    createDonation('Darth', 20, ideaId2, userId);
-    createDonation('Darth', 10, ideaId2, userId);
+    createDonation('Darth', 20, userId, ideaId1);
+    createDonation('Darth', 10, userId, ideaId1);
+    createDonation('Darth', 30, userId, ideaId2);
+    createDonation('Darth', 20, userId, ideaId2);
+    createDonation('Darth', 10, userId, ideaId2);
 }
 createTestData();
