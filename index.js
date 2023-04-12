@@ -23,9 +23,12 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
+// IDEAS METHODS
+
 app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
 });
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });

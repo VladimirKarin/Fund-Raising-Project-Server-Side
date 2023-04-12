@@ -80,7 +80,6 @@ function getAllIdeas() {
 
         return [...updatedIdeas, updatedIdea]; //updating idea list, by adding new updated idea.
     }, []);
-
     return ideasWithDonations;
 }
 
