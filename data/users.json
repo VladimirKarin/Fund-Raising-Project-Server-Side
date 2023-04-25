@@ -3,9 +3,49 @@
         "id": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "picture": "./img/default_userpic.webp",
         "userName": "DVader",
-        "password": "7363a0d0604902af7b70b271a0b96480",
+        "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Darth",
         "lastName": "Vader",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "picture": "./img/default_userpic.webp",
+        "userName": "MasterYoda",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Master",
+        "lastName": "Yoda",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "388bd17f-0e66-4d2e-beed-5f7001b4b555",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnonymousDroid",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Droid",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "7a693f37-ccb4-4ecb-be2b-8e34749430b5",
+        "picture": "./img/default_userpic.webp",
+        "userName": "MrSpaceNalls",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Mr",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "bf51ee23-9707-432a-9f76-6f43b36860cc",
+        "picture": "./img/default_userpic.webp",
+        "userName": "Chewbacca",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
         "session": null,
         "role": "user"
     }

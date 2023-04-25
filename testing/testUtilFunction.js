@@ -9,6 +9,7 @@ const {
     sortedByDonationSumIdeas,
 } = require('../businessRules/ideas');
 const { donationData } = require('../businessRules/donations');
+const { registerUser } = require('../businessRules/users');
 
 //FR-31 testin user creation function
 
@@ -51,6 +52,9 @@ const { donationData } = require('../businessRules/donations');
 // );
 // getIdeas();
 // console.log(sortedByDonationSumIdeas());
+//
+//DonationData Tests
+//
 // donationData(
 //     'Darth',
 //     10,
@@ -64,4 +68,10 @@ const { donationData } = require('../businessRules/donations');
 //     '4e94a388-268d-46c9-b888-b2279c469ecd'
 // );
 // donationData('Vladimir', 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
-donationData(null, 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
+// donationData(null, 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
+//
+//RegisterUser Test
+// registerUser('MasterYoda', '123', 'Master', 'Yoda');
+// registerUser('AnonymousDroid', '123', null, 'Droid');
+// registerUser('MrSpaceNalls', '123', 'Mr', null);
+// registerUser('Chewbacca', '123', null, null);
