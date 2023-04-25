@@ -4,6 +4,10 @@ const { createUser, deleteUser } = require('../models/users');
 // const { createUser } = require('./models/users.js');
 const { createDonation } = require('../models/donations');
 const { createIdea, deleteIdea } = require('../models/ideas');
+const {
+    getIdeas,
+    sortedByDonationSumIdeas,
+} = require('../businessRules/ideas');
 
 //FR-31 testin user creation function
 
@@ -12,7 +16,7 @@ const { createIdea, deleteIdea } = require('../models/ideas');
 
 //FR-32 test delete user function
 
-deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
+// deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
 
 //FR 33-- testing idea creation function
 
@@ -44,3 +48,5 @@ deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
 //     20,
 //     'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
 // );
+// getIdeas();
+console.log(sortedByDonationSumIdeas());
