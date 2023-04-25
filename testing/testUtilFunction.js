@@ -8,6 +8,7 @@ const {
     getIdeas,
     sortedByDonationSumIdeas,
 } = require('../businessRules/ideas');
+const { donationData } = require('../businessRules/donations');
 
 //FR-31 testin user creation function
 
@@ -49,4 +50,18 @@ const {
 //     'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
 // );
 // getIdeas();
-console.log(sortedByDonationSumIdeas());
+// console.log(sortedByDonationSumIdeas());
+// donationData(
+//     'Darth',
+//     10,
+//     '6fba75be-1f13-449e-b8ee-0d9287d70208',
+//     '4e94a388-268d-46c9-b888-b2279c469ecd'
+// // );
+// donationData(
+//     null,
+//     10,
+//     '6fba75be-1f13-449e-b8ee-0d9287d70208',
+//     '4e94a388-268d-46c9-b888-b2279c469ecd'
+// );
+// donationData('Vladimir', 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
+donationData(null, 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');

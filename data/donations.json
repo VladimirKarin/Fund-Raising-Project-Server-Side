@@ -33,5 +33,68 @@
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "1977004d-1750-476e-94ca-1a694b062d99"
+    },
+    {
+        "id": "61b4813f-7faf-4d80-84ae-01af061170fb",
+        "firstName": "Darth",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "75705c83-ebaa-46e5-a54b-e382e645e7e6",
+        "firstName": "Darth",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "65eb17de-9ac8-445b-85e8-a73db41ecc5f",
+        "firstName": "Darth",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "9dcb9e4d-3530-438d-a6cc-76203f6fad52",
+        "firstName": "Darth",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "0c6f4e2b-3d74-42fd-a7b8-571187cf7601",
+        "firstName": "Darth",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "7de6a805-58a2-42bc-9da8-7345648964a5",
+        "firstName": "Darth",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "57e9db40-9f0a-4583-813c-045cdf65302a",
+        "firstName": "Anonymous",
+        "sum": 10,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "3b50f07e-8cca-4565-a601-c4490fa1d7f8",
+        "firstName": "Vladimir",
+        "sum": 10,
+        "userId": "297dffa2-26bc-46f2-af83-d4ad459dd6b6",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
+    },
+    {
+        "id": "3d8552c4-7cd3-4446-9ec6-8429240e0df9",
+        "firstName": "Anonymous",
+        "sum": 10,
+        "userId": "4e263c63-8534-4dbb-a48c-33407a138ea4",
+        "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     }
 ]
