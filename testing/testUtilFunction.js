@@ -3,13 +3,16 @@
 const { createUser, deleteUser } = require('../models/users');
 // const { createUser } = require('./models/users.js');
 const { createDonation } = require('../models/donations');
-const { createIdea, deleteIdea } = require('../models/ideas');
+const { createIdea, deleteIdea, getAllIdeas } = require('../models/ideas');
 const {
     getIdeas,
     sortedByDonationSumIdeas,
     createIdeas,
 } = require('../businessRules/ideas');
-const { donationData } = require('../businessRules/donations');
+const {
+    donationData,
+    ideasDonationSum,
+} = require('../businessRules/donations');
 const { registerUser } = require('../businessRules/users');
 /*
 FR-31 testin user creation function
@@ -110,3 +113,6 @@ createIdeas(
     null
 );
  */
+//FR-46 Create ideas donation sum function testing.
+// console.log(getAllIdeas());
+// console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));

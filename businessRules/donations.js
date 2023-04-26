@@ -1,6 +1,6 @@
 const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
-const { updateIdea } = require('../models/ideas');
+const { updateIdea, getAllIdeas } = require('../models/ideas');
 
 function donationData(firstName, sum, userId, ideaId) {
     if (firstName != null && userId != null) {
@@ -22,6 +22,14 @@ function donationData(firstName, sum, userId, ideaId) {
     }
 }
 
+function ideasDonationSum(ideaId) {
+    const ideas = getAllIdeas();
+    const idea = ideas.find((idea) => idea.id === ideaId);
+    const totalDonationSum = idea.totalDonationSum;
+    return totalDonationSum;
+}
+
 module.exports = {
     donationData,
+    ideasDonationSum,
 };
