@@ -10,6 +10,7 @@ const {
     createIdeas,
     ideasStatusApproval,
     pendingIdeasList,
+    approvedIdeasList,
 } = require('../businessRules/ideas');
 const {
     donationData,
@@ -140,9 +141,14 @@ createIdea(
     'bf51ee23-9707-432a-9f76-6f43b36860cc'
 );
 ideasStatusApproval('e3987170-6bd8-42f2-8040-7ad4fe97d2aa', 'denied');
-*/
-//FR-48 testing function that show ideas with 'pending' status only
+
+FR-48 testing function that show ideas with 'pending' status only
 ideasStatusApproval('a852a6b6-1b0c-4836-a9a6-07c23845280e', 'approved');
 ideasStatusApproval('70c8e131-ac49-453f-85f6-d18160b7be19', 'approved');
 
-pendingIdeasList();
+console.log(pendingIdeasList());
+
+
+FR-49 Testing function that shows ideas with 'approved status only
+console.log(approvedIdeasList());
+*/

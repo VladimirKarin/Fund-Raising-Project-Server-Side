@@ -49,10 +49,17 @@ function pendingIdeasList() {
     return pendingIdeas;
 }
 
+function approvedIdeasList() {
+    const ideas = getAllIdeas();
+    const approvedIdeas = ideas.filter((idea) => idea.approve === 'approved');
+    return approvedIdeas;
+}
+
 module.exports = {
     getIdeas,
     sortedByDonationSumIdeas,
     createIdeas,
     ideasStatusApproval,
     pendingIdeasList,
+    approvedIdeasList,
 };
