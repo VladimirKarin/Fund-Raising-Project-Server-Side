@@ -43,9 +43,16 @@ function ideasStatusApproval(ideaId, approvalStatus) {
     }
 }
 
+function pendingIdeasList() {
+    const ideas = getAllIdeas();
+    const pendingIdeas = ideas.filter((idea) => idea.approve === 'pending');
+    return pendingIdeas;
+}
+
 module.exports = {
     getIdeas,
     sortedByDonationSumIdeas,
     createIdeas,
     ideasStatusApproval,
+    pendingIdeasList,
 };

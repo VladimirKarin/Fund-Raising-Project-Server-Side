@@ -9,6 +9,7 @@ const {
     sortedByDonationSumIdeas,
     createIdeas,
     ideasStatusApproval,
+    pendingIdeasList,
 } = require('../businessRules/ideas');
 const {
     donationData,
@@ -140,3 +141,8 @@ createIdea(
 );
 ideasStatusApproval('e3987170-6bd8-42f2-8040-7ad4fe97d2aa', 'denied');
 */
+//FR-48 testing function that show ideas with 'pending' status only
+ideasStatusApproval('a852a6b6-1b0c-4836-a9a6-07c23845280e', 'approved');
+ideasStatusApproval('70c8e131-ac49-453f-85f6-d18160b7be19', 'approved');
+
+pendingIdeasList();

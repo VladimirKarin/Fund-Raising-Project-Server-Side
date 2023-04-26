@@ -6,7 +6,7 @@
         "description": "Idea 1 Description 1 ",
         "askedSum": 100,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
-        "approve": "pending"
+        "approve": "approved"
     },
     {
         "id": "1977004d-1750-476e-94ca-1a694b062d99",
@@ -33,6 +33,6 @@
         "description": "Fantastic description of simplu magnificent idea!",
         "askedSum": 250,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
-        "approve": "pending"
+        "approve": "approved"
     }
 ]
