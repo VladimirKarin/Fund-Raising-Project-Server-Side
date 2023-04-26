@@ -17,7 +17,7 @@ const {
     ideasDonationSum,
     ideasSumDifference,
 } = require('../businessRules/donations');
-const { registerUser } = require('../businessRules/users');
+const { registerUser, usersList } = require('../businessRules/users');
 /*
 FR-31 testin user creation function
 
@@ -151,4 +151,7 @@ console.log(pendingIdeasList());
 
 FR-49 Testing function that shows ideas with 'approved status only
 console.log(approvedIdeasList());
+
+FR-50 testing Function that returns users list
+console.log(usersList());
 */

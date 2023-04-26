@@ -49,7 +49,13 @@ function login(req, res) {
     }
 }
 
+function usersList() {
+    const userList = getUsers();
+    return userList;
+}
+
 module.exports = {
     registerUser,
     login,
+    usersList,
 };
