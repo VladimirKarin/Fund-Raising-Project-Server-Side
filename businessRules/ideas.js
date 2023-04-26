@@ -1,4 +1,9 @@
-const { getAllIdeas, createIdea } = require('../models/ideas');
+const {
+    getAllIdeas,
+    createIdea,
+    updateIdea,
+    deleteIdea,
+} = require('../models/ideas');
 
 function getIdeas() {
     return getAllIdeas();
@@ -27,8 +32,20 @@ function createIdeas(header, description, askedSum, userId) {
     }
 }
 
+function ideasStatusApproval(ideaId, approvalStatus) {
+    const ideas = getAllIdeas();
+    const idea = ideas.find((idea) => idea.id === ideaId);
+
+    if (approvalStatus === 'approved') {
+        updateIdea(ideaId, 'approve', 'approved');
+    } else {
+        deleteIdea(ideaId);
+    }
+}
+
 module.exports = {
     getIdeas,
     sortedByDonationSumIdeas,
     createIdeas,
+    ideasStatusApproval,
 };

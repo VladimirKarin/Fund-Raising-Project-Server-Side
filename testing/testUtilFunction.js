@@ -8,6 +8,7 @@ const {
     getIdeas,
     sortedByDonationSumIdeas,
     createIdeas,
+    ideasStatusApproval,
 } = require('../businessRules/ideas');
 const {
     donationData,
@@ -113,10 +114,29 @@ createIdeas(
     250,
     null
 );
- */
-//FR-46 Create ideas donation sum function testing.
-// console.log(getAllIdeas());
-// console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));
-//
-//Testing a function that calculates difference between ideas sum and sum of all donations for the idea
+ 
+FR-46 Create ideas donation sum function testing.
+console.log(getAllIdeas());
+console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));
+
+Testing a function that calculates difference between ideas sum and sum of all donations for the idea
 ideasSumDifference('4e94a388-268d-46c9-b888-b2279c469ecd');
+
+FR-47 Testing function that updated ideas approve status. And deletes if not approved.
+createIdea(
+    'Test-HEADER-Test',
+    'Test-Description-Test',
+    1500,
+    'bf51ee23-9707-432a-9f76-6f43b36860cc'
+);
+
+ideasStatusApproval('1e1368ee-e95e-4e0d-83af-91c1e0d85050', 'approved');
+
+createIdea(
+    'Test-HEADER-Test-TO-DELETE',
+    'Test-Description-Test-TO-DELETE',
+    1500,
+    'bf51ee23-9707-432a-9f76-6f43b36860cc'
+);
+ideasStatusApproval('e3987170-6bd8-42f2-8040-7ad4fe97d2aa', 'denied');
+*/
