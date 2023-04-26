@@ -12,6 +12,7 @@ const {
 const {
     donationData,
     ideasDonationSum,
+    ideasSumDifference,
 } = require('../businessRules/donations');
 const { registerUser } = require('../businessRules/users');
 /*
@@ -116,3 +117,6 @@ createIdeas(
 //FR-46 Create ideas donation sum function testing.
 // console.log(getAllIdeas());
 // console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));
+//
+//Testing a function that calculates difference between ideas sum and sum of all donations for the idea
+ideasSumDifference('4e94a388-268d-46c9-b888-b2279c469ecd');

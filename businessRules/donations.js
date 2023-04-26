@@ -29,7 +29,21 @@ function ideasDonationSum(ideaId) {
     return totalDonationSum;
 }
 
+function ideasSumDifference(ideaId) {
+    const ideas = getAllIdeas();
+    const idea = ideas.find((idea) => idea.id === ideaId);
+
+    const ideasSum = idea.askedSum;
+
+    const totalDonationSumForThisIdea = ideasDonationSum(ideaId);
+    const askedSumAndDonationSumDifference =
+        ideasSum - totalDonationSumForThisIdea;
+
+    return askedSumAndDonationSumDifference;
+}
+
 module.exports = {
     donationData,
     ideasDonationSum,
+    ideasSumDifference,
 };
