@@ -48,5 +48,45 @@
         "lastName": "Incognito",
         "session": null,
         "role": "user"
+    },
+    {
+        "id": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "picture": "./img/default_userpic.webp",
+        "userName": "TheEvoke",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "The",
+        "lastName": "Evoke",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "cd0973ff-9e25-459e-98f8-028caa2c04da",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnonymouseEvoke",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Evoke",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "c5df826f-8091-48ef-8534-709aef828ae0",
+        "picture": "./img/default_userpic.webp",
+        "userName": "MrEvoke",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Mr",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "187675ab-f500-41fc-8aee-a9a706f79089",
+        "picture": "./img/default_userpic.webp",
+        "userName": "EvokeUnkonown",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
     }
 ]

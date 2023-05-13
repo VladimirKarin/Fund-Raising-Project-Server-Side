@@ -78,12 +78,11 @@ donationData(
 donationData('Vladimir', 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
 donationData(null, 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
 
-RegisterUser Test
-registerUser('MasterYoda', '123', 'Master', 'Yoda');
-registerUser('AnonymousDroid', '123', null, 'Droid');
-registerUser('MrSpaceNalls', '123', 'Mr', null);
-registerUser('Chewbacca', '123', null, null);
-
+ RegisterUser Test
+registerUser('TheEvoke', '123', 'The', 'Evoke');
+registerUser('AnonymouseEvoke', '123', null, 'Evoke');
+registerUser('MrEvoke', '123', 'Mr', null);
+registerUser('EvokeUnkonown', '123', null, null);
 
 Testing createIdea function
 createIdeas(
