@@ -25,8 +25,7 @@ function donationData(firstName, sum, userId, ideaId) {
 function ideasDonationSum(ideaId) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
-    const totalDonationSum = idea.totalDonationSum;
-    return totalDonationSum;
+    return idea.totalDonationSum;
 }
 
 function ideasSumDifference(ideaId) {
