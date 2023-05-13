@@ -62,22 +62,23 @@ getIdeas();
 console.log(sortedByDonationSumIdeas());
 
 DonationData Tests
-
+*/
 donationData(
-    'Darth',
+    'Master',
     10,
-    '6fba75be-1f13-449e-b8ee-0d9287d70208',
-    '4e94a388-268d-46c9-b888-b2279c469ecd'
-// );
+    'a9670cd0-85fa-4847-966b-ab10d58e7a67',
+    'a6bbff48-113a-46fb-9338-9e5844275e1f'
+);
+
 donationData(
     null,
     10,
-    '6fba75be-1f13-449e-b8ee-0d9287d70208',
-    '4e94a388-268d-46c9-b888-b2279c469ecd'
+    'a9670cd0-85fa-4847-966b-ab10d58e7a67',
+    'a6bbff48-113a-46fb-9338-9e5844275e1f'
 );
-donationData('Vladimir', 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
-donationData(null, 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
-
+donationData('Master', 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
+donationData(null, 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
+/*
  RegisterUser Test
 registerUser('TheEvoke', '123', 'The', 'Evoke');
 registerUser('AnonymouseEvoke', '123', null, 'Evoke');
