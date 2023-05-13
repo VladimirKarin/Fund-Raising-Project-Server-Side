@@ -19,13 +19,13 @@ function sortedByDonationSumIdeas() {
 }
 
 function createIdeas(header, description, askedSum, userId) {
-    if (header === null) {
+    if (!header) {
         throw new Error('Error. Please, check your header.');
-    } else if (description === null) {
+    } else if (!description) {
         throw new Error('Error. Please, check your description.');
-    } else if (askedSum === null) {
+    } else if (!askedSum) {
         throw new Error('Error. Please, check your asked sum.');
-    } else if (userId === null) {
+    } else if (!userId) {
         throw new Error('Error. Please, check if you are logged in.');
     } else if (header && description && askedSum && userId) {
         createIdea(header, description, askedSum, userId);

@@ -82,40 +82,37 @@ donationData(null, 10, null, '4e94a388-268d-46c9-b888-b2279c469ecd');
 registerUser('TheEvoke', '123', 'The', 'Evoke');
 registerUser('AnonymouseEvoke', '123', null, 'Evoke');
 registerUser('MrEvoke', '123', 'Mr', null);
-registerUser('EvokeUnkonown', '123', null, null);
-
-Testing createIdea function
+registerUser('EvokeUnkonown', '123', null, null);Testing createIdea function
 createIdeas(
-    'Another simply awesome header',
-    'Fantastic description of simplu magnificent idea!',
-    250,
-    'a9670cd0-85fa-4847-966b-ab10d58e7a67'
+    'Simply Amazing HEADER 1',
+    'Yet another interesting text. Just read it',
+    500,
+    '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
 createIdeas(
     null,
-    'Fantastic description of simplu magnificent idea!',
-    250,
-    'a9670cd0-85fa-4847-966b-ab10d58e7a67'
+    'Yet another interesting text. Just read it',
+    500,
+    '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
 createIdeas(
-    'Another simply awesome header',
+    'Simply Amazing HEADER 3',
     null,
-    250,
-    'a9670cd0-85fa-4847-966b-ab10d58e7a67'
+    500,
+    '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
 createIdeas(
-    'Another simply awesome header',
-    'Fantastic description of simplu magnificent idea!',
+    'Simply Amazing HEADER 4',
+    'Yet another interesting text. Just read it',
     null,
-    'a9670cd0-85fa-4847-966b-ab10d58e7a67'
+    '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
 createIdeas(
-    'Another simply awesome header',
-    'Fantastic description of simplu magnificent idea!',
-    250,
+    'Simply Amazing HEADER 5',
+    'Yet another interesting text. Just read it',
+    500,
     null
 );
- 
 FR-46 Create ideas donation sum function testing.
 console.log(getAllIdeas());
 console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));

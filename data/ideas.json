@@ -1,1 +1,47 @@
-[{"id":"70c8e131-ac49-453f-85f6-d18160b7be19","picture":"./img/default_idea.png","header":"Idea 1","description":"Idea 1 Description 1 ","askedSum":100,"userId":"6fba75be-1f13-449e-b8ee-0d9287d70208","approve":"approved"},{"id":"1977004d-1750-476e-94ca-1a694b062d99","picture":"./img/default_idea.png","header":"Idea 2","description":"Idea 2 Description 2 ","askedSum":100,"userId":"6fba75be-1f13-449e-b8ee-0d9287d70208","approve":"pending"},{"id":"4e94a388-268d-46c9-b888-b2279c469ecd","picture":"./img/default_idea.png","header":"Idea 3","description":"Idea 3 Description 3 ","askedSum":100,"userId":"6fba75be-1f13-449e-b8ee-0d9287d70208","approve":"pending"},{"id":"a852a6b6-1b0c-4836-a9a6-07c23845280e","picture":"./img/default_idea.png","header":"Another simply awesome header","description":"Fantastic description of simplu magnificent idea!","askedSum":250,"userId":"a9670cd0-85fa-4847-966b-ab10d58e7a67","approve":"approved"}]
+[
+    {
+        "id": "70c8e131-ac49-453f-85f6-d18160b7be19",
+        "picture": "./img/default_idea.png",
+        "header": "Idea 1",
+        "description": "Idea 1 Description 1 ",
+        "askedSum": 100,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "approve": "approved"
+    },
+    {
+        "id": "1977004d-1750-476e-94ca-1a694b062d99",
+        "picture": "./img/default_idea.png",
+        "header": "Idea 2",
+        "description": "Idea 2 Description 2 ",
+        "askedSum": 100,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "approve": "pending"
+    },
+    {
+        "id": "4e94a388-268d-46c9-b888-b2279c469ecd",
+        "picture": "./img/default_idea.png",
+        "header": "Idea 3",
+        "description": "Idea 3 Description 3 ",
+        "askedSum": 100,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "approve": "pending"
+    },
+    {
+        "id": "a852a6b6-1b0c-4836-a9a6-07c23845280e",
+        "picture": "./img/default_idea.png",
+        "header": "Another simply awesome header",
+        "description": "Fantastic description of simplu magnificent idea!",
+        "askedSum": 250,
+        "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "approve": "approved"
+    },
+    {
+        "id": "a6bbff48-113a-46fb-9338-9e5844275e1f",
+        "picture": "./img/default_idea.png",
+        "header": "Simply Amazing HEADER 1",
+        "description": "Yet another interesting text. Just read it",
+        "askedSum": 500,
+        "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "approve": "pending"
+    }
+]
