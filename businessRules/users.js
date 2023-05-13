@@ -7,15 +7,20 @@ function registerUser(userName, password, firstName, lastName) {
     const noFirstName = 'Anonymous';
     const noLastName = 'Incognito';
 
-    if (firstName === null && lastName === null) {
-        createUser(userName, password, noFirstName, noLastName);
-    } else if (firstName === null) {
-        createUser(userName, password, noFirstName, lastName);
-    } else if (lastName === null) {
-        createUser(userName, password, firstName, noLastName);
-    } else {
-        createUser(userName, password, firstName, lastName);
+    if (!firstName && !lastName) {
+        firstName = noFirstName;
+        lastName = noLastName;
     }
+
+    if (!firstName) {
+        firstName = noFirstName;
+    }
+
+    if (lastName === null) {
+        lastName = noLastName;
+    }
+
+    createUser(userName, password, firstName, lastName);
 }
 
 function login(req, res) {

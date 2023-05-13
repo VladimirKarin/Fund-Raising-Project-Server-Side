@@ -88,5 +88,45 @@
         "lastName": "Incognito",
         "session": null,
         "role": "user"
+    },
+    {
+        "id": "f7b388d0-b344-48ef-a2d3-f463ae78a591",
+        "picture": "./img/default_userpic.webp",
+        "userName": "RegUser1",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Reg",
+        "lastName": "User1",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "a8274e4e-dd7b-48f4-b490-6a73684dcb89",
+        "picture": "./img/default_userpic.webp",
+        "userName": "RegUser2",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "User2",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "76c39bf2-fc03-40e6-be8a-9d338a41537b",
+        "picture": "./img/default_userpic.webp",
+        "userName": "RegUser3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Reg",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "79af6e83-097e-4d09-91f0-26be592be570",
+        "picture": "./img/default_userpic.webp",
+        "userName": "RegUser4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
     }
 ]

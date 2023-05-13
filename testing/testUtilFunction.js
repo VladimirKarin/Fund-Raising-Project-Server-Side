@@ -62,7 +62,7 @@ getIdeas();
 console.log(sortedByDonationSumIdeas());
 
 DonationData Tests
-*/
+
 donationData(
     'Master',
     10,
@@ -78,12 +78,14 @@ donationData(
 );
 donationData('Master', 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
 donationData(null, 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
-/*
- RegisterUser Test
-registerUser('TheEvoke', '123', 'The', 'Evoke');
-registerUser('AnonymouseEvoke', '123', null, 'Evoke');
-registerUser('MrEvoke', '123', 'Mr', null);
-registerUser('EvokeUnkonown', '123', null, null);Testing createIdea function
+RegisterUser Test
+
+registerUser('RegUser1', '123', 'Reg', 'User1');
+registerUser('RegUser2', '123', null, 'User2');
+registerUser('RegUser3', '123', 'Reg', null);
+registerUser('RegUser4', '123', null, null);
+
+Testing createIdea function
 createIdeas(
     'Simply Amazing HEADER 1',
     'Yet another interesting text. Just read it',
