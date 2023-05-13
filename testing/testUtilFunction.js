@@ -86,36 +86,27 @@ registerUser('RegUser3', '123', 'Reg', null);
 registerUser('RegUser4', '123', null, null);
 
 Testing createIdea function
+
 createIdeas(
-    'Simply Amazing HEADER 1',
-    'Yet another interesting text. Just read it',
+    'HEADER',
+    'Description.Description.Description.',
     500,
     '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
 createIdeas(
     null,
-    'Yet another interesting text. Just read it',
+    'Description.Description.Description.',
     500,
     '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
+createIdeas('HEADER', null, 500, '57226ce8-3e44-4f98-83b1-eff8e257a842');
 createIdeas(
-    'Simply Amazing HEADER 3',
-    null,
-    500,
-    '57226ce8-3e44-4f98-83b1-eff8e257a842'
-);
-createIdeas(
-    'Simply Amazing HEADER 4',
-    'Yet another interesting text. Just read it',
+    'HEADER',
+    'Description.Description.Description.',
     null,
     '57226ce8-3e44-4f98-83b1-eff8e257a842'
 );
-createIdeas(
-    'Simply Amazing HEADER 5',
-    'Yet another interesting text. Just read it',
-    500,
-    null
-);
+createIdeas('HEADER', 'Description.Description.Description.', 500, null);
 FR-46 Create ideas donation sum function testing.
 console.log(getAllIdeas());
 

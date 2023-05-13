@@ -43,5 +43,14 @@
         "askedSum": 500,
         "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
         "approve": "pending"
+    },
+    {
+        "id": "e4a253af-d5b9-4384-9f4b-868d99205915",
+        "picture": "./img/default_idea.png",
+        "header": "HEADER",
+        "description": "Description.Description.Description.",
+        "askedSum": 500,
+        "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "approve": "pending"
     }
 ]

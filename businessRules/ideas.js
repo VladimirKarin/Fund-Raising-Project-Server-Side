@@ -35,9 +35,7 @@ function createIdeas(header, description, askedSum, userId) {
         throw new Error('Error. Please, check if you are logged in.');
     }
 
-    if (header && description && askedSum && userId) {
-        createIdea(header, description, askedSum, userId);
-    }
+    createIdea(header, description, askedSum, userId);
 }
 
 function ideasStatusApproval(ideaId, approvalStatus) {
