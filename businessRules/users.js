@@ -7,16 +7,11 @@ function registerUser(userName, password, firstName, lastName) {
     const noFirstName = 'Anonymous';
     const noLastName = 'Incognito';
 
-    if (!firstName && !lastName) {
-        firstName = noFirstName;
-        lastName = noLastName;
-    }
-
     if (!firstName) {
         firstName = noFirstName;
     }
 
-    if (lastName === null) {
+    if (!lastName) {
         lastName = noLastName;
     }
 

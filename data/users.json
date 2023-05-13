@@ -128,5 +128,45 @@
         "lastName": "Incognito",
         "session": null,
         "role": "user"
+    },
+    {
+        "id": "cb7c5caa-73e4-4dc1-97e4-8ff6ebb18193",
+        "picture": "./img/default_userpic.webp",
+        "userName": "UserReg1",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "User",
+        "lastName": "Reg1",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "e023324c-2af6-40d8-83d3-b8ab4374c059",
+        "picture": "./img/default_userpic.webp",
+        "userName": "UserReg2",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Reg2",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "5cc2d271-d13f-4781-8017-78ff8ba16033",
+        "picture": "./img/default_userpic.webp",
+        "userName": "UserReg3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "User",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "332bf814-41dc-49fd-b866-552289c50e8f",
+        "picture": "./img/default_userpic.webp",
+        "userName": "UserReg4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
     }
 ]
