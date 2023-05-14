@@ -45,8 +45,7 @@ function login(req, res) {
 }
 
 function usersList() {
-    const userList = getUsers();
-    return userList;
+    return getUsers();
 }
 
 module.exports = {
