@@ -6,18 +6,21 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
     const generateId = v4();
     const anonymous = 'Anonymous';
 
-    if (!firstName && !userId) {
-        firstName = anonymous;
-        userId = generateId;
-    }
+    firstName = firstName || anonymous;
+    userId = userId || generateId;
 
-    if (!userId) {
-        userId = generateId;
-    }
+    // if (!firstName && !userId) {
+    //     firstName = anonymous;
+    //     userId = generateId;
+    // }
 
-    if (!firstName) {
-        firstName = anonymous;
-    }
+    // if (!userId) {
+    //     userId = generateId;
+    // }
+
+    // if (!firstName) {
+    //     firstName = anonymous;
+    // }
     createDonation(firstName, sum, userId, ideaId);
 }
 
