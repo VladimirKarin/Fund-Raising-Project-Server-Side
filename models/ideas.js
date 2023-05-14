@@ -57,11 +57,11 @@ function getAllIdeas() {
         // Transforming ideas without donations to ideas with donations.
 
         const donationsForThisIdea = donations.filter((donation) => {
-            console.log(donation);
-            console.log(idea.id);
+            // console.log(donation);
+            // console.log(idea.id);
             return donation.ideaId === idea.id; //filtering donations for the certain idea.
         });
-        console.log(donationsForThisIdea);
+        // console.log(donationsForThisIdea);
 
         const totalDonationSum = donationsForThisIdea.reduce(
             //Transforming donation list (with different sums) to donation list with one sum, for certain idea.
@@ -70,6 +70,7 @@ function getAllIdeas() {
             },
             0
         );
+        // console.log(totalDonationSum);
 
         const updatedIdea = {
             //Updating idea object with idea, all the donations for this idea and total sum of those donations.
@@ -80,6 +81,7 @@ function getAllIdeas() {
 
         return [...updatedIdeas, updatedIdea]; //updating idea list, by adding new updated idea.
     }, []);
+    // console.log(ideasWithDonations);
     return ideasWithDonations;
 }
 

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
+const { login } = require('./businessRules/users');
 
 const app = express();
 const port = 3003;
@@ -27,6 +28,12 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
+});
+
+//Login
+
+app.post('/login', (req, res) => {
+    login(req, res);
 });
 
 app.listen(port, () => {
