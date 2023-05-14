@@ -4,16 +4,8 @@ const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
 
 function registerUser(userName, password, firstName, lastName) {
-    const noFirstName = 'Anonymous';
-    const noLastName = 'Incognito';
-
-    if (!firstName) {
-        firstName = noFirstName;
-    }
-
-    if (!lastName) {
-        lastName = noLastName;
-    }
+    firstName = firstName || 'Anonymous';
+    lastName = lastName || 'Incognito';
 
     createUser(userName, password, firstName, lastName);
 }

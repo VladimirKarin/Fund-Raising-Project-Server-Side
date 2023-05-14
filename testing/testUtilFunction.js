@@ -80,10 +80,10 @@ donationData('Master', 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
 donationData(null, 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
 RegisterUser Test
 
-registerUser('RegUser1', '123', 'Reg', 'User1');
-registerUser('RegUser2', '123', null, 'User2');
-registerUser('RegUser3', '123', 'Reg', null);
-registerUser('RegUser4', '123', null, null);
+registerUser('RU1', '123', 'R', 'U1');
+registerUser('RU2', '123', null, 'U2');
+registerUser('RU3', '123', 'R', null);
+registerUser('RU4', '123', null, null);
 
 Testing createIdea function
 
