@@ -13,7 +13,7 @@ function sortedByDonationSumIdeas() {
     const ideasList = getIdeas();
 
     const sortedIdeasList = ideasList.sort(
-        (a, b) => a.totalDonationSum - b.totalDonationSum
+        (ideaA, ideaB) => ideaA.totalDonationSum - ideaB.totalDonationSum
     );
     return sortedIdeasList;
 }

@@ -59,8 +59,9 @@ createIdea(
     'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
 );
 getIdeas();
+*/
 console.log(sortedByDonationSumIdeas());
-
+/*
 DonationData Tests
 
 createDonationsWithDataValidation(
