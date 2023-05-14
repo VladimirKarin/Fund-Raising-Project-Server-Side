@@ -27,6 +27,10 @@ function login(req, res) {
     const user = users.find(
         (user) => user.userName === userName && user.password === password
     );
+    if (!user) {
+        res.status(400).json({ status: 'No such user.' });
+        return;
+    }
 
     if (user) {
         const sessionId = md5(v4()); //Should be REAL cryptography.
@@ -39,8 +43,6 @@ function login(req, res) {
             maxAge: 900000,
         });
         res.status(200).json({ status: 'OK', username: user.userName });
-    } else {
-        res.status(400).json({ status: 'No such user.' });
     }
 }
 
