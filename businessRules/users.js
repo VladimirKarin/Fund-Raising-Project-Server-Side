@@ -19,23 +19,22 @@ function login(req, res) {
     const user = users.find(
         (user) => user.userName === userName && user.password === password
     );
+
     if (!user) {
         res.status(400).json({ status: 'No such user.' });
         return;
     }
 
-    if (user) {
-        const sessionId = md5(v4()); //Should be REAL cryptography.
-        user.session = sessionId;
-        setUsers(users);
-        res.cookie('userLoginSession', sessionId, {
-            sameSite: 'None',
-            secure: true,
-            httpOnly: true,
-            maxAge: 900000,
-        });
-        res.status(200).json({ status: 'OK', username: user.userName });
-    }
+    const sessionId = md5(v4()); //Should be REAL cryptography.
+    user.session = sessionId;
+    setUsers(users);
+    res.cookie('userLoginSession', sessionId, {
+        sameSite: 'None',
+        secure: true,
+        httpOnly: true,
+        maxAge: 900000,
+    });
+    res.status(200).json({ status: 'OK', username: user.userName });
 }
 
 function usersList() {
