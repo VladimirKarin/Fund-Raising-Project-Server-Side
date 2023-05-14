@@ -25,7 +25,7 @@ function login(req, res) {
     const password = md5(req.body.password);
 
     const user = users.find(
-        (u) => u.userName === userName && u.password === password
+        (user) => user.userName === userName && user.password === password
     );
 
     if (user) {
