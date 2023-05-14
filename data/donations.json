@@ -131,5 +131,33 @@
         "sum": 10,
         "userId": "ac6feb2f-d6e4-4670-a63d-cce7455e5b32",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
+    },
+    {
+        "id": "0552555b-4fcc-4fd0-acd6-c3e5a50e1366",
+        "firstName": "Master",
+        "sum": 13,
+        "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
+    },
+    {
+        "id": "449a3d1c-5fcc-4c1f-ae30-a5f370644209",
+        "firstName": "Anonymous",
+        "sum": 13,
+        "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
+    },
+    {
+        "id": "23c9cee9-7834-45e0-9dc2-2192c8127800",
+        "firstName": "Master",
+        "sum": 13,
+        "userId": "b1bb6cc7-b51f-4dd8-9e24-e690710475c4",
+        "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
+    },
+    {
+        "id": "995834e4-331b-49fc-9612-98599f226739",
+        "firstName": "Anonymous",
+        "sum": 13,
+        "userId": "81d5a27c-135f-4929-99f0-1182f3c5273c",
+        "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     }
 ]

@@ -13,7 +13,7 @@ const {
     approvedIdeasList,
 } = require('../businessRules/ideas');
 const {
-    donationData,
+    createDonationsWithDataValidation,
     ideasDonationSum,
     ideasSumDifference,
 } = require('../businessRules/donations');
@@ -63,21 +63,32 @@ console.log(sortedByDonationSumIdeas());
 
 DonationData Tests
 
-donationData(
+createDonationsWithDataValidation(
     'Master',
-    10,
+    13,
     'a9670cd0-85fa-4847-966b-ab10d58e7a67',
     'a6bbff48-113a-46fb-9338-9e5844275e1f'
 );
 
-donationData(
+createDonationsWithDataValidation(
     null,
-    10,
+    13,
     'a9670cd0-85fa-4847-966b-ab10d58e7a67',
     'a6bbff48-113a-46fb-9338-9e5844275e1f'
 );
-donationData('Master', 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
-donationData(null, 10, null, 'a6bbff48-113a-46fb-9338-9e5844275e1f');
+createDonationsWithDataValidation(
+    'Master',
+    13,
+    null,
+    'a6bbff48-113a-46fb-9338-9e5844275e1f'
+);
+createDonationsWithDataValidation(
+    null,
+    13,
+    null,
+    'a6bbff48-113a-46fb-9338-9e5844275e1f'
+);
+
 RegisterUser Test
 
 registerUser('RU1', '123', 'R', 'U1');

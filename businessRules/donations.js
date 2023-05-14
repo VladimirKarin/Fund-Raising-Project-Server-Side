@@ -6,25 +6,19 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
     const generateId = v4();
     const anonymous = 'Anonymous';
 
-    if (firstName && userId) {
-        createDonation(firstName, sum, userId, ideaId);
-    }
-
     if (!firstName && !userId) {
         firstName = anonymous;
         userId = generateId;
-        createDonation(firstName, sum, userId, ideaId);
     }
 
     if (!userId) {
         userId = generateId;
-        createDonation(firstName, sum, userId, ideaId);
     }
 
     if (!firstName) {
         firstName = anonymous;
-        createDonation(firstName, sum, userId, ideaId);
     }
+    createDonation(firstName, sum, userId, ideaId);
 }
 
 function ideasDonationSum(ideaId) {
