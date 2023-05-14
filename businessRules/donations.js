@@ -9,18 +9,6 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
     firstName = firstName || anonymous;
     userId = userId || generateId;
 
-    // if (!firstName && !userId) {
-    //     firstName = anonymous;
-    //     userId = generateId;
-    // }
-
-    // if (!userId) {
-    //     userId = generateId;
-    // }
-
-    // if (!firstName) {
-    //     firstName = anonymous;
-    // }
     createDonation(firstName, sum, userId, ideaId);
 }
 
