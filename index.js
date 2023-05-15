@@ -1,7 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const { getIdeas, sortedByDonationSumIdeas } = require('./businessRules/ideas');
+const {
+    getIdeas,
+    sortedByDonationSumIdeas,
+    pendingIdeasList,
+} = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
 
 const app = express();
@@ -30,8 +34,12 @@ app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
 });
 
-app.get('/ideas/sorted', (req, res) => {
+app.get('/ideas/sorted/donationSum', (req, res) => {
     res.status(200).json(sortedByDonationSumIdeas());
+});
+
+app.get('/ideas/sorted/pendingStatus', (req, res) => {
+    res.status(200).json(pendingIdeasList());
 });
 
 //Login
