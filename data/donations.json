@@ -187,5 +187,26 @@
         "sum": 17,
         "userId": "6b611d09-5f4b-48f1-93d5-00273792915a",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
+    },
+    {
+        "id": "43c63f87-583c-4180-936e-8a33a78f7350",
+        "firstName": "AnonymousDroid",
+        "sum": 25,
+        "userId": "388bd17f-0e66-4d2e-beed-5f7001b4b555",
+        "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
+    },
+    {
+        "id": "622e5ed3-84b9-4767-9171-86819a8da134",
+        "firstName": "Anonymous",
+        "sum": 25,
+        "userId": "388bd17f-0e66-4d2e-beed-5f7001b4b555",
+        "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
+    },
+    {
+        "id": "354893e1-ae69-40fc-8948-11482ee999f0",
+        "firstName": "Anonymous",
+        "sum": 25,
+        "userId": "e209f3fa-1187-4760-9ece-eac85f0ac6c3",
+        "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     }
 ]

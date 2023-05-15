@@ -6,6 +6,7 @@ const { login } = require('./businessRules/users');
 const {
     ideasDonationSum,
     ideasSumDifference,
+    createDonationsWithDataValidation,
 } = require('./businessRules/donations');
 
 const app = express();
@@ -42,6 +43,19 @@ app.get('/donations', (req, res) => {
 
 app.get('/donations/sumDifference', (req, res) => {
     res.status(200).json(ideasSumDifference(req.body.ideaId));
+});
+
+app.post('/donations', (req, res) => {
+    res.status(200)
+        .json(
+            createDonationsWithDataValidation(
+                req.body.firstName,
+                req.body.sum,
+                req.body.userId,
+                req.body.ideaId
+            )
+        )
+        .send('Donation created successfully');
 });
 
 //Login
