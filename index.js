@@ -8,6 +8,7 @@ const {
     pendingIdeasList,
     approvedIdeasList,
     createIdeas,
+    ideasStatusApproval,
 } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
 
@@ -67,6 +68,13 @@ app.put('/ideas/', (req, res) => {
         .json(updateIdea(req.body.ideaId, req.body.key, req.body.value))
         .send('Idea updated successfully.');
 });
+
+app.put('/ideas/status', (req, res) => {
+    res.status(200)
+        .json(ideasStatusApproval(req.body.ideaId, req.body.approvalStatus))
+        .send('Ideas status updated successfully.');
+});
+
 //Login
 
 app.post('/login', (req, res) => {
