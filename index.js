@@ -3,6 +3,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
+const { ideasDonationSum } = require('./businessRules/donations');
 
 const app = express();
 const port = 3003;
@@ -28,6 +29,12 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
+});
+
+//DONATION METHODS
+
+app.get('/donations', (req, res) => {
+    res.status(200).json(ideasDonationSum(req.body.ideaId));
 });
 
 //Login
