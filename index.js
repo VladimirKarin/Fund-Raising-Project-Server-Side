@@ -5,6 +5,7 @@ const {
     getIdeas,
     sortedByDonationSumIdeas,
     pendingIdeasList,
+    approvedIdeasList,
 } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
 
@@ -40,6 +41,10 @@ app.get('/ideas/sorted/donationSum', (req, res) => {
 
 app.get('/ideas/sorted/pendingStatus', (req, res) => {
     res.status(200).json(pendingIdeasList());
+});
+
+app.get('/ideas/sorted/approvedStatus', (req, res) => {
+    res.status(200).json(approvedIdeasList());
 });
 
 //Login
