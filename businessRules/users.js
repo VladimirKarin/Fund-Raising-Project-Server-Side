@@ -34,12 +34,29 @@ function login(req, res) {
         httpOnly: true,
         maxAge: 900000,
     });
-    res.status(200).json({ status: 'OK', username: user.userName });
+    res.status(200).json({
+        status: 'OK',
+        username: user.userName,
+        statusMessage: 'You have successfully logged in.',
+    });
 }
 
 function usersList() {
     return getUsers();
 }
+
+
+function logout(req, res) {
+    res.clearCookie('userLoginSession', {
+        sameSite: 'None',
+        secure: true,
+        httpOnly: true,
+        sameSite: 'None',
+    });
+    res.status(200).json({
+        status: 'OK',
+        statusMessage: 'You have successfully logged out.',
+    });
 
 function updateUser(userId, key, value) {
     let users = getUsers();
@@ -62,11 +79,13 @@ function updateUser(userId, key, value) {
     const updatedUsers = users.reduce(reduceFunction, initialReduceValue);
 
     setUsers(updatedUsers);
+
 }
 
 module.exports = {
     registerUser,
     login,
     usersList,
-    updateUser,
+     updateUser,
+    logout,
 };
