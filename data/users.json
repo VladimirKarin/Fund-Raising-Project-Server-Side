@@ -201,11 +201,11 @@
     },
     {
         "id": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
-        "picture": "./img/default_userpic.webp",
+        "picture": "./img/strangeDefaultPicture.jpeg",
         "userName": "RU4",
         "password": "202cb962ac59075b964b07152d234b70",
-        "firstName": "Anonymous",
-        "lastName": "Incognito",
+        "firstName": "NOTanonymous",
+        "lastName": "NOTincognito",
         "session": null,
         "role": "user"
     }

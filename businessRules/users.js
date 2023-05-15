@@ -45,6 +45,7 @@ function usersList() {
     return getUsers();
 }
 
+
 function logout(req, res) {
     res.clearCookie('userLoginSession', {
         sameSite: 'None',
@@ -56,11 +57,35 @@ function logout(req, res) {
         status: 'OK',
         statusMessage: 'You have successfully logged out.',
     });
+
+function updateUser(userId, key, value) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    const updatedUser = {
+        ...user,
+        [key]: value,
+    };
+
+    function reduceFunction(previousValue, user) {
+        if (user.id === userId) {
+            return [...previousValue, updatedUser];
+        }
+        return [...previousValue, user];
+    }
+
+    const initialReduceValue = [];
+    const updatedUsers = users.reduce(reduceFunction, initialReduceValue);
+
+    setUsers(updatedUsers);
+
 }
 
 module.exports = {
     registerUser,
     login,
     usersList,
+     updateUser,
     logout,
 };
