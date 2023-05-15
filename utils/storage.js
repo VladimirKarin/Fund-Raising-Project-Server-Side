@@ -1,11 +1,11 @@
 const fs = require('fs');
 
 function setData(data, fileName) {
-    fs.writeFileSync(`./data/${fileName}.json`, JSON.stringify(data), 'utf-8');
+    fs.writeFileSync(`../data/${fileName}.json`, JSON.stringify(data), 'utf-8');
 }
 
 function getData(fileName) {
-    const jsonData = fs.readFileSync(`./data/${fileName}.json`, 'utf-8');
+    const jsonData = fs.readFileSync(`../data/${fileName}.json`, 'utf-8');
     const jsData = JSON.parse(jsonData);
     return jsData;
 }
