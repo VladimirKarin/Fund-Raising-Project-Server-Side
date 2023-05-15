@@ -190,16 +190,6 @@
         "role": "user"
     },
     {
-        "id": "19e4f79f-4776-4612-8ff2-1a6d2cd88eca",
-        "picture": "./img/default_userpic.webp",
-        "userName": "RU3",
-        "password": "202cb962ac59075b964b07152d234b70",
-        "firstName": "R",
-        "lastName": "Incognito",
-        "session": null,
-        "role": "user"
-    },
-    {
         "id": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
         "picture": "./img/strangeDefaultPicture.jpeg",
         "userName": "RU4",

@@ -45,7 +45,6 @@ function usersList() {
     return getUsers();
 }
 
-
 function logout(req, res) {
     res.clearCookie('userLoginSession', {
         sameSite: 'None',
@@ -57,6 +56,7 @@ function logout(req, res) {
         status: 'OK',
         statusMessage: 'You have successfully logged out.',
     });
+}
 
 function updateUser(userId, key, value) {
     let users = getUsers();
@@ -79,13 +79,21 @@ function updateUser(userId, key, value) {
     const updatedUsers = users.reduce(reduceFunction, initialReduceValue);
 
     setUsers(updatedUsers);
+}
 
+function deleteUser(userId) {
+    let users = getUsers();
+
+    let updatedUsers = users.filter((user) => userId !== user.id);
+
+    setIdeas(updatedUsers);
 }
 
 module.exports = {
     registerUser,
     login,
     usersList,
-     updateUser,
+    updateUser,
     logout,
+    deleteUser,
 };

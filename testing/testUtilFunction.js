@@ -171,4 +171,7 @@ updateUser(
     'picture',
     './img/strangeDefaultPicture.jpeg'
 );
+FR-54 Testing deleteUser function
+
+deleteUser('19e4f79f-4776-4612-8ff2-1a6d2cd88eca'); // should delete RU3 user
 */
