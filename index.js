@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const { getIdeas } = require('./businessRules/ideas');
+const { getIdeas, sortedByDonationSumIdeas } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
 
 const app = express();
@@ -28,6 +28,10 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
+});
+
+app.get('/ideas/sorted', (req, res) => {
+    res.status(200).json(sortedByDonationSumIdeas());
 });
 
 //Login
