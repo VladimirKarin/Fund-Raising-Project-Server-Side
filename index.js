@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const { updateIdea } = require('./models/ideas');
+const { updateIdea, deleteIdea } = require('./models/ideas');
 const {
     getIdeas,
     sortedByDonationSumIdeas,
@@ -50,7 +50,7 @@ app.get('/ideas/sorted/approvedStatus', (req, res) => {
     res.status(200).json(approvedIdeasList());
 });
 
-app.post('/ideas/', (req, res) => {
+app.post('/ideas', (req, res) => {
     res.status(200)
         .json(
             createIdeas(
@@ -63,7 +63,7 @@ app.post('/ideas/', (req, res) => {
         .send('Idea created successfully.');
 });
 
-app.put('/ideas/', (req, res) => {
+app.put('/ideas', (req, res) => {
     res.status(200)
         .json(updateIdea(req.body.ideaId, req.body.key, req.body.value))
         .send('Idea updated successfully.');
@@ -73,6 +73,12 @@ app.put('/ideas/status', (req, res) => {
     res.status(200)
         .json(ideasStatusApproval(req.body.ideaId, req.body.approvalStatus))
         .send('Ideas status updated successfully.');
+});
+
+app.delete('/ideas', (req, res) => {
+    res.status(200)
+        .json(deleteIdea(req.body.ideaId))
+        .send('Ideas successfully deleted');
 });
 
 //Login
