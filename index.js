@@ -3,7 +3,10 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
-const { ideasDonationSum } = require('./businessRules/donations');
+const {
+    ideasDonationSum,
+    ideasSumDifference,
+} = require('./businessRules/donations');
 
 const app = express();
 const port = 3003;
@@ -35,6 +38,10 @@ app.get('/ideas', (req, res) => {
 
 app.get('/donations', (req, res) => {
     res.status(200).json(ideasDonationSum(req.body.ideaId));
+});
+
+app.get('/donations/sumDifference', (req, res) => {
+    res.status(200).json(ideasSumDifference(req.body.ideaId));
 });
 
 //Login
