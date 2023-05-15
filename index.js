@@ -6,6 +6,7 @@ const {
     sortedByDonationSumIdeas,
     pendingIdeasList,
     approvedIdeasList,
+    createIdeas,
 } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
 
@@ -45,6 +46,19 @@ app.get('/ideas/sorted/pendingStatus', (req, res) => {
 
 app.get('/ideas/sorted/approvedStatus', (req, res) => {
     res.status(200).json(approvedIdeasList());
+});
+
+app.post('/ideas/', (req, res) => {
+    res.status(200)
+        .json(
+            createIdeas(
+                req.body.header,
+                req.body.description,
+                req.body.askedSum,
+                req.body.userId
+            )
+        )
+        .send('Idea created successfully.');
 });
 
 //Login
