@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
-const { login, logout } = require('./businessRules/users');
+const { login, logout, checkIfLoggedIn } = require('./businessRules/users');
 
 const app = express();
 const port = 3003;
@@ -34,6 +34,10 @@ app.get('/ideas', (req, res) => {
 
 app.post('/login', (req, res) => {
     login(req, res);
+});
+
+app.get('/login', (req, res) => {
+    checkIfLoggedIn(req, res);
 });
 
 //Logout

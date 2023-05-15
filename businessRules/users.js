@@ -88,6 +88,27 @@ function deleteUser(userId) {
 
     setIdeas(updatedUsers);
 }
+function checkIfLoggedIn(req, res) {
+    let users = getUsers();
+
+    const user = req.cookies.userLoginSession
+        ? users.find((user) => user.session === req.cookies.userLoginSession)
+        : null;
+
+    if (!user) {
+        res.status(401).json({
+            status: 'error',
+            message: 'You are not Logged in.',
+        });
+    }
+
+    res.status(200).json({
+        status: 'OK',
+        message: 'You are Logged in.',
+        name: user.firstName,
+        role: user.role,
+    });
+}
 
 module.exports = {
     registerUser,
@@ -96,4 +117,5 @@ module.exports = {
     updateUser,
     logout,
     deleteUser,
+    checkIfLoggedIn,
 };
