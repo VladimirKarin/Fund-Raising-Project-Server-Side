@@ -11,6 +11,9 @@ const {
     ideasStatusApproval,
 } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
+const { getIdeas } = require('./businessRules/ideas');
+const { login, logout, checkIfLoggedIn } = require('./businessRules/users');
+
 
 const app = express();
 const port = 3003;
@@ -25,8 +28,7 @@ app.use(cookieParser());
 
 const corsOptions = {
     origin: 'http://localhost:3000',
-    credentials: true,
-    // access-control-allow-credentials:true
+    credentials: true
 };
 app.use(cors(corsOptions));
 
@@ -84,7 +86,16 @@ app.delete('/ideas', (req, res) => {
 //Login
 
 app.post('/login', (req, res) => {
-    login(req, res);
+    res.status(200).json(login(req, res));
+});
+
+app.get('/login', (req, res) => {
+    checkIfLoggedIn(req, res);
+});
+
+//Logout
+app.post('/logout', (req, res) => {
+    logout(req, res);
 });
 
 app.listen(port, () => {
