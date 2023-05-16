@@ -164,13 +164,15 @@ console.log(usersList());
 
 FR-53 Testing updateUser function
 
-updateUser('8f29d0e6-afda-4171-b309-84ece4f95cb7', 'firstName', 'NOTanonymous');
+updateUser('d70207a2-32bb-4e08-9878-e3174b7490c1', 'firstName', 'NOTanonymous');
+
 updateUser('8f29d0e6-afda-4171-b309-84ece4f95cb7', 'lastName', 'NOTincognito');
 updateUser(
     '8f29d0e6-afda-4171-b309-84ece4f95cb7',
     'picture',
     './img/strangeDefaultPicture.jpeg'
 );
+
 FR-54 Testing deleteUser function
 
 deleteUser('19e4f79f-4776-4612-8ff2-1a6d2cd88eca'); // should delete RU3 user

@@ -63,6 +63,10 @@ function updateUser(userId, key, value) {
 
     const user = users.find((user) => userId === user.id);
 
+    if (!user) {
+        throw new Error('Error. No such user.');
+    }
+
     const updatedUser = {
         ...user,
         [key]: value,
