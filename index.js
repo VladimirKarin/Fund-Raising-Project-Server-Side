@@ -33,7 +33,7 @@ app.get('/ideas', (req, res) => {
 //Login
 
 app.post('/login', (req, res) => {
-    login(req, res);
+    res.status(200).json(login(req, res));
 });
 
 app.get('/login', (req, res) => {
