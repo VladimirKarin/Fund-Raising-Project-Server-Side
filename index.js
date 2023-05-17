@@ -2,12 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
-const { login } = require('./businessRules/users');
 const {
     ideasDonationSum,
     ideasSumDifference,
     createDonationsWithDataValidation,
 } = require('./businessRules/donations');
+const { login, logout, checkIfLoggedIn } = require('./businessRules/users');
 
 const app = express();
 const port = 3003;
@@ -62,7 +62,16 @@ app.post('/donations', (req, res) => {
 //Login
 
 app.post('/login', (req, res) => {
-    login(req, res);
+    res.status(200).json(login(req, res));
+});
+
+app.get('/login', (req, res) => {
+    checkIfLoggedIn(req, res);
+});
+
+//Logout
+app.post('/logout', (req, res) => {
+    logout(req, res);
 });
 
 app.listen(port, () => {
