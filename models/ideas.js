@@ -19,9 +19,17 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
+    if (!value) {
+        throw new Error(`Error. You didn't provide any value to update`);
+    }
+
     let ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error(`Error. No idea found.`);
+    }
 
     const updatedIdea = {
         ...idea,

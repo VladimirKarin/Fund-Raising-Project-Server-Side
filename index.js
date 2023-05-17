@@ -51,22 +51,27 @@ app.get('/ideas/sorted/approvedStatus', (req, res) => {
 });
 
 app.post('/ideas', (req, res) => {
-    res.status(200)
-        .json(
-            createIdeas(
-                req.body.header,
-                req.body.description,
-                req.body.askedSum,
-                req.body.userId
-            )
-        )
-        .send('Idea created successfully.');
+    try {
+        createIdeas(
+            req.body.header,
+            req.body.description,
+            req.body.askedSum,
+            req.body.userId
+        );
+    } catch (Error) {
+        res.status(400).send(Error.message);
+    }
+    res.status(200).send('Idea created successfully.');
 });
 
 app.put('/ideas', (req, res) => {
-    res.status(200)
-        .json(updateIdea(req.body.ideaId, req.body.key, req.body.value))
-        .send('Idea updated successfully.');
+    try {
+        res.status(200)
+            .json(updateIdea(req.body.ideaId, req.body.key, req.body.value))
+            .send('Idea updated successfully.');
+    } catch (Error) {
+        res.status(400).send(Error.message);
+    }
 });
 
 app.put('/ideas/status', (req, res) => {

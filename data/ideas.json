@@ -52,5 +52,23 @@
         "askedSum": 500,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "approve": "approved"
+    },
+    {
+        "id": "a93a06ea-4cd0-42aa-8e50-f80b013e3171",
+        "picture": "./img/default_idea.png",
+        "header": "One. Two. Three",
+        "description": "Long story about the one-two-threes",
+        "askedSum": 123,
+        "userId": "bf51ee23-9707-432a-9f76-6f43b36860cc",
+        "approve": "pending"
+    },
+    {
+        "id": "a48902bf-d750-4528-a6fb-204792a034ba",
+        "picture": "./img/default_idea.png",
+        "header": "NEWnewNEw",
+        "description": "Long story about the one-two-threes",
+        "askedSum": 123,
+        "userId": "bf51ee23-9707-432a-9f76-6f43b36860cc",
+        "approve": "pending"
     }
 ]
