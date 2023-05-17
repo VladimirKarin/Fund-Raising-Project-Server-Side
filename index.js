@@ -10,10 +10,7 @@ const {
     createIdeas,
     ideasStatusApproval,
 } = require('./businessRules/ideas');
-const { login } = require('./businessRules/users');
-const { getIdeas } = require('./businessRules/ideas');
 const { login, logout, checkIfLoggedIn } = require('./businessRules/users');
-
 
 const app = express();
 const port = 3003;
@@ -28,7 +25,7 @@ app.use(cookieParser());
 
 const corsOptions = {
     origin: 'http://localhost:3000',
-    credentials: true
+    credentials: true,
 };
 app.use(cors(corsOptions));
 
@@ -68,12 +65,11 @@ app.post('/ideas', (req, res) => {
 
 app.put('/ideas', (req, res) => {
     try {
-        res.status(200)
-            .json(updateIdea(req.body.ideaId, req.body.key, req.body.value))
-            .send('Idea updated successfully.');
+        updateIdea(req.body.ideaId, req.body.key, req.body.value);
     } catch (Error) {
         res.status(400).send(Error.message);
     }
+    res.status(200).send('Idea updated successfully.');
 });
 
 app.put('/ideas/status', (req, res) => {
