@@ -37,15 +37,15 @@ app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
 });
 
-app.get('/ideas/sorted/donationSum', (req, res) => {
+app.get('/ideas?sortBy=totalDonationSum&sortOrder=desc', (req, res) => {
     res.status(200).json(sortedByDonationSumIdeas());
 });
 
-app.get('/ideas/sorted/pendingStatus', (req, res) => {
+app.get('/ideas?sortBy=approve&approve=pending', (req, res) => {
     res.status(200).json(pendingIdeasList());
 });
 
-app.get('/ideas/sorted/approvedStatus', (req, res) => {
+app.get('/ideas?sortBy=approve&approve=approved', (req, res) => {
     res.status(200).json(approvedIdeasList());
 });
 
