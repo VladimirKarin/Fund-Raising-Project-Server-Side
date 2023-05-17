@@ -37,15 +37,15 @@ app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
 });
 
-app.get('/ideas?sortBy=totalDonationSum&sortOrder=desc', (req, res) => {
+app.get('/ideas/sort/byDonationSum', (req, res) => {
     res.status(200).json(sortedByDonationSumIdeas());
 });
 
-app.get('/ideas?sortBy=approve&approve=pending', (req, res) => {
+app.get('/ideas', (req, res) => {
     res.status(200).json(pendingIdeasList());
 });
 
-app.get('/ideas?sortBy=approve&approve=approved', (req, res) => {
+app.get('/ideas', (req, res) => {
     res.status(200).json(approvedIdeasList());
 });
 
@@ -74,7 +74,7 @@ app.put('/ideas', (req, res) => {
 
 app.put('/ideas/status', (req, res) => {
     try {
-        ideasStatusApproval(req.body.ideaId, req.body.approvalStatus);
+        ideasStatusApproval(req.body.ideaId, req.body.isApproved);
     } catch (Error) {
         res.status(404).send(Error.message);
     }

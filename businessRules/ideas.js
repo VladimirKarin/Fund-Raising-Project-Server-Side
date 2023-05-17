@@ -38,7 +38,7 @@ function createIdeas(header, description, askedSum, userId) {
     createIdea(header, description, askedSum, userId);
 }
 
-function ideasStatusApproval(ideaId, approvalStatus) {
+function ideasStatusApproval(ideaId, isApproved) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
 
@@ -46,13 +46,7 @@ function ideasStatusApproval(ideaId, approvalStatus) {
         throw new Error(`Error. No idea with such ID found.`);
     }
 
-    if (approvalStatus === 'approved') {
-        updateIdea(ideaId, 'approve', 'approved');
-    }
-
-    if (approvalStatus === 'Not approved') {
-        deleteIdea(ideaId);
-    }
+    isApproved ? updateIdea(ideaId, 'approve', 'approved') : deleteIdea(ideaId);
 }
 
 function pendingIdeasList() {
