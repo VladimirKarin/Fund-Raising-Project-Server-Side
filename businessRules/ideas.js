@@ -42,9 +42,15 @@ function ideasStatusApproval(ideaId, approvalStatus) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
 
+    if (!idea) {
+        throw new Error(`Error. No idea with such ID found.`);
+    }
+
     if (approvalStatus === 'approved') {
         updateIdea(ideaId, 'approve', 'approved');
-    } else {
+    }
+
+    if (approvalStatus === 'Not approved') {
         deleteIdea(ideaId);
     }
 }

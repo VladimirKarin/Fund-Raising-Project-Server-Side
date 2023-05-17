@@ -73,9 +73,12 @@ app.put('/ideas', (req, res) => {
 });
 
 app.put('/ideas/status', (req, res) => {
-    res.status(200)
-        .json(ideasStatusApproval(req.body.ideaId, req.body.approvalStatus))
-        .send('Ideas status updated successfully.');
+    try {
+        ideasStatusApproval(req.body.ideaId, req.body.approvalStatus);
+    } catch (Error) {
+        res.status(400).send(Error.message);
+    }
+    res.status(200).send('Ideas status updated successfully.');
 });
 
 app.delete('/ideas', (req, res) => {

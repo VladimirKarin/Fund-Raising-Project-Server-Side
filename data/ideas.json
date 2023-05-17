@@ -18,15 +18,6 @@
         "approve": "pending"
     },
     {
-        "id": "4e94a388-268d-46c9-b888-b2279c469ecd",
-        "picture": "./img/default_idea.png",
-        "header": "Idea 3",
-        "description": "Idea 3 Description 3 ",
-        "askedSum": 100,
-        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
-        "approve": "pending"
-    },
-    {
         "id": "a852a6b6-1b0c-4836-a9a6-07c23845280e",
         "picture": "./img/default_idea.png",
         "header": "Another simply awesome header",
@@ -42,7 +33,7 @@
         "description": "Yet another interesting text. Just read it",
         "askedSum": 500,
         "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
-        "approve": "pending"
+        "approve": "approved"
     },
     {
         "id": "c00a9e4c-8565-431a-80f4-dc399911d2eb",
@@ -52,23 +43,5 @@
         "askedSum": 500,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "approve": "approved"
-    },
-    {
-        "id": "a93a06ea-4cd0-42aa-8e50-f80b013e3171",
-        "picture": "./img/default_idea.png",
-        "header": "One. Two. Three",
-        "description": "Long story about the one-two-threes",
-        "askedSum": 123,
-        "userId": "bf51ee23-9707-432a-9f76-6f43b36860cc",
-        "approve": "pending"
-    },
-    {
-        "id": "a48902bf-d750-4528-a6fb-204792a034ba",
-        "picture": "./img/default_idea.png",
-        "header": "NEWnewNEw---2",
-        "description": "Long story about the one-two-threes",
-        "askedSum": 123,
-        "userId": "bf51ee23-9707-432a-9f76-6f43b36860cc",
-        "approve": "pending"
     }
 ]
