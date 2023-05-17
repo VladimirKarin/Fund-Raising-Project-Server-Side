@@ -46,16 +46,17 @@ app.get('/donations/sumDifference', (req, res) => {
 });
 
 app.post('/donations', (req, res) => {
-    res.status(200)
-        .json(
-            createDonationsWithDataValidation(
-                req.body.firstName,
-                req.body.sum,
-                req.body.userId,
-                req.body.ideaId
-            )
-        )
-        .send('Donation created successfully');
+    try {
+        createDonationsWithDataValidation(
+            req.body.firstName,
+            req.body.sum,
+            req.body.userId,
+            req.body.ideaId
+        );
+    } catch (Error) {
+        res.status(404).send(Error.message);
+    }
+    res.status(200).send('Donation created successfully');
 });
 
 //Login

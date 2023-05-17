@@ -208,5 +208,19 @@
         "sum": 25,
         "userId": "e209f3fa-1187-4760-9ece-eac85f0ac6c3",
         "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
+    },
+    {
+        "id": "4164fe69-ee41-4584-a549-6986a10d1912",
+        "firstName": "Anonymous",
+        "sum": 25,
+        "userId": "0ec19c93-7ee9-45cb-b1fe-fa00d26f9355",
+        "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
+    },
+    {
+        "id": "f072e28e-0e14-4812-9356-66d0cd3eb593",
+        "firstName": "Anonymous",
+        "sum": 25,
+        "userId": "74e1510f-46d4-4d53-a4ac-98a70703c9b0",
+        "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     }
 ]
