@@ -67,7 +67,7 @@ app.put('/ideas', (req, res) => {
     try {
         updateIdea(req.body.ideaId, req.body.key, req.body.value);
     } catch (Error) {
-        res.status(400).send(Error.message);
+        res.status(404).send(Error.message);
     }
     res.status(200).send('Idea updated successfully.');
 });
@@ -76,15 +76,19 @@ app.put('/ideas/status', (req, res) => {
     try {
         ideasStatusApproval(req.body.ideaId, req.body.approvalStatus);
     } catch (Error) {
-        res.status(400).send(Error.message);
+        res.status(404).send(Error.message);
     }
     res.status(200).send('Ideas status updated successfully.');
 });
 
 app.delete('/ideas', (req, res) => {
-    res.status(200)
-        .json(deleteIdea(req.body.ideaId))
-        .send('Ideas successfully deleted');
+    try {
+        deleteIdea(req.body.ideaId);
+    } catch (Error) {
+        res.status(404).send(Error.message);
+    }
+
+    res.status(200).send('Ideas successfully deleted');
 });
 
 //Login

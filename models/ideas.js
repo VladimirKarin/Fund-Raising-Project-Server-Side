@@ -52,6 +52,12 @@ function updateIdea(ideaId, key, value) {
 function deleteIdea(ideaId) {
     let ideas = getIdeas();
 
+    const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error(`Error. No idea with such ID found..`);
+    }
+
     let updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
 
     setIdeas(updatedIdeas);

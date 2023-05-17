@@ -34,14 +34,5 @@
         "askedSum": 500,
         "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
         "approve": "approved"
-    },
-    {
-        "id": "c00a9e4c-8565-431a-80f4-dc399911d2eb",
-        "picture": "./img/default_idea.png",
-        "header": "NEW FUCKING HEADER",
-        "description": "NEW POLITE HEADER",
-        "askedSum": 500,
-        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
-        "approve": "approved"
     }
 ]
