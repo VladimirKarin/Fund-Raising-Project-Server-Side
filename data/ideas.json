@@ -6,7 +6,7 @@
         "description": "Idea 1 Description 1 ",
         "askedSum": 100,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
-        "approve": "approved"
+        "approve": "accepted"
     },
     {
         "id": "1977004d-1750-476e-94ca-1a694b062d99",
@@ -15,7 +15,7 @@
         "description": "Idea 2 Description 2 ",
         "askedSum": 100,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
-        "approve": "pending"
+        "approve": "rejected"
     },
     {
         "id": "a6bbff48-113a-46fb-9338-9e5844275e1f",
@@ -24,6 +24,15 @@
         "description": "Yet another interesting text. Just read it",
         "askedSum": 500,
         "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
-        "approve": "approved"
+        "approve": "accepted"
+    },
+    {
+        "id": "a6bbff48-113a-46fb-9338-9e5844275333",
+        "picture": "./img/default_idea.png",
+        "header": "Simply Amazing HEADER 1",
+        "description": "Yet another interesting text. Just read it",
+        "askedSum": 300,
+        "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "approve": "pending"
     }
 ]

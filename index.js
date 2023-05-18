@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea } = require('./models/ideas');
 const {
     getIdeas,
@@ -9,6 +10,7 @@ const {
     approvedIdeasList,
     createIdeas,
     ideasStatusApproval,
+    rejectedIdeasList,
 } = require('./businessRules/ideas');
 const { login, logout, checkIfLoggedIn } = require('./businessRules/users');
 
@@ -23,6 +25,9 @@ app.use(
 
 app.use(cookieParser());
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const corsOptions = {
     origin: 'http://localhost:3000',
     credentials: true,
@@ -34,19 +39,33 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
-    res.status(200).json(getIdeas());
-});
-
-app.get('/ideas/sort/byDonationSum', (req, res) => {
-    res.status(200).json(sortedByDonationSumIdeas());
-});
-
-app.get('/ideas', (req, res) => {
-    res.status(200).json(pendingIdeasList());
-});
-
-app.get('/ideas', (req, res) => {
-    res.status(200).json(approvedIdeasList());
+    try {
+        if (req.query.sortBy === 'totalDonationSum') {
+            res.status(200).json(sortedByDonationSumIdeas());
+            return;
+        }
+        if (
+            req.query.sortBy === 'approve' &&
+            req.query.approve === 'accepted'
+        ) {
+            res.status(200).json(approvedIdeasList());
+            return;
+        }
+        if (req.query.sortBy === 'approve' && req.query.approve === 'pending') {
+            res.status(200).json(pendingIdeasList());
+            return;
+        }
+        if (
+            req.query.sortBy === 'approve' &&
+            req.query.approve === 'rejected'
+        ) {
+            res.status(200).json(rejectedIdeasList());
+            return;
+        }
+        res.status(200).json(getIdeas());
+    } catch (Error) {
+        res.status(400).send(Error.message);
+    }
 });
 
 app.post('/ideas', (req, res) => {
