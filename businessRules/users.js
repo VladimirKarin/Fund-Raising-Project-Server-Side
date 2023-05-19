@@ -2,8 +2,16 @@ const { v4 } = require('uuid');
 const md5 = require('md5');
 const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
+const { throws } = require('assert');
 
 function registerUser(userName, password, firstName, lastName) {
+    if (!userName) {
+        throw new Error('Error. No Username provided');
+    }
+    if (!password) {
+        throw new Error('Error. No password provided');
+    }
+
     firstName = firstName || 'Anonymous';
     lastName = lastName || 'Incognito';
 
