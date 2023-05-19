@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
-const { login, registerUser } = require('./businessRules/users');
+const { login, registerUser, updateUser } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 
 const app = express();
@@ -50,10 +50,24 @@ app.post('/users', (req, res) => {
     res.status(200).send('User created successfully.');
 });
 
+app.put('/users', (req, res) => {
+    try {
+        updateUser(req.body.userId, req.body.key, req.body.value);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+    res.status(200).send('User successfully update.');
+});
+
 //Login
 
 app.post('/login', (req, res) => {
-    login(req, res);
+    try {
+        login(req, res);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+    res.status(200).send('Successfully logged in.');
 });
 
 app.listen(port, () => {
