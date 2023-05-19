@@ -46,13 +46,27 @@ function usersList() {
     return getUsers();
 }
 
+
+function logout(req, res) {
+    res.clearCookie('userLoginSession', {
+        sameSite: 'None',
+        secure: true,
+        httpOnly: true,
+        sameSite: 'None',
+    });
+    res.status(200).json({
+        status: 'OK',
+        statusMessage: 'You have successfully logged out.',
+    });
+}
+
 function updateUser(userId, key, value) {
     let users = getUsers();
 
     const user = users.find((user) => userId === user.id);
 
     if (!user) {
-        throw new Error('No such user.');
+        throw new Error('Error. No such user.');
     }
 
     const updatedUser = {
@@ -73,9 +87,44 @@ function updateUser(userId, key, value) {
     setUsers(updatedUsers);
 }
 
+
+function deleteUser(userId) {
+    let users = getUsers();
+
+    let updatedUsers = users.filter((user) => userId !== user.id);
+
+    setIdeas(updatedUsers);
+}
+
+function checkIfLoggedIn(req, res) {
+    let users = getUsers();
+
+    const user = req.cookies.userLoginSession
+        ? users.find((user) => user.session === req.cookies.userLoginSession)
+        : null;
+
+    if (!user) {
+        res.status(401).json({
+            status: 'error',
+            message: 'You are not Logged in.',
+        });
+    }
+
+    res.status(200).json({
+        status: 'OK',
+        message: 'You are Logged in.',
+        name: user.firstName,
+        role: user.role,
+    });
+}
+
 module.exports = {
     registerUser,
     login,
     usersList,
     updateUser,
+    logout,
+    deleteUser,
+    checkIfLoggedIn,
+
 };

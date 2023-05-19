@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
-const { login, registerUser, updateUser } = require('./businessRules/users');
+const { login, registerUser, updateUser, logout, checkIfLoggedIn } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
+
 
 const app = express();
 const port = 3003;
@@ -63,6 +64,7 @@ app.put('/users', (req, res) => {
 //Login
 
 app.post('/login', (req, res) => {
+
     try {
         login(req, res);
     } catch (error) {
@@ -78,6 +80,17 @@ app.delete('/users', (req, res) => {
         res.status(400).send(error.message);
     }
     res.status(200).send('User successfully deleted.');
+=======
+    res.status(200).json(login(req, res));
+});
+
+app.get('/login', (req, res) => {
+    checkIfLoggedIn(req, res);
+});
+
+//Logout
+app.post('/logout', (req, res) => {
+    logout(req, res);
 });
 
 app.listen(port, () => {
