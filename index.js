@@ -3,6 +3,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
 const { login } = require('./businessRules/users');
+const { getUsers } = require('./utils/storage');
 
 const app = express();
 const port = 3003;
@@ -28,6 +29,11 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     res.status(200).json(getIdeas());
+});
+
+//USER METHODS
+app.get('/users', (req, res) => {
+    res.status(200).json(getUsers());
 });
 
 //Login
