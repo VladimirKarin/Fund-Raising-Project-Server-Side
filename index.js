@@ -9,7 +9,7 @@ const {
     pendingIdeasList,
     approvedIdeasList,
     createIdeas,
-    ideasStatusApproval,
+    updateIdeasStatus,
     rejectedIdeasList,
 } = require('./businessRules/ideas');
 const { login, logout, checkIfLoggedIn } = require('./businessRules/users');
@@ -39,7 +39,6 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
-    console.log(req.query);
     try {
         if (req.query.sortBy === 'totalDonationSum') {
             res.status(200).json(sortedByDonationSumIdeas());
@@ -88,7 +87,7 @@ app.put('/ideas', (req, res) => {
 
 app.put('/ideas/status', (req, res) => {
     try {
-        ideasStatusApproval(req.body.ideaId, req.body.isApproved);
+        updateIdeasStatus(req.body.ideaId, req.body.isApproved);
     } catch (error) {
         res.status(404).send(error.message);
     }

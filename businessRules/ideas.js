@@ -39,7 +39,7 @@ function createIdeas(header, description, askedSum, userId) {
     createIdea(header, description, askedSum, userId);
 }
 
-function ideasStatusApproval(ideaId, isApproved) {
+function updateIdeasStatus(ideaId, isApproved) {
     // Check if idea with this ideaId exists.
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
@@ -89,7 +89,7 @@ module.exports = {
     getIdeas,
     sortedByDonationSumIdeas,
     createIdeas,
-    ideasStatusApproval,
+    updateIdeasStatus,
     pendingIdeasList,
     approvedIdeasList,
     rejectedIdeasList,
