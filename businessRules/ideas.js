@@ -49,11 +49,10 @@ function updateIdeasStatus(ideaId, isApproved) {
     }
     // Idea exists.
     let ideaStatus = '';
-    if (isApproved) {
-        ideaStatus = IDEA_STATUS.accepted;
-    } else {
-        ideaStatus = IDEA_STATUS.rejected;
-    }
+
+    isApproved
+        ? (ideaStatus = IDEA_STATUS.accepted)
+        : (ideaStatus = IDEA_STATUS.rejected);
 
     updateIdea(ideaId, 'status', ideaStatus);
 }

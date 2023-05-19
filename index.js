@@ -41,22 +41,23 @@ app.use(express.json());
 app.get('/ideas', (req, res) => {
     try {
         if (req.query.sortBy === 'totalDonationSum') {
-            res.status(200).json(sortedByDonationSumIdeas());
+            sortedByDonationSumIdeas();
             return;
         }
         if (req.query.sortBy === 'status' && req.query.status === 'accepted') {
-            res.status(200).json(approvedIdeasList());
+            approvedIdeasList();
             return;
         }
         if (req.query.sortBy === 'status' && req.query.status === 'pending') {
-            res.status(200).json(pendingIdeasList());
+            pendingIdeasList();
             return;
         }
         if (req.query.sortBy === 'status' && req.query.status === 'rejected') {
-            res.status(200).json(rejectedIdeasList());
+            rejectedIdeasList();
             return;
         }
-        res.status(200).json(getIdeas());
+        getIdeas();
+        res.status(200);
     } catch (error) {
         res.status(400).send(error.message);
     }
