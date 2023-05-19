@@ -11,7 +11,7 @@ function createIdea(header, description, askedSum, userId) {
     newIdea.description = description;
     newIdea.askedSum = askedSum;
     newIdea.userId = userId;
-    newIdea.approve = 'pending';
+    newIdea.status = 'pending';
 
     const newIdeas = [...ideas, newIdea];
     setIdeas(newIdeas);

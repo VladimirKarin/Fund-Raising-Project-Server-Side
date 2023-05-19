@@ -48,16 +48,21 @@ function ideasStatusApproval(ideaId, isApproved) {
         throw new Error(`Error. No idea with such ID found.`);
     }
     // Idea exists.
-    isApproved
-        ? updateIdea(ideaId, 'approve', IDEA_STATUS.accepted)
-        : updateIdea(ideaId, 'approve', IDEA_STATUS.rejected);
+    let ideaStatus = '';
+    if (isApproved) {
+        ideaStatus = IDEA_STATUS.accepted;
+    } else {
+        ideaStatus = IDEA_STATUS.rejected;
+    }
+
+    updateIdea(ideaId, 'status', ideaStatus);
 }
 
 function pendingIdeasList() {
     const ideas = getAllIdeas();
 
     const pendingIdeas = ideas.filter(
-        (idea) => idea.approve === IDEA_STATUS.pending
+        (idea) => idea.status === IDEA_STATUS.pending
     );
     return pendingIdeas;
 }
@@ -66,7 +71,7 @@ function approvedIdeasList() {
     const ideas = getAllIdeas();
 
     const approvedIdeas = ideas.filter(
-        (idea) => idea.approve === IDEA_STATUS.accepted
+        (idea) => idea.status === IDEA_STATUS.accepted
     );
     return approvedIdeas;
 }
@@ -75,7 +80,7 @@ function rejectedIdeasList() {
     const ideas = getAllIdeas();
 
     const rejectedIdeas = ideas.filter(
-        (idea) => idea.approve === IDEA_STATUS.rejected
+        (idea) => idea.status === IDEA_STATUS.rejected
     );
     return rejectedIdeas;
 }

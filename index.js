@@ -39,32 +39,27 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
+    console.log(req.query);
     try {
         if (req.query.sortBy === 'totalDonationSum') {
             res.status(200).json(sortedByDonationSumIdeas());
             return;
         }
-        if (
-            req.query.sortBy === 'approve' &&
-            req.query.approve === 'accepted'
-        ) {
+        if (req.query.sortBy === 'status' && req.query.status === 'accepted') {
             res.status(200).json(approvedIdeasList());
             return;
         }
-        if (req.query.sortBy === 'approve' && req.query.approve === 'pending') {
+        if (req.query.sortBy === 'status' && req.query.status === 'pending') {
             res.status(200).json(pendingIdeasList());
             return;
         }
-        if (
-            req.query.sortBy === 'approve' &&
-            req.query.approve === 'rejected'
-        ) {
+        if (req.query.sortBy === 'status' && req.query.status === 'rejected') {
             res.status(200).json(rejectedIdeasList());
             return;
         }
         res.status(200).json(getIdeas());
-    } catch (Error) {
-        res.status(400).send(Error.message);
+    } catch (error) {
+        res.status(400).send(error.message);
     }
 });
 
@@ -76,8 +71,8 @@ app.post('/ideas', (req, res) => {
             req.body.askedSum,
             req.body.userId
         );
-    } catch (Error) {
-        res.status(400).send(Error.message);
+    } catch (error) {
+        res.status(400).send(error.message);
     }
     res.status(200).send('Idea created successfully.');
 });
@@ -85,8 +80,8 @@ app.post('/ideas', (req, res) => {
 app.put('/ideas', (req, res) => {
     try {
         updateIdea(req.body.ideaId, req.body.key, req.body.value);
-    } catch (Error) {
-        res.status(404).send(Error.message);
+    } catch (error) {
+        res.status(404).send(error.message);
     }
     res.status(200).send('Idea updated successfully.');
 });
@@ -94,8 +89,8 @@ app.put('/ideas', (req, res) => {
 app.put('/ideas/status', (req, res) => {
     try {
         ideasStatusApproval(req.body.ideaId, req.body.isApproved);
-    } catch (Error) {
-        res.status(404).send(Error.message);
+    } catch (error) {
+        res.status(404).send(error.message);
     }
     res.status(200).send('Ideas status updated successfully.');
 });
@@ -103,11 +98,11 @@ app.put('/ideas/status', (req, res) => {
 app.delete('/ideas', (req, res) => {
     try {
         deleteIdea(req.body.ideaId);
-    } catch (Error) {
-        res.status(404).send(Error.message);
+    } catch (error) {
+        res.status(404).send(error.message);
     }
 
-    res.status(200).send('Ideas successfully deleted');
+    res.status(200).send('Ideas successfully deleted.');
 });
 
 //Login
