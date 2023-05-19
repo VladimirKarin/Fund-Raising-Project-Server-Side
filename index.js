@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
 const { login, registerUser, updateUser } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
+const { deleteUser } = require('./models/users');
 
 const app = express();
 const port = 3003;
@@ -68,6 +69,15 @@ app.post('/login', (req, res) => {
         res.status(400).send(error.message);
     }
     res.status(200).send('Successfully logged in.');
+});
+
+app.delete('/users', (req, res) => {
+    try {
+        deleteUser(req.body.userId);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+    res.status(200).send('User successfully deleted.');
 });
 
 app.listen(port, () => {
