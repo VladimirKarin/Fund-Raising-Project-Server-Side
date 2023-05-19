@@ -24,6 +24,10 @@ function deleteUser(userId) {
     let users = getUsers();
     const userToDelete = users.find((user) => userId === user.id);
 
+    if (!userToDelete) {
+        throw new Error(`No such user. `);
+    }
+
     if (userToDelete.role === 'admin') {
         throw new Error(`You cant't delete "Admin". `);
     }
