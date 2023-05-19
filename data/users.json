@@ -208,5 +208,45 @@
         "lastName": "Incognito",
         "session": null,
         "role": "user"
+    },
+    {
+        "id": "81c3be9a-009b-4c44-b034-ae2a4276c850",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalker",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anakyn",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "0acad09f-7cd4-4455-b889-1d4f05021d07",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalkerTEST1",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anonymous",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "21332755-0bb7-4182-9972-96491c564778",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalkerTEST2",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anakyn",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "b0b19eba-7b42-420c-aa1e-3e8e2ee8a102",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalkerTEST3",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
     }
 ]

@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { getIdeas } = require('./businessRules/ideas');
-const { login } = require('./businessRules/users');
+const { login, registerUser } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 
 const app = express();
@@ -34,6 +34,20 @@ app.get('/ideas', (req, res) => {
 //USER METHODS
 app.get('/users', (req, res) => {
     res.status(200).json(getUsers());
+});
+
+app.post('/users', (req, res) => {
+    try {
+        registerUser(
+            req.body.userName,
+            req.body.password,
+            req.body.firstName,
+            req.body.lastName
+        );
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+    res.status(200).send('User created successfully.');
 });
 
 //Login
