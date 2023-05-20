@@ -62,11 +62,7 @@ app.get('/ideas', (req, res) => {
         sortedIdeasList = rejectedIdeasList();
     }
 
-    try {
-        res.status(200).json(sortedIdeasList);
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
+    res.status(200).json(sortedIdeasList);
 });
 
 app.post('/ideas', (req, res) => {
