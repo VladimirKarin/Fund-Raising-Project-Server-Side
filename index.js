@@ -39,7 +39,6 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
-    console.log(req.query);
     try {
         if (req.query.sortBy === 'totalDonationSum') {
             res.json(sortedByDonationSumIdeas());
