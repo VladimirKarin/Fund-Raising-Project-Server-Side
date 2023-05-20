@@ -45,14 +45,10 @@ function updateIdeasStatus(ideaId, isApproved) {
     const idea = ideas.find((idea) => idea.id === ideaId);
 
     if (!idea) {
-        throw new Error(`Error. No idea with such ID found.`);
+        throw new Error('Error. No idea with such ID found.');
     }
     // Idea exists.
-    let ideaStatus = '';
-
-    isApproved
-        ? (ideaStatus = IDEA_STATUS.accepted)
-        : (ideaStatus = IDEA_STATUS.rejected);
+    const ideaStatus = isApproved ? IDEA_STATUS.accepted : IDEA_STATUS.rejected;
 
     updateIdea(ideaId, 'status', ideaStatus);
 }

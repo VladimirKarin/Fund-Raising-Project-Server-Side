@@ -39,24 +39,25 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
+    console.log(req.query);
     try {
         if (req.query.sortBy === 'totalDonationSum') {
-            sortedByDonationSumIdeas();
+            res.json(sortedByDonationSumIdeas());
             return;
         }
         if (req.query.sortBy === 'status' && req.query.status === 'accepted') {
-            approvedIdeasList();
+            res.json(approvedIdeasList());
             return;
         }
         if (req.query.sortBy === 'status' && req.query.status === 'pending') {
-            pendingIdeasList();
+            res.json(pendingIdeasList());
             return;
         }
         if (req.query.sortBy === 'status' && req.query.status === 'rejected') {
-            rejectedIdeasList();
+            res.json(rejectedIdeasList());
             return;
         }
-        getIdeas();
+        res.json(getIdeas());
         res.status(200);
     } catch (error) {
         res.status(400).send(error.message);
