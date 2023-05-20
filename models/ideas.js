@@ -11,7 +11,7 @@ function createIdea(header, description, askedSum, userId) {
     newIdea.description = description;
     newIdea.askedSum = askedSum;
     newIdea.userId = userId;
-    newIdea.approve = 'pending';
+    newIdea.status = 'pending';
 
     const newIdeas = [...ideas, newIdea];
     setIdeas(newIdeas);
@@ -19,9 +19,20 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
+    if (!key) {
+        throw new Error("Error. You didn't provide any key to update");
+    }
+    if (!value) {
+        throw new Error("Error. You didn't provide any value to update");
+    }
+
     let ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error('Error. No idea with such ID found.');
+    }
 
     const updatedIdea = {
         ...idea,
@@ -43,6 +54,12 @@ function updateIdea(ideaId, key, value) {
 
 function deleteIdea(ideaId) {
     let ideas = getIdeas();
+
+    const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error('Error. No idea with such ID found.');
+    }
 
     let updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
 
