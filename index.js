@@ -40,14 +40,7 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     let sortedIdeasList;
-    switch (req.query.sortBy) {
-        case 'all':
-            sortedIdeasList = getIdeas();
-            break;
-        case 'totalDonationSum':
-            sortedIdeasList = sortedByDonationSumIdeas();
-            break;
-    }
+
     if (req.query.sortBy === 'all') {
         sortedIdeasList = getIdeas();
     } else if (req.query.sortBy === 'totalDonationSum') {
