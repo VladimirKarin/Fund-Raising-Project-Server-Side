@@ -19,6 +19,9 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
+    if (!key) {
+        throw new Error("Error. You didn't provide any key to update");
+    }
     if (!value) {
         throw new Error("Error. You didn't provide any value to update");
     }
