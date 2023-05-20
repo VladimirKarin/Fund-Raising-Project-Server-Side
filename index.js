@@ -40,24 +40,37 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     let sortedIdeasList;
+    switch (req.query.sortBy) {
+        case 'all':
+            sortedIdeasList = getIdeas();
+            break;
+        case 'totalDonationSum':
+            sortedIdeasList = sortedByDonationSumIdeas();
+            break;
+    }
     if (req.query.sortBy === 'all') {
         sortedIdeasList = getIdeas();
-    }
-    if (req.query.sortBy === 'totalDonationSum') {
+    } else if (req.query.sortBy === 'totalDonationSum') {
         sortedIdeasList = sortedByDonationSumIdeas();
-    }
-    if (req.query.sortBy === 'status' && req.query.status === 'accepted') {
+    } else if (
+        req.query.sortBy === 'status' &&
+        req.query.status === 'accepted'
+    ) {
         sortedIdeasList = approvedIdeasList();
-    }
-    if (req.query.sortBy === 'status' && req.query.status === 'pending') {
+    } else if (
+        req.query.sortBy === 'status' &&
+        req.query.status === 'pending'
+    ) {
         sortedIdeasList = pendingIdeasList();
-    }
-    if (req.query.sortBy === 'status' && req.query.status === 'rejected') {
+    } else if (
+        req.query.sortBy === 'status' &&
+        req.query.status === 'rejected'
+    ) {
         sortedIdeasList = rejectedIdeasList();
     }
+
     try {
-        res.json(sortedIdeasList);
-        res.status(200);
+        res.status(200).json(sortedIdeasList);
     } catch (error) {
         res.status(400).send(error.message);
     }
