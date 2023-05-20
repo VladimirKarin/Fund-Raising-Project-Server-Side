@@ -17,7 +17,8 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Master",
         "lastName": "Yoda",
-        "session": "afb6bdb528985bd28df87fb9a2293641",
+        "session": null,
+
         "role": "user"
     },
     {
@@ -185,12 +186,13 @@
         "picture": "./img/default_userpic.webp",
         "userName": "RU2",
         "password": "202cb962ac59075b964b07152d234b70",
-        "firstName": "Anonymous",
+        "firstName": "NOTanonymous",
         "lastName": "U2",
         "session": null,
         "role": "user"
     },
     {
+
         "id": "19e4f79f-4776-4612-8ff2-1a6d2cd88eca",
         "picture": "./img/default_userpic.webp",
         "userName": "RU3",
@@ -239,5 +241,16 @@
         "lastName": "Incognito",
         "session": "7d322e4b51d715bc7ce2bdee7f57984f",
         "role": "user"
+    },
+    {
+        "id": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
+        "picture": "./img/strangeDefaultPicture.jpeg",
+        "userName": "RU4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "NOTanonymous",
+        "lastName": "NOTincognito",
+        "session": null,
+        "role": "user"
+
     }
 ]
