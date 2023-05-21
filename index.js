@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const {
     ideasDonationSum,
     ideasSumDifference,
-    createDonationsWithDataValidation,
+    createDonation,
 } = require('./businessRules/donations');
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea } = require('./models/ideas');
@@ -124,7 +124,7 @@ app.get('/donations/sumDifference', (req, res) => {
 
 app.post('/donations', (req, res) => {
     try {
-        createDonationsWithDataValidation(
+        createDonation(
             req.body.firstName,
             req.body.sum,
             req.body.userId,
