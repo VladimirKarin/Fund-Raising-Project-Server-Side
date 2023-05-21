@@ -1,4 +1,3 @@
-
 [
     {
         "id": "6fba75be-1f13-449e-b8ee-0d9287d70208",
@@ -7,7 +6,7 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Darth",
         "lastName": "Vader",
-        "session": null,
+        "session": "null",
         "role": "user"
     },
     {
@@ -18,7 +17,6 @@
         "firstName": "Master",
         "lastName": "Yoda",
         "session": null,
-
         "role": "user"
     },
     {
@@ -192,7 +190,6 @@
         "role": "user"
     },
     {
-
         "id": "19e4f79f-4776-4612-8ff2-1a6d2cd88eca",
         "picture": "./img/default_userpic.webp",
         "userName": "RU3",
@@ -251,6 +248,5 @@
         "lastName": "NOTincognito",
         "session": null,
         "role": "user"
-
     }
 ]

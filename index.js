@@ -1,7 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const md5 = require('md5');
 const cookieParser = require('cookie-parser');
-const { login, registerUser, updateUser, logout, checkIfLoggedIn } = require('./businessRules/users');
+const {
+    login,
+    registerUser,
+    updateUser,
+    logout,
+    checkIfLoggedIn,
+} = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
 const bodyParser = require('body-parser');
@@ -137,18 +144,6 @@ app.put('/users', (req, res) => {
     res.status(200).send('User successfully update.');
 });
 
-//Login
-
-app.post('/login', (req, res) => {
-
-    try {
-        login(req, res);
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-    res.status(200).send('Successfully logged in.');
-});
-
 app.delete('/users', (req, res) => {
     try {
         deleteUser(req.body.userId);
@@ -156,17 +151,56 @@ app.delete('/users', (req, res) => {
         res.status(400).send(error.message);
     }
     res.status(200).send('User successfully deleted.');
-=======
-    res.status(200).json(login(req, res));
+});
+
+//Login
+
+app.post('/login', (req, res) => {
+    try {
+        const sessionId = login(req.body.userName, md5(req.body.password));
+
+        res.cookie('userLoginSession', sessionId, {
+            sameSite: 'None',
+            secure: true,
+            httpOnly: true,
+            maxAge: 900000,
+        });
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+
+    res.status(200).send('Successfully logged in.');
 });
 
 app.get('/login', (req, res) => {
-    checkIfLoggedIn(req, res);
+    try {
+        const user = checkIfLoggedIn(req.body.userLoginSession);
+        res.status(200).json({
+            status: 'OK',
+            message: 'You are Logged in.',
+            name: user.firstName,
+            role: user.role,
+        });
+    } catch (error) {
+        res.status(404).send(error.message);
+    }
 });
 
 //Logout
 app.post('/logout', (req, res) => {
-    logout(req, res);
+    try {
+        logout(req.body.userLoginSession);
+
+        res.clearCookie('userLoginSession', {
+            sameSite: 'None',
+            secure: true,
+            httpOnly: true,
+            sameSite: 'None',
+        });
+    } catch (error) {
+        res.status(404).send(error.message);
+    }
+    res.status(200).send('You have successfully logged out.');
 });
 
 app.listen(port, () => {

@@ -5,10 +5,10 @@ const { getUsers, setUsers } = require('../utils/storage');
 
 function registerUser(userName, password, firstName, lastName) {
     if (!userName) {
-        throw new Error('Error. No Username provided');
+        throw new Error('Error. There was no username provided.');
     }
     if (!password) {
-        throw new Error('Error. No password provided');
+        throw new Error('Error. There was no password provided.');
     }
 
     firstName = firstName || 'Anonymous';
@@ -17,50 +17,59 @@ function registerUser(userName, password, firstName, lastName) {
     createUser(userName, password, firstName, lastName);
 }
 
-function login(req, res) {
-    let users = getUsers();
+function login(userName, password) {
+    if (!userName) {
+        throw new Error('Error. There was no username provided.');
+    }
+    if (!password) {
+        throw new Error('Error. There was no password provided.');
+    }
 
-    const userName = req.body.userName;
-    const password = md5(req.body.password);
+    let users = getUsers();
 
     const user = users.find(
         (user) => user.userName === userName && user.password === password
     );
+    console.log(`users.js - ${password}`);
 
     if (!user) {
-        throw new Error('No such user.');
+        throw new Error('Error. No such user.');
     }
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
     user.session = sessionId;
     setUsers(users);
-    res.cookie('userLoginSession', sessionId, {
-        sameSite: 'None',
-        secure: true,
-        httpOnly: true,
-        maxAge: 900000,
-    });
+    return sessionId;
 }
 
 function usersList() {
     return getUsers();
 }
 
+function logout(userLoginSession) {
+    if (!userLoginSession) {
+        throw new Error('Error. There was no users session data provided.');
+    }
 
-function logout(req, res) {
-    res.clearCookie('userLoginSession', {
-        sameSite: 'None',
-        secure: true,
-        httpOnly: true,
-        sameSite: 'None',
-    });
-    res.status(200).json({
-        status: 'OK',
-        statusMessage: 'You have successfully logged out.',
-    });
+    let users = getUsers();
+
+    const user = userLoginSession
+        ? users.find((user) => user.session === userLoginSession)
+        : null;
+    if (!user) {
+        throw new Error('You are not logged in.');
+    }
+    updateUser(user.id, 'session', 'null');
 }
 
 function updateUser(userId, key, value) {
+    if (!key) {
+        throw new Error("Error. You didn't provide any key to update.");
+    }
+    if (!value) {
+        throw new Error("Error. You didn't provide any value to updat.");
+    }
+
     let users = getUsers();
 
     const user = users.find((user) => userId === user.id);
@@ -87,35 +96,35 @@ function updateUser(userId, key, value) {
     setUsers(updatedUsers);
 }
 
-
 function deleteUser(userId) {
     let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    if (!user) {
+        throw new Error('Error. No user with such ID found.');
+    }
 
     let updatedUsers = users.filter((user) => userId !== user.id);
 
     setIdeas(updatedUsers);
 }
 
-function checkIfLoggedIn(req, res) {
+function checkIfLoggedIn(userLoginSession) {
+    if (!userLoginSession) {
+        throw new Error('Error. There was no users session data provided.');
+    }
+
     let users = getUsers();
 
-    const user = req.cookies.userLoginSession
-        ? users.find((user) => user.session === req.cookies.userLoginSession)
+    const user = userLoginSession
+        ? users.find((user) => user.session === userLoginSession)
         : null;
 
     if (!user) {
-        res.status(401).json({
-            status: 'error',
-            message: 'You are not Logged in.',
-        });
+        throw new Error('You are not logged in.');
     }
-
-    res.status(200).json({
-        status: 'OK',
-        message: 'You are Logged in.',
-        name: user.firstName,
-        role: user.role,
-    });
+    return user;
 }
 
 module.exports = {
@@ -126,5 +135,4 @@ module.exports = {
     logout,
     deleteUser,
     checkIfLoggedIn,
-
 };
