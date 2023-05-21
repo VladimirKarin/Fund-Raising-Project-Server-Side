@@ -130,8 +130,8 @@ app.post('/donations', (req, res) => {
             req.body.userId,
             req.body.ideaId
         );
-    } catch (Error) {
-        res.status(404).send(Error.message);
+    } catch (error) {
+        res.status(404).send(error.message);
     }
     res.status(200).send('Donation created successfully.');
 });
