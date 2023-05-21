@@ -56,7 +56,7 @@ app.post('/donations', (req, res) => {
     } catch (Error) {
         res.status(404).send(Error.message);
     }
-    res.status(200).send('Donation created successfully');
+    res.status(200).send('Donation created successfully.');
 });
 
 //Login

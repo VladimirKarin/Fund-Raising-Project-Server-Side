@@ -8,7 +8,7 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
     const idea = ideas.find((idea) => ideaId === idea.id);
 
     if (!idea) {
-        throw new Error(`Error. No idea with such ID found..`);
+        throw new Error(`Error. No idea with such ID found.`);
     }
 
     const generateId = v4();
@@ -23,12 +23,20 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
 function ideasDonationSum(ideaId) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
+
+    if (!idea) {
+        throw new Error(`Error. No idea with such ID found.`);
+    }
     return idea.totalDonationSum;
 }
 
 function ideasSumDifference(ideaId) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
+
+    if (!idea) {
+        throw new Error(`Error. No idea with such ID found.`);
+    }
 
     const ideasSum = idea.askedSum;
 
