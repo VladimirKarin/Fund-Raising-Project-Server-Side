@@ -36,8 +36,7 @@ function login(userName, password) {
     }
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
-    user.session = sessionId;
-    setUsers(user);
+    updateUser(user.id, 'session', sessionId);
 
     return sessionId;
 }
