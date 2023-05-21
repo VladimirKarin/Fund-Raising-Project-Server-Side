@@ -30,7 +30,6 @@ function login(userName, password) {
     const user = users.find(
         (user) => user.userName === userName && user.password === password
     );
-    console.log(`users.js - ${password}`);
 
     if (!user) {
         throw new Error('Error. No such user.');
@@ -38,7 +37,8 @@ function login(userName, password) {
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
     user.session = sessionId;
-    setUsers(users);
+    setUsers(user);
+
     return sessionId;
 }
 
