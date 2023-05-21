@@ -58,15 +58,15 @@ function logout(userLoginSession) {
     if (!user) {
         throw new Error('You are not logged in.');
     }
-    updateUser(user.id, 'session', 'null');
+    updateUser(user.id, 'session', null);
 }
 
 function updateUser(userId, key, value) {
     if (!key) {
         throw new Error("Error. You didn't provide any key to update.");
     }
-    if (!value) {
-        throw new Error("Error. You didn't provide any value to updat.");
+    if (value === undefined) {
+        throw new Error("Error. You didn't provide any value to update.");
     }
 
     let users = getUsers();
