@@ -11,6 +11,11 @@ const {
 } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
+const {
+    ideasDonationSum,
+    ideasSumDifference,
+    createDonation,
+} = require('./businessRules/donations');
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea } = require('./models/ideas');
 const {
@@ -116,6 +121,7 @@ app.delete('/ideas', (req, res) => {
     res.status(200).send('Ideas successfully deleted.');
 });
 
+
 //USER METHODS
 app.get('/users', (req, res) => {
     res.status(200).json(getUsers());
@@ -151,6 +157,29 @@ app.delete('/users', (req, res) => {
         res.status(400).send(error.message);
     }
     res.status(200).send('User successfully deleted.');
+
+//DONATION METHODS
+
+app.get('/donations', (req, res) => {
+    res.status(200).json(ideasDonationSum(req.body.ideaId));
+});
+
+app.get('/donations/sumDifference', (req, res) => {
+    res.status(200).json(ideasSumDifference(req.body.ideaId));
+});
+
+app.post('/donations', (req, res) => {
+    try {
+        createDonation(
+            req.body.firstName,
+            req.body.sum,
+            req.body.userId,
+            req.body.ideaId
+        );
+    } catch (error) {
+        res.status(404).send(error.message);
+    }
+    res.status(200).send('Donation created successfully.');
 });
 
 //Login
