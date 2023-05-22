@@ -45,6 +45,10 @@ function usersList() {
     return getUsers();
 }
 
+function deleteUserSession(userId) {
+    updateUser(userId, 'session', null);
+}
+
 function logout(userLoginSession) {
     if (!userLoginSession) {
         throw new Error('Error. There was no users session data provided.');
@@ -55,10 +59,12 @@ function logout(userLoginSession) {
     const user = userLoginSession
         ? users.find((user) => user.session === userLoginSession)
         : null;
+
     if (!user) {
         throw new Error('You are not logged in.');
     }
-    updateUser(user.id, 'session', null);
+
+    deleteUserSession(user.id);
 }
 
 function updateUser(userId, key, value) {
