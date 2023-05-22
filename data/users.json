@@ -6,7 +6,7 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Darth",
         "lastName": "Vader",
-        "session": "2a9073129110151484e07073020329db",
+        "session": null,
         "role": "user"
     },
     {
@@ -16,7 +16,7 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Master",
         "lastName": "Yoda",
-        "session": null,
+        "session": "000e1fb3a675b7094b5836b85217015d",
         "role": "user"
     },
     {
@@ -26,7 +26,7 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Anonymous",
         "lastName": "Droid",
-        "session": "83a67ac608ba2e6fb006c5e0f8c6d1db",
+        "session": null,
         "role": "user"
     },
     {
@@ -187,6 +187,56 @@
         "firstName": "NOTanonymous",
         "lastName": "U2",
         "session": null,
+        "role": "user"
+    },
+    {
+        "id": "19e4f79f-4776-4612-8ff2-1a6d2cd88eca",
+        "picture": "./img/default_userpic.webp",
+        "userName": "RU3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "R",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
+        "picture": "./img/default_userpic.webp",
+        "userName": "RU4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "81c3be9a-009b-4c44-b034-ae2a4276c850",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalker",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anakyn",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "0acad09f-7cd4-4455-b889-1d4f05021d07",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalkerTEST1",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anonymous",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "b0b19eba-7b42-420c-aa1e-3e8e2ee8a102",
+        "picture": "./img/default_userpic.webp",
+        "userName": "AnySkywalkerTEST3",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "AnonymousAnakyn",
+        "lastName": "Incognito",
+        "session": "7d322e4b51d715bc7ce2bdee7f57984f",
         "role": "user"
     },
     {

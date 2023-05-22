@@ -21,6 +21,7 @@ const {
     registerUser,
     usersList,
     updateUser,
+    login,
 } = require('../businessRules/users');
 /*
 FR-31 testin user creation function
