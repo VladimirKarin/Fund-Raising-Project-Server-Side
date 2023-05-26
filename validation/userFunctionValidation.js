@@ -1,18 +1,18 @@
 const { getUsers } = require('../utils/storage');
 
-function checkingUserNameExistence(userName) {
+function checkIfUserNameProvided(userName) {
     if (!userName) {
         throw new Error('Error. There was no username provided.');
     }
 }
 
-function checkingPasswordExistence(password) {
+function checkIfPasswordProvided(password) {
     if (!password) {
         throw new Error('Error. There was no password provided.');
     }
 }
 
-function checkingIfUserNameAndPasswordMatchesUsersData(userName, password) {
+function checkIfUserNameAndPasswordMatches(userName, password) {
     let users = getUsers();
 
     const user = users.find(
@@ -26,8 +26,57 @@ function checkingIfUserNameAndPasswordMatchesUsersData(userName, password) {
     return user;
 }
 
+function checkIfUserLoginSessionProvided(userLoginSession) {
+    if (!userLoginSession) {
+        throw new Error('Error. There was no users session data provided.');
+    }
+}
+
+function checkIfUserLoginSessionMatches(userLoginSession) {
+    let users = getUsers();
+
+    const user = userLoginSession
+        ? users.find((user) => user.session === userLoginSession)
+        : null;
+
+    if (!user) {
+        throw new Error('You are not logged in.');
+    }
+
+    return user;
+}
+
+function checkIfUserIdMatches(userId) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    if (!user) {
+        throw new Error('Error. No such user.');
+    }
+
+    return [users, user];
+}
+
+function checkIfKeyProvided(key) {
+    if (!key) {
+        throw new Error("Error. You didn't provide any key to update.");
+    }
+}
+
+function checkIfValueProvided(value) {
+    if (value === undefined) {
+        throw new Error("Error. You didn't provide any value to update.");
+    }
+}
+
 module.exports = {
-    checkingUserNameExistence,
-    checkingPasswordExistence,
-    checkingIfUserNameAndPasswordMatchesUsersData,
+    checkIfUserNameProvided,
+    checkIfPasswordProvided,
+    checkIfUserNameAndPasswordMatches,
+    checkIfUserLoginSessionProvided,
+    checkIfUserLoginSessionMatches,
+    checkIfUserIdMatches,
+    checkIfKeyProvided,
+    checkIfValueProvided,
 };

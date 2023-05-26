@@ -3,15 +3,20 @@ const md5 = require('md5');
 const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
 const {
-    checkingUserNameExistence,
-    checkingPasswordExistence,
-    checkingIfUserNameAndPasswordMatchesUsersData,
+    checkIfUserNameProvided,
+    checkIfPasswordProvided,
+    checkIfUserNameAndPasswordMatches,
+    checkIfUserLoginSessionProvided,
+    checkIfUserLoginSessionMatches,
+    checkIfUserIdMatches,
+    checkIfValueProvided,
+    checkIfKeyProvided,
 } = require('../validation/userfunctionValidation');
 
 function registerUser(userName, password, firstName, lastName) {
-    checkingUserNameExistence(userName);
+    checkIfUserNameProvided(userName);
 
-    checkingPasswordExistence(password);
+    checkIfPasswordProvided(password);
 
     firstName = firstName || 'Anonymous';
     lastName = lastName || 'Incognito';
@@ -20,14 +25,11 @@ function registerUser(userName, password, firstName, lastName) {
 }
 
 function login(userName, password) {
-    checkingUserNameExistence(userName);
+    checkIfUserNameProvided(userName);
 
-    checkingPasswordExistence(password);
+    checkIfPasswordProvided(password);
 
-    const user = checkingIfUserNameAndPasswordMatchesUsersData(
-        userName,
-        password
-    );
+    const user = checkIfUserNameAndPasswordMatches(userName, password);
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
 
@@ -41,38 +43,22 @@ function deleteUserSession(userId) {
 }
 
 function logout(userLoginSession) {
-    if (!userLoginSession) {
-        throw new Error('Error. There was no users session data provided.');
-    }
+    checkIfUserLoginSessionProvided(userLoginSession);
 
-    let users = getUsers();
-
-    const user = userLoginSession
-        ? users.find((user) => user.session === userLoginSession)
-        : null;
-
-    if (!user) {
-        throw new Error('You are not logged in.');
-    }
+    const user = checkIfUserLoginSessionMatches(userLoginSession);
 
     deleteUserSession(user.id);
 }
 
 function updateUser(userId, key, value) {
-    if (!key) {
-        throw new Error("Error. You didn't provide any key to update.");
-    }
-    if (value === undefined) {
-        throw new Error("Error. You didn't provide any value to update.");
-    }
+    checkIfKeyProvided(key);
 
-    let users = getUsers();
+    checkIfValueProvided(value);
 
-    const user = users.find((user) => userId === user.id);
+    let validationResults = checkIfUserIdMatches(userId);
 
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
+    let users = validationResults[0],
+        user = validationResults[1];
 
     const updatedUser = {
         ...user,
@@ -93,13 +79,8 @@ function updateUser(userId, key, value) {
 }
 
 function deleteUser(userId) {
-    let users = getUsers();
-
-    const user = users.find((user) => userId === user.id);
-
-    if (!user) {
-        throw new Error('Error. No user with such ID found.');
-    }
+    let validationResults = checkIfUserIdMatches(userId);
+    let users = validationResults[0];
 
     let updatedUsers = users.filter((user) => userId !== user.id);
 
@@ -107,19 +88,9 @@ function deleteUser(userId) {
 }
 
 function checkIfLoggedIn(userLoginSession) {
-    if (!userLoginSession) {
-        throw new Error('Error. There was no users session data provided.');
-    }
+    checkIfUserLoginSessionMatches(userLoginSession);
 
-    let users = getUsers();
-
-    const user = userLoginSession
-        ? users.find((user) => user.session === userLoginSession)
-        : null;
-
-    if (!user) {
-        throw new Error('You are not logged in.');
-    }
+    const user = checkIfUserLoginSessionMatches(userLoginSession);
     return user;
 }
 
