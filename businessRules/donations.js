@@ -2,14 +2,18 @@ const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
 const { getAllIdeas } = require('../models/ideas');
 const { getIdeas } = require('../utils/storage');
+const {
+    checkIfIdeaIdMatches,
+} = require('../validation/ideaFunctionValidation');
+const {
+    checkIfSumIsANumber,
+    checkIfIdeaIdMatchesIdea,
+} = require('../validation/donationFunctionValidation');
 
 function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
-    let ideas = getIdeas();
-    const idea = ideas.find((idea) => ideaId === idea.id);
+    checkIfIdeaIdMatches(ideaId);
 
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
+    checkIfSumIsANumber(sum);
 
     const generateId = v4();
     const anonymous = 'Anonymous';
@@ -21,26 +25,18 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
 }
 
 function ideasDonationSum(ideaId) {
-    const ideas = getAllIdeas();
-    const idea = ideas.find((idea) => idea.id === ideaId);
+    let idea = checkIfIdeaIdMatchesIdea(ideaId);
 
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
     return idea.totalDonationSum;
 }
 
 function ideasSumDifference(ideaId) {
-    const ideas = getAllIdeas();
-    const idea = ideas.find((idea) => idea.id === ideaId);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
+    let idea = checkIfIdeaIdMatchesIdea(ideaId);
 
     const ideasSum = idea.askedSum;
 
     const totalDonationSumForThisIdea = ideasDonationSum(ideaId);
+
     const askedSumAndDonationSumDifference =
         ideasSum - totalDonationSumForThisIdea;
 
@@ -48,7 +44,7 @@ function ideasSumDifference(ideaId) {
 }
 
 module.exports = {
-    createDonation: createDonationsWithDataValidation,
+    createDonationsWithDataValidation,
     ideasDonationSum,
     ideasSumDifference,
 };
