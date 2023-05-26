@@ -34,5 +34,14 @@
         "askedSum": 1500,
         "userId": "7a693f37-ccb4-4ecb-be2b-8e34749430b5",
         "status": "pending"
+    },
+    {
+        "id": "6ae1ea20-6e79-45f8-8265-eba8a3d22677",
+        "picture": "./img/default_idea.png",
+        "header": "Epic Star Wars Header",
+        "description": "Epic description, that will astonish you!",
+        "askedSum": 500,
+        "userId": "d6e15668-dcc1-49e6-9343-4972d100f329",
+        "status": "accepted"
     }
 ]
