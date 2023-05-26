@@ -97,10 +97,23 @@ createDonationsWithDataValidation(
 
 RegisterUser Test
 
-registerUser('RU1', '123', 'R', 'U1');
-registerUser('RU2', '123', null, 'U2');
-registerUser('RU3', '123', 'R', null);
-registerUser('RU4', '123', null, null);
+console.log('Test 1- All data');
+registerUser('StormTrooper', '123', 'Storm', 'Trooper');
+
+console.log('Test 2- No firstName');
+registerUser('StormTrooper2', '123', null, 'Trooper');
+
+console.log('Test 3- No lastName');
+registerUser('StormTrooper3', '123', 'Storm', null);
+
+console.log('Test 4- No firstName and no lastName');
+registerUser('StormTrooper4', '123', null, null);
+
+console.log('Test 5- No userName');
+registerUser(null, '123', 'Storm', 'Trooper');
+
+console.log('Test 6- No Password');
+registerUser('StormTrooper', null, 'Storm', 'Trooper');
 
 Testing createIdea function
 

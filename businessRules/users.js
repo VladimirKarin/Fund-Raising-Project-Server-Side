@@ -2,14 +2,16 @@ const { v4 } = require('uuid');
 const md5 = require('md5');
 const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
+const {
+    checkingUserNameExistence,
+    checkingPasswordExistence,
+    checkingIfUserNameAndPasswordMatchesUsersData,
+} = require('../validation/userfunctionValidation');
 
 function registerUser(userName, password, firstName, lastName) {
-    if (!userName) {
-        throw new Error('Error. There was no username provided.');
-    }
-    if (!password) {
-        throw new Error('Error. There was no password provided.');
-    }
+    checkingUserNameExistence(userName);
+
+    checkingPasswordExistence(password);
 
     firstName = firstName || 'Anonymous';
     lastName = lastName || 'Incognito';
@@ -18,31 +20,20 @@ function registerUser(userName, password, firstName, lastName) {
 }
 
 function login(userName, password) {
-    if (!userName) {
-        throw new Error('Error. There was no username provided.');
-    }
-    if (!password) {
-        throw new Error('Error. There was no password provided.');
-    }
+    checkingUserNameExistence(userName);
 
-    let users = getUsers();
+    checkingPasswordExistence(password);
 
-    const user = users.find(
-        (user) => user.userName === userName && user.password === password
+    const user = checkingIfUserNameAndPasswordMatchesUsersData(
+        userName,
+        password
     );
 
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
-
     const sessionId = md5(v4()); //Should be REAL cryptography.
+
     updateUser(user.id, 'session', sessionId);
 
     return sessionId;
-}
-
-function usersList() {
-    return getUsers();
 }
 
 function deleteUserSession(userId) {
@@ -135,7 +126,7 @@ function checkIfLoggedIn(userLoginSession) {
 module.exports = {
     registerUser,
     login,
-    usersList,
+    usersList: getUsers,
     updateUser,
     logout,
     deleteUser,
