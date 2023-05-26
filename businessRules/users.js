@@ -2,14 +2,21 @@ const { v4 } = require('uuid');
 const md5 = require('md5');
 const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
+const {
+    checkIfUserNameProvided,
+    checkIfPasswordProvided,
+    checkIfUserNameAndPasswordMatches,
+    checkIfUserLoginSessionProvided,
+    checkIfUserLoginSessionMatches,
+    checkIfUserIdMatches,
+    checkIfValueProvided,
+    checkIfKeyProvided,
+} = require('../validation/userfunctionValidation');
 
 function registerUser(userName, password, firstName, lastName) {
-    if (!userName) {
-        throw new Error('Error. There was no username provided.');
-    }
-    if (!password) {
-        throw new Error('Error. There was no password provided.');
-    }
+    checkIfUserNameProvided(userName);
+
+    checkIfPasswordProvided(password);
 
     firstName = firstName || 'Anonymous';
     lastName = lastName || 'Incognito';
@@ -18,31 +25,17 @@ function registerUser(userName, password, firstName, lastName) {
 }
 
 function login(userName, password) {
-    if (!userName) {
-        throw new Error('Error. There was no username provided.');
-    }
-    if (!password) {
-        throw new Error('Error. There was no password provided.');
-    }
+    checkIfUserNameProvided(userName);
 
-    let users = getUsers();
+    checkIfPasswordProvided(password);
 
-    const user = users.find(
-        (user) => user.userName === userName && user.password === password
-    );
-
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
+    const user = checkIfUserNameAndPasswordMatches(userName, password);
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
+
     updateUser(user.id, 'session', sessionId);
 
     return sessionId;
-}
-
-function usersList() {
-    return getUsers();
 }
 
 function deleteUserSession(userId) {
@@ -50,38 +43,22 @@ function deleteUserSession(userId) {
 }
 
 function logout(userLoginSession) {
-    if (!userLoginSession) {
-        throw new Error('Error. There was no users session data provided.');
-    }
+    checkIfUserLoginSessionProvided(userLoginSession);
 
-    let users = getUsers();
-
-    const user = userLoginSession
-        ? users.find((user) => user.session === userLoginSession)
-        : null;
-
-    if (!user) {
-        throw new Error('You are not logged in.');
-    }
+    const user = checkIfUserLoginSessionMatches(userLoginSession);
 
     deleteUserSession(user.id);
 }
 
 function updateUser(userId, key, value) {
-    if (!key) {
-        throw new Error("Error. You didn't provide any key to update.");
-    }
-    if (value === undefined) {
-        throw new Error("Error. You didn't provide any value to update.");
-    }
+    checkIfKeyProvided(key);
 
-    let users = getUsers();
+    checkIfValueProvided(value);
 
-    const user = users.find((user) => userId === user.id);
+    let validationResults = checkIfUserIdMatches(userId);
 
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
+    let users = validationResults[0],
+        user = validationResults[1];
 
     const updatedUser = {
         ...user,
@@ -102,13 +79,8 @@ function updateUser(userId, key, value) {
 }
 
 function deleteUser(userId) {
-    let users = getUsers();
-
-    const user = users.find((user) => userId === user.id);
-
-    if (!user) {
-        throw new Error('Error. No user with such ID found.');
-    }
+    let validationResults = checkIfUserIdMatches(userId);
+    let users = validationResults[0];
 
     let updatedUsers = users.filter((user) => userId !== user.id);
 
@@ -116,26 +88,16 @@ function deleteUser(userId) {
 }
 
 function checkIfLoggedIn(userLoginSession) {
-    if (!userLoginSession) {
-        throw new Error('Error. There was no users session data provided.');
-    }
+    checkIfUserLoginSessionMatches(userLoginSession);
 
-    let users = getUsers();
-
-    const user = userLoginSession
-        ? users.find((user) => user.session === userLoginSession)
-        : null;
-
-    if (!user) {
-        throw new Error('You are not logged in.');
-    }
+    const user = checkIfUserLoginSessionMatches(userLoginSession);
     return user;
 }
 
 module.exports = {
     registerUser,
     login,
-    usersList,
+    usersList: getUsers,
     updateUser,
     logout,
     deleteUser,

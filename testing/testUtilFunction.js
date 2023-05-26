@@ -31,7 +31,7 @@ console.log(createUser('masterYoda', '202cb962ac59075b964b07152d234b70', 'Master
 
 FR-32 test delete user function
 
-deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
+deleteUser('b239a9ed-acf7-4988-8569-6b35d966b242');
 
 FR 33-- testing idea creation function
 
@@ -97,10 +97,23 @@ createDonationsWithDataValidation(
 
 RegisterUser Test
 
-registerUser('RU1', '123', 'R', 'U1');
-registerUser('RU2', '123', null, 'U2');
-registerUser('RU3', '123', 'R', null);
-registerUser('RU4', '123', null, null);
+console.log('Test 1- All data');
+registerUser('StormTrooper', '123', 'Storm', 'Trooper');
+
+console.log('Test 2- No firstName');
+registerUser('StormTrooper2', '123', null, 'Trooper');
+
+console.log('Test 3- No lastName');
+registerUser('StormTrooper3', '123', 'Storm', null);
+
+console.log('Test 4- No firstName and no lastName');
+registerUser('StormTrooper4', '123', null, null);
+
+console.log('Test 5- No userName');
+registerUser(null, '123', 'Storm', 'Trooper');
+
+console.log('Test 6- No Password');
+registerUser('StormTrooper', null, 'Storm', 'Trooper');
 
 Testing createIdea function
 
@@ -165,14 +178,23 @@ console.log(usersList());
 
 FR-53 Testing updateUser function
 
-updateUser('d70207a2-32bb-4e08-9878-e3174b7490c1', 'firstName', 'NOTanonymous');
-
-updateUser('8f29d0e6-afda-4171-b309-84ece4f95cb7', 'lastName', 'NOTincognito');
+console.log('Test 1 - ALL DATA');
+updateUser('542c7ebb-55aa-4375-8da7-632a7269849a', 'firstName', 'NOTanonymous');
+console.log('Test 2 - ALL DATA');
+updateUser('542c7ebb-55aa-4375-8da7-632a7269849a', 'lastName', 'NOTincognito');
+console.log('Test 3 - ALL DATA');
 updateUser(
-    '8f29d0e6-afda-4171-b309-84ece4f95cb7',
+    '542c7ebb-55aa-4375-8da7-632a7269849a',
     'picture',
     './img/strangeDefaultPicture.jpeg'
 );
+
+console.log('Test 4 - No userId');
+updateUser(null, 'firstName', 'NOTanonymous');
+console.log('Test 5 - no key');
+updateUser('542c7ebb-55aa-4375-8da7-632a7269849a', null, 'NOTanonymous');
+console.log('Test 6 - no value');
+updateUser('542c7ebb-55aa-4375-8da7-632a7269849a', 'firstName');
 
 FR-54 Testing deleteUser function
 

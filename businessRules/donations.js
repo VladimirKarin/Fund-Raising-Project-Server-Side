@@ -3,7 +3,7 @@ const { createDonation } = require('../models/donations');
 const { getAllIdeas } = require('../models/ideas');
 const { getIdeas } = require('../utils/storage');
 
-function createDonation(firstName, sum, userId, ideaId) {
+function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
     let ideas = getIdeas();
     const idea = ideas.find((idea) => ideaId === idea.id);
 
@@ -48,7 +48,7 @@ function ideasSumDifference(ideaId) {
 }
 
 module.exports = {
-    createDonation,
+    createDonation: createDonationsWithDataValidation,
     ideasDonationSum,
     ideasSumDifference,
 };

@@ -1,6 +1,9 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
+const {
+    checkIfUserIdMatches,
+} = require('../validation/userfunctionValidation');
 
 function createUser(userName, password, firstName, lastName) {
     let users = getUsers();
@@ -21,12 +24,9 @@ function createUser(userName, password, firstName, lastName) {
 }
 
 function deleteUser(userId) {
-    let users = getUsers();
-    const userToDelete = users.find((user) => userId === user.id);
-
-    if (!userToDelete) {
-        throw new Error('No such user.');
-    }
+    let validationResults = checkIfUserIdMatches(userId);
+    let users = validationResults[0],
+        userToDelete = validationResults[1];
 
     if (userToDelete.role === 'admin') {
         throw new Error("You cant't delete 'Admin'.");
