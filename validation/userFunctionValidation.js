@@ -65,7 +65,7 @@ function checkIfKeyProvided(key) {
 }
 
 function checkIfValueProvided(value) {
-    if (value === undefined) {
+    if (value === undefined || value === 'undefined') {
         throw new Error("Error. You didn't provide any value to update.");
     }
 }
