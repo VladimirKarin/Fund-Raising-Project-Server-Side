@@ -1,5 +1,12 @@
 const { v4 } = require('uuid');
 const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
+const {
+    checkIfKeyProvided,
+    checkIfValueProvided,
+} = require('../validation/userfunctionValidation');
+const {
+    checkIfIdeaIdMatches,
+} = require('../validation/ideaFunctionValidation');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -19,20 +26,13 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
-    if (!key) {
-        throw new Error("Error. You didn't provide any key to update");
-    }
-    if (!value) {
-        throw new Error("Error. You didn't provide any value to update");
-    }
+    checkIfKeyProvided(key);
 
-    let ideas = getIdeas();
+    checkIfValueProvided(value);
 
-    const idea = ideas.find((idea) => ideaId === idea.id);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
+    let validationResults = checkIfIdeaIdMatches(ideaId);
+    let ideas = validationResults[0];
+    let idea = validationResults[1];
 
     const updatedIdea = {
         ...idea,
@@ -53,13 +53,8 @@ function updateIdea(ideaId, key, value) {
 }
 
 function deleteIdea(ideaId) {
-    let ideas = getIdeas();
-
-    const idea = ideas.find((idea) => ideaId === idea.id);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
+    let validationResults = checkIfIdeaIdMatches(ideaId);
+    let ideas = validationResults[0];
 
     let updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
 

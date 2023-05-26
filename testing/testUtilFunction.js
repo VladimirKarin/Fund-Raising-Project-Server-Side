@@ -3,7 +3,12 @@
 const { createUser, deleteUser } = require('../models/users');
 // const { createUser } = require('./models/users.js');
 const { createDonation } = require('../models/donations');
-const { createIdea, deleteIdea, getAllIdeas } = require('../models/ideas');
+const {
+    createIdea,
+    deleteIdea,
+    getAllIdeas,
+    updateIdea,
+} = require('../models/ideas');
 const {
     getIdeas,
     sortedByDonationSumIdeas,
@@ -36,15 +41,15 @@ deleteUser('b239a9ed-acf7-4988-8569-6b35d966b242');
 FR 33-- testing idea creation function
 
 createIdea(
-    'New Brains2',
-    'Think about having a spare pair of new brains',
-    '200002',
-    'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
+    'New liver, for Alcoholics',
+    'Perhaps it you need one?',
+    5000,
+    '7a693f37-ccb4-4ecb-be2b-8e34749430b5'
 );
 
 FR-34 testin idea delete function
 
-deleteIdea('6f871b10-9462-4ead-b3a3-c63505e0f5c1');
+deleteIdea('a6bbff48-113a-46fb-9338-9e5844275333');
 
 FR-36 testing create donation function
 
@@ -56,7 +61,16 @@ createDonation(
 );
 
 FR-26 testing idea update function
-updateIdea('333e02ba-8e79-472f-8441-a4da39884253', 'askedSum', 50);
+
+console.log('Test 1 - All Data');
+updateIdea('6055e10e-1b89-4213-81cf-360c2e6dc6a1', 'askedSum', 1500);
+console.log('Test 2 - No Id');
+updateIdea('6055e10e-1b89-4213-81cf-360c2e6dc6aa', 'askedSum', 1500);
+console.log('Test 3 - No key');
+updateIdea('6055e10e-1b89-4213-81cf-360c2e6dc6a1', null, 1500);
+console.log('Test 4 - All Data');
+updateIdea('6055e10e-1b89-4213-81cf-360c2e6dc6a1', 'askedSum', undefined);
+
 createIdea(
     'header2',
     'description2',

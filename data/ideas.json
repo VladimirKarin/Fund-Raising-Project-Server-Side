@@ -27,12 +27,12 @@
         "status": "rejected"
     },
     {
-        "id": "a6bbff48-113a-46fb-9338-9e5844275333",
+        "id": "6055e10e-1b89-4213-81cf-360c2e6dc6a1",
         "picture": "./img/default_idea.png",
-        "header": "Simply Amazing HEADER 1",
-        "description": "Yet another interesting text. Just read it",
-        "askedSum": 300,
-        "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "header": "New liver, for Alcoholics",
+        "description": "Perhaps it you need one?",
+        "askedSum": 1500,
+        "userId": "7a693f37-ccb4-4ecb-be2b-8e34749430b5",
         "status": "pending"
     }
 ]
