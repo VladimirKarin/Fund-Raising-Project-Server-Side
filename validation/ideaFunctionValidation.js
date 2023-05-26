@@ -1,3 +1,4 @@
+const { getAllIdeas } = require('../models/ideas');
 const { getIdeas } = require('../utils/storage');
 
 function checkIfIdeaIdMatches(ideaId) {

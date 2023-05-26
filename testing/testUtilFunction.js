@@ -52,12 +52,65 @@ FR-34 testin idea delete function
 deleteIdea('a6bbff48-113a-46fb-9338-9e5844275333');
 
 FR-36 testing create donation function
+console.log('Test 1 - No Data at all');
+createDonationsWithDataValidation(null, null, null, null);
 
-createDonation(
-    'Master',
-    '5000',
-    '45ff012c-be0d-487e-9b9d-7f53471821b0',
-    'c1ca74ae-c42d-4b51-b814-2edcd8af35ec'
+
+console.log('Test 2 - no firstName, no sum, no userID, entered ideaId');
+createDonationsWithDataValidation(
+    null,
+    null,
+    null,
+    '6055e10e-1b89-4213-81cf-360c2e6dc6a1'
+);
+
+console.log(
+    'Test 3 - entered firstName, entered sum, no userID, entered ideaId'
+);
+createDonationsWithDataValidation(
+    'Any',
+    null,
+    null,
+    '6055e10e-1b89-4213-81cf-360c2e6dc6a1'
+);
+
+console.log(
+    'Test 4 - entered firstName, entered sum, entered userID, entered noideaId'
+);
+createDonationsWithDataValidation(
+    null,
+    50,
+    null,
+    '6055e10e-1b89-4213-81cf-360c2e6dc6a1'
+);
+
+console.log(
+    'Test 5 - entered firstName, entered sum, entered userID, entered noideaId'
+);
+createDonationsWithDataValidation(
+    null,
+    null,
+    '81c3be9a-009b-4c44-b034-ae2a4276c850',
+    '6055e10e-1b89-4213-81cf-360c2e6dc6a1'
+);
+console.log(
+    'Test 6 - no firstName, entered sum, entere userID, entered noideaId'
+);
+createDonationsWithDataValidation(
+    null,
+    50,
+    '81c3be9a-009b-4c44-b034-ae2a4276c850',
+    '6055e10e-1b89-4213-81cf-360c2e6dc6a1'
+);
+
+console.log(
+    'Test 7 - no firstName, entered sum, entere userID, entered noideaId'
+);
+createDonationsWithDataValidation(
+    'Any',
+    '50',
+    '81c3be9a-009b-4c44-b034-ae2a4276c850',
+    '6055e10e-1b89-4213-81cf-360c2e6dc6a1'
 );
 
 FR-26 testing idea update function
@@ -154,10 +207,10 @@ createIdeas('HEADER', 'Description.Description.Description.', 500, null);
 FR-46 Create ideas donation sum function testing.
 console.log(getAllIdeas());
 
-console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));
+console.log(ideasDonationSum('6ae1ea20-6e79-45f8-8265-eba8a3d22677'));
 
 Testing a function that calculates difference between ideas sum and sum of all donations for the idea
-ideasSumDifference('4e94a388-268d-46c9-b888-b2279c469ecd');
+console.log(ideasSumDifference('70c8e131-ac49-453f-85f6-d18160b7be19'));
 
 FR-47 Testing function that updated ideas approve status. And deletes if not approved.
 createIdea(
