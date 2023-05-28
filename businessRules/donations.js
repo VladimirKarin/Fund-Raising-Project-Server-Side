@@ -1,17 +1,15 @@
 const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
-const { getAllIdeas } = require('../models/ideas');
-const { getIdeas } = require('../utils/storage');
 const {
-    checkIfIdeaIdMatches,
+    ideaThatMatchesIdeaId,
 } = require('../validation/ideaFunctionValidation');
 const {
     checkIfSumIsANumber,
-    checkIfIdeaIdMatchesIdea,
+    ideaWithTotalDonationSumThatMatchesIdeaId,
 } = require('../validation/donationFunctionValidation');
 
 function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
-    checkIfIdeaIdMatches(ideaId);
+    ideaThatMatchesIdeaId(ideaId);
 
     checkIfSumIsANumber(sum);
 
@@ -25,13 +23,13 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
 }
 
 function ideasDonationSum(ideaId) {
-    let idea = checkIfIdeaIdMatchesIdea(ideaId);
+    let idea = ideaWithTotalDonationSumThatMatchesIdeaId(ideaId);
 
     return idea.totalDonationSum;
 }
 
 function ideasSumDifference(ideaId) {
-    let idea = checkIfIdeaIdMatchesIdea(ideaId);
+    let idea = checkIfIdeaIdMatchesIdeas(ideaId);
 
     const ideasSum = idea.askedSum;
 

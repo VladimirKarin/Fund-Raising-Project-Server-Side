@@ -2,7 +2,7 @@ const { v4 } = require('uuid');
 const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
 const {
-    checkIfUserIdMatches,
+    userWithMatchingUserId,
 } = require('../validation/userfunctionValidation');
 
 function createUser(userName, password, firstName, lastName) {
@@ -24,7 +24,7 @@ function createUser(userName, password, firstName, lastName) {
 }
 
 function deleteUser(userId) {
-    let validationResults = checkIfUserIdMatches(userId);
+    let validationResults = userWithMatchingUserId(userId);
     let users = validationResults[0],
         userToDelete = validationResults[1];
 

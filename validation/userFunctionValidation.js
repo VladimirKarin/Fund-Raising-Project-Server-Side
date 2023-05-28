@@ -1,18 +1,18 @@
 const { getUsers } = require('../utils/storage');
 
-function checkIfUserNameProvided(userName) {
+function isUserNameValid(userName) {
     if (!userName) {
         throw new Error('Error. There was no username provided.');
     }
 }
 
-function checkIfPasswordProvided(password) {
+function isPasswordValid(password) {
     if (!password) {
         throw new Error('Error. There was no password provided.');
     }
 }
 
-function checkIfUserNameAndPasswordMatches(userName, password) {
+function userWithMatchingUserNameAndPassword(userName, password) {
     let users = getUsers();
 
     const user = users.find(
@@ -26,13 +26,13 @@ function checkIfUserNameAndPasswordMatches(userName, password) {
     return user;
 }
 
-function checkIfUserLoginSessionProvided(userLoginSession) {
+function isLoginSessionValid(userLoginSession) {
     if (!userLoginSession) {
         throw new Error('Error. There was no users session data provided.');
     }
 }
 
-function checkIfUserLoginSessionMatches(userLoginSession) {
+function userWithMatchingLoginSession(userLoginSession) {
     let users = getUsers();
 
     const user = userLoginSession
@@ -46,7 +46,7 @@ function checkIfUserLoginSessionMatches(userLoginSession) {
     return user;
 }
 
-function checkIfUserIdMatches(userId) {
+function userWithMatchingUserId(userId) {
     let users = getUsers();
 
     const user = users.find((user) => userId === user.id);
@@ -58,25 +58,25 @@ function checkIfUserIdMatches(userId) {
     return [users, user];
 }
 
-function checkIfKeyProvided(key) {
+function isKeyValid(key) {
     if (!key) {
         throw new Error("Error. You didn't provide any key to update.");
     }
 }
 
-function checkIfValueProvided(value) {
+function isValueValid(value) {
     if (value === undefined || value === 'undefined') {
         throw new Error("Error. You didn't provide any value to update.");
     }
 }
 
 module.exports = {
-    checkIfUserNameProvided,
-    checkIfPasswordProvided,
-    checkIfUserNameAndPasswordMatches,
-    checkIfUserLoginSessionProvided,
-    checkIfUserLoginSessionMatches,
-    checkIfUserIdMatches,
-    checkIfKeyProvided,
-    checkIfValueProvided,
+    isUserNameValid,
+    isPasswordValid,
+    userWithMatchingUserNameAndPassword,
+    isLoginSessionValid,
+    userWithMatchingLoginSession,
+    userWithMatchingUserId,
+    isKeyValid,
+    isValueValid,
 };

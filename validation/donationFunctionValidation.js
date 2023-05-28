@@ -6,7 +6,7 @@ function checkIfSumIsANumber(sum) {
     }
 }
 
-function checkIfIdeaIdMatchesIdea(ideaId) {
+function ideaWithTotalDonationSumThatMatchesIdeaId(ideaId) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
 
@@ -18,5 +18,5 @@ function checkIfIdeaIdMatchesIdea(ideaId) {
 
 module.exports = {
     checkIfSumIsANumber,
-    checkIfIdeaIdMatchesIdea,
+    ideaWithTotalDonationSumThatMatchesIdeaId,
 };
