@@ -1,7 +1,6 @@
-const { getAllIdeas } = require('../models/ideas');
 const { getIdeas } = require('../utils/storage');
 
-function checkIfIdeaIdMatches(ideaId) {
+function ideaThatMatchesIdeaId(ideaId) {
     let ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
@@ -13,19 +12,19 @@ function checkIfIdeaIdMatches(ideaId) {
     return [ideas, idea];
 }
 
-function checkIfHeaderProvided(header) {
+function isHeaderValid(header) {
     if (!header) {
         throw new Error('Error. Please, check your header.');
     }
 }
 
-function checkIfDescriptionProvided(description) {
+function isDescriptionValid(description) {
     if (!description) {
         throw new Error('Error. Please, check your description.');
     }
 }
 
-function checkIfAskedSumProvided(askedSum) {
+function isAskedSumValid(askedSum) {
     if (!askedSum) {
         throw new Error('Error. Please, check your asked sum.');
     }
@@ -42,9 +41,9 @@ function checkIfUserIdProvided(userId) {
 }
 
 module.exports = {
-    checkIfIdeaIdMatches,
-    checkIfHeaderProvided,
-    checkIfDescriptionProvided,
-    checkIfAskedSumProvided,
+    ideaThatMatchesIdeaId,
+    isHeaderValid,
+    isDescriptionValid,
+    isAskedSumValid,
     checkIfUserIdProvided,
 };
