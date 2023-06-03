@@ -1,11 +1,11 @@
 const { getAllIdeas, createIdea, updateIdea } = require('../models/ideas');
 const {
-    isHeaderValid,
-    isDescriptionValid,
-    checkIfUserIdProvided,
-    isAskedSumValid,
-    ideaThatMatchesIdeaId,
-} = require('../validation/ideaFunctionValidation');
+    validateHeader,
+    validateDescription,
+    validateUserId,
+    validateAskedSum,
+    findIdeaWithSameId,
+} = require('../validations/ideas.js');
 
 const IDEA_STATUS = {
     pending: 'pending',
@@ -27,20 +27,20 @@ function sortedByDonationSumIdeas() {
 }
 
 function createIdeas(header, description, askedSum, userId) {
-    isHeaderValid(header);
+    validateHeader(header);
 
-    isDescriptionValid(description);
+    validateDescription(description);
 
-    isAskedSumValid(askedSum);
+    validateAskedSum(askedSum);
 
-    checkIfUserIdProvided(userId);
+    validateUserId(userId);
 
     createIdea(header, description, askedSum, userId);
 }
 
 function updateIdeasStatus(ideaId, isApproved) {
     // Check if idea with this ideaId exists.
-    ideaThatMatchesIdeaId(ideaId);
+    findIdeaWithSameId(ideaId);
 
     // Idea exists.
     const ideaStatus = isApproved ? IDEA_STATUS.accepted : IDEA_STATUS.rejected;

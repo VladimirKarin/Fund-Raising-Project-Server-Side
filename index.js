@@ -14,8 +14,8 @@ const { deleteUser } = require('./models/users');
 const {
     ideasDonationSum,
     ideasSumDifference,
-    createDonation,
-} = require('./businessRules/donations');
+    createDonations,
+} = require('./businessRules/donations.js');
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea } = require('./models/ideas');
 const {
@@ -170,7 +170,7 @@ app.get('/donations/sumDifference', (req, res) => {
 
 app.post('/donations', (req, res) => {
     try {
-        createDonation(
+        createDonations(
             req.body.firstName,
             req.body.sum,
             req.body.userId,

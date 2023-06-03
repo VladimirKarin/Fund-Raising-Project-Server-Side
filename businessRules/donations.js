@@ -1,17 +1,15 @@
 const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
+const { findIdeaWithSameId } = require('../validations/ideas');
 const {
-    ideaThatMatchesIdeaId,
-} = require('../validation/ideaFunctionValidation');
-const {
-    checkIfSumIsANumber,
-    ideaWithTotalDonationSumThatMatchesIdeaId,
-} = require('../validation/donationFunctionValidation');
+    validateSum,
+    findIdeaWithTotalDonationSumWithSameId,
+} = require('../validations/donations.js');
 
-function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
-    ideaThatMatchesIdeaId(ideaId);
+function createDonations(firstName, sum, userId, ideaId) {
+    findIdeaWithSameId(ideaId);
 
-    checkIfSumIsANumber(sum);
+    validateSum(sum);
 
     const generateId = v4();
     const anonymous = 'Anonymous';
@@ -23,7 +21,7 @@ function createDonationsWithDataValidation(firstName, sum, userId, ideaId) {
 }
 
 function ideasDonationSum(ideaId) {
-    let idea = ideaWithTotalDonationSumThatMatchesIdeaId(ideaId);
+    let idea = findIdeaWithTotalDonationSumWithSameId(ideaId);
 
     return idea.totalDonationSum;
 }
@@ -42,7 +40,7 @@ function ideasSumDifference(ideaId) {
 }
 
 module.exports = {
-    createDonationsWithDataValidation,
+    createDonations,
     ideasDonationSum,
     ideasSumDifference,
 };

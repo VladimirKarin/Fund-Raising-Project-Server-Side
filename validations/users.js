@@ -1,18 +1,18 @@
 const { getUsers } = require('../utils/storage');
 
-function isUserNameValid(userName) {
+function validateUserName(userName) {
     if (!userName) {
         throw new Error('Error. There was no username provided.');
     }
 }
 
-function isPasswordValid(password) {
+function validatePassword(password) {
     if (!password) {
         throw new Error('Error. There was no password provided.');
     }
 }
 
-function userWithMatchingUserNameAndPassword(userName, password) {
+function findUserWithSameUserNameAndPassword(userName, password) {
     let users = getUsers();
 
     const user = users.find(
@@ -26,13 +26,13 @@ function userWithMatchingUserNameAndPassword(userName, password) {
     return user;
 }
 
-function isLoginSessionValid(userLoginSession) {
+function validateLoginSession(userLoginSession) {
     if (!userLoginSession) {
         throw new Error('Error. There was no users session data provided.');
     }
 }
 
-function userWithMatchingLoginSession(userLoginSession) {
+function findUserWithSameLoginSession(userLoginSession) {
     let users = getUsers();
 
     const user = userLoginSession
@@ -46,7 +46,7 @@ function userWithMatchingLoginSession(userLoginSession) {
     return user;
 }
 
-function userWithMatchingUserId(userId) {
+function findUserWithSameId(userId) {
     let users = getUsers();
 
     const user = users.find((user) => userId === user.id);
@@ -58,25 +58,25 @@ function userWithMatchingUserId(userId) {
     return [users, user];
 }
 
-function isKeyValid(key) {
+function validateKey(key) {
     if (!key) {
         throw new Error("Error. You didn't provide any key to update.");
     }
 }
 
-function isValueValid(value) {
+function validateValue(value) {
     if (value === undefined || value === 'undefined') {
         throw new Error("Error. You didn't provide any value to update.");
     }
 }
 
 module.exports = {
-    isUserNameValid,
-    isPasswordValid,
-    userWithMatchingUserNameAndPassword,
-    isLoginSessionValid,
-    userWithMatchingLoginSession,
-    userWithMatchingUserId,
-    isKeyValid,
-    isValueValid,
+    validateUserName,
+    validatePassword,
+    findUserWithSameUserNameAndPassword,
+    validateLoginSession,
+    findUserWithSameLoginSession,
+    findUserWithSameId,
+    validateKey,
+    validateValue,
 };

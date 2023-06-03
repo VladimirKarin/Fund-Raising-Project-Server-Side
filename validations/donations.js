@@ -1,12 +1,12 @@
 const { getAllIdeas } = require('../models/ideas');
 
-function checkIfSumIsANumber(sum) {
+function validateSum(sum) {
     if (!Number.isInteger(sum)) {
         throw new Error('Sum should be a number.');
     }
 }
 
-function ideaWithTotalDonationSumThatMatchesIdeaId(ideaId) {
+function findIdeaWithTotalDonationSumWithSameId(ideaId) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
 
@@ -17,6 +17,6 @@ function ideaWithTotalDonationSumThatMatchesIdeaId(ideaId) {
 }
 
 module.exports = {
-    checkIfSumIsANumber,
-    ideaWithTotalDonationSumThatMatchesIdeaId,
+    validateSum,
+    findIdeaWithTotalDonationSumWithSameId,
 };

@@ -3,20 +3,20 @@ const md5 = require('md5');
 const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
 const {
-    isUserNameValid,
-    isPasswordValid,
-    userWithMatchingUserNameAndPassword,
-    isLoginSessionValid,
-    userWithMatchingLoginSession,
-    userWithMatchingUserId,
-    isValueValid,
-    isKeyValid,
-} = require('../validation/userfunctionValidation');
+    validateUserName,
+    validatePassword,
+    findUserWithSameUserNameAndPassword,
+    validateLoginSession,
+    findUserWithSameLoginSession,
+    findUserWithSameId,
+    validateValue,
+    validateKey,
+} = require('../validations/users.js');
 
 function registerUser(userName, password, firstName, lastName) {
-    isUserNameValid(userName);
+    validateUserName(userName);
 
-    isPasswordValid(password);
+    validatePassword(password);
 
     firstName = firstName || 'Anonymous';
     lastName = lastName || 'Incognito';
@@ -25,11 +25,11 @@ function registerUser(userName, password, firstName, lastName) {
 }
 
 function login(userName, password) {
-    isUserNameValid(userName);
+    validateUserName(userName);
 
-    isPasswordValid(password);
+    validatePassword(password);
 
-    const user = userWithMatchingUserNameAndPassword(userName, password);
+    const user = findUserWithSameUserNameAndPassword(userName, password);
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
 
@@ -43,19 +43,19 @@ function deleteUserSession(userId) {
 }
 
 function logout(userLoginSession) {
-    isLoginSessionValid(userLoginSession);
+    validateLoginSession(userLoginSession);
 
-    const user = userWithMatchingLoginSession(userLoginSession);
+    const user = findUserWithSameLoginSession(userLoginSession);
 
     deleteUserSession(user.id);
 }
 
 function updateUser(userId, key, value) {
-    isKeyValid(key);
+    validateKey(key);
 
-    isValueValid(value);
+    validateValue(value);
 
-    let validationResults = userWithMatchingUserId(userId);
+    let validationResults = findUserWithSameId(userId);
 
     let users = validationResults[0],
         user = validationResults[1];
@@ -79,7 +79,7 @@ function updateUser(userId, key, value) {
 }
 
 function deleteUser(userId) {
-    let validationResults = userWithMatchingUserId(userId);
+    let validationResults = findUserWithSameId(userId);
     let users = validationResults[0];
 
     let updatedUsers = users.filter((user) => userId !== user.id);
@@ -88,7 +88,7 @@ function deleteUser(userId) {
 }
 
 function checkIfLoggedIn(userLoginSession) {
-    const user = userWithMatchingLoginSession(userLoginSession);
+    const user = findUserWithSameLoginSession(userLoginSession);
     return user;
 }
 
