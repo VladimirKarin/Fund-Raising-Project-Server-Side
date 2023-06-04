@@ -12,9 +12,10 @@ const {
 const { getUsers } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
 const {
-    ideasDonationSum,
-    ideasSumDifference,
-    createDonations,
+    getIdeasTotalDonationSum,
+    getIdeasSumDifference,
+    createDonationByUnregisteredUser,
+    createDonationByRegisteredUser,
 } = require('./businessRules/donations.js');
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea } = require('./models/ideas');
@@ -27,6 +28,7 @@ const {
     updateIdeasStatus,
     rejectedIdeasList,
 } = require('./businessRules/ideas');
+const { findUser } = require('./validations/users');
 
 const app = express();
 const port = 3003;
@@ -161,21 +163,33 @@ app.delete('/users', (req, res) => {
 //DONATION METHODS
 
 app.get('/donations', (req, res) => {
-    res.status(200).json(ideasDonationSum(req.body.ideaId));
+    res.status(200).json(getIdeasTotalDonationSum(req.body.ideaId));
 });
 
 app.get('/donations/sumDifference', (req, res) => {
-    res.status(200).json(ideasSumDifference(req.body.ideaId));
+    res.status(200).json(getIdeasSumDifference(req.body.ideaId));
 });
 
 app.post('/donations', (req, res) => {
     try {
-        createDonations(
-            req.body.firstName,
-            req.body.sum,
-            req.body.userId,
-            req.body.ideaId
-        );
+        let searchResults = findUser(req.body.userId);
+        let user = searchResults[1];
+
+        if (!user) {
+            createDonationByUnregisteredUser(
+                req.body.firstName,
+                req.body.sum,
+                req.body.userId,
+                req.body.ideaId
+            );
+        } else {
+            createDonationByRegisteredUser(
+                req.body.firstName,
+                req.body.sum,
+                req.body.userId,
+                req.body.ideaId
+            );
+        }
     } catch (error) {
         res.status(404).send(error.message);
     }

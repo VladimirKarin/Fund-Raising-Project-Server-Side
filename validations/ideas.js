@@ -1,6 +1,6 @@
 const { getIdeas } = require('../utils/storage');
 
-function findIdeaWithSameId(ideaId) {
+function findIdea(ideaId) {
     let ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
@@ -41,7 +41,7 @@ function validateUserId(userId) {
 }
 
 module.exports = {
-    findIdeaWithSameId,
+    findIdea,
     validateHeader,
     validateDescription,
     validateAskedSum,

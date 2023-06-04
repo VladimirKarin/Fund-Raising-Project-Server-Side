@@ -6,7 +6,7 @@ function validateSum(sum) {
     }
 }
 
-function findIdeaWithTotalDonationSumWithSameId(ideaId) {
+function findIdeaWithTotalDonationSum(ideaId) {
     const ideas = getAllIdeas();
     const idea = ideas.find((idea) => idea.id === ideaId);
 
@@ -18,5 +18,5 @@ function findIdeaWithTotalDonationSumWithSameId(ideaId) {
 
 module.exports = {
     validateSum,
-    findIdeaWithTotalDonationSumWithSameId,
+    findIdeaWithTotalDonationSum,
 };

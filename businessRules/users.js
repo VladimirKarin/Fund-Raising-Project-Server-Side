@@ -7,8 +7,8 @@ const {
     validatePassword,
     findUserWithSameUserNameAndPassword,
     validateLoginSession,
-    findUserWithSameLoginSession,
-    findUserWithSameId,
+    findUserByUserLoginSession,
+    findUser,
     validateValue,
     validateKey,
 } = require('../validations/users.js');
@@ -45,7 +45,7 @@ function deleteUserSession(userId) {
 function logout(userLoginSession) {
     validateLoginSession(userLoginSession);
 
-    const user = findUserWithSameLoginSession(userLoginSession);
+    const user = findUserByUserLoginSession(userLoginSession);
 
     deleteUserSession(user.id);
 }
@@ -55,7 +55,7 @@ function updateUser(userId, key, value) {
 
     validateValue(value);
 
-    let validationResults = findUserWithSameId(userId);
+    let validationResults = findUser(userId);
 
     let users = validationResults[0],
         user = validationResults[1];
@@ -79,7 +79,7 @@ function updateUser(userId, key, value) {
 }
 
 function deleteUser(userId) {
-    let validationResults = findUserWithSameId(userId);
+    let validationResults = findUser(userId);
     let users = validationResults[0];
 
     let updatedUsers = users.filter((user) => userId !== user.id);
@@ -88,7 +88,7 @@ function deleteUser(userId) {
 }
 
 function checkIfLoggedIn(userLoginSession) {
-    const user = findUserWithSameLoginSession(userLoginSession);
+    const user = findUserByUserLoginSession(userLoginSession);
     return user;
 }
 

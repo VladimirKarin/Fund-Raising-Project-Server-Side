@@ -4,7 +4,7 @@ const {
     validateDescription,
     validateUserId,
     validateAskedSum,
-    findIdeaWithSameId,
+    findIdea,
 } = require('../validations/ideas.js');
 
 const IDEA_STATUS = {
@@ -40,7 +40,7 @@ function createIdeas(header, description, askedSum, userId) {
 
 function updateIdeasStatus(ideaId, isApproved) {
     // Check if idea with this ideaId exists.
-    findIdeaWithSameId(ideaId);
+    findIdea(ideaId);
 
     // Idea exists.
     const ideaStatus = isApproved ? IDEA_STATUS.accepted : IDEA_STATUS.rejected;

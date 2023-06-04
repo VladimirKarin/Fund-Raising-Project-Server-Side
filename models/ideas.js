@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
 const { validateKey, validateValue } = require('../validations/users');
-const { findIdeaWithSameId } = require('../validations/ideas');
+const { findIdea } = require('../validations/ideas');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -25,7 +25,7 @@ function updateIdea(ideaId, key, value) {
 
     validateValue(value);
 
-    let validationResults = findIdeaWithSameId(ideaId);
+    let validationResults = findIdea(ideaId);
     let ideas = validationResults[0];
     let idea = validationResults[1];
 
@@ -48,7 +48,7 @@ function updateIdea(ideaId, key, value) {
 }
 
 function deleteIdea(ideaId) {
-    let validationResults = findIdeaWithSameId(ideaId);
+    let validationResults = findIdea(ideaId);
     let ideas = validationResults[0];
 
     let updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
