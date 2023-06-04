@@ -93,7 +93,7 @@ function getAllIdeas() {
 }
 
 module.exports = {
-    createIdea,
+    create: createIdea,
     updateIdea,
     deleteIdea,
     getAllIdeas,

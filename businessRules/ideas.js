@@ -1,4 +1,4 @@
-const { getAllIdeas, createIdea, updateIdea } = require('../models/ideas');
+const { getAllIdeas, create, updateIdea } = require('../models/ideas');
 const {
     validateHeader,
     validateDescription,
@@ -17,7 +17,7 @@ function getIdeas() {
     return getAllIdeas();
 }
 
-function sortedByDonationSumIdeas() {
+function sortIdeasByDonationsSum() {
     const ideasList = getIdeas();
 
     const sortedIdeasList = ideasList.sort(
@@ -26,7 +26,7 @@ function sortedByDonationSumIdeas() {
     return sortedIdeasList;
 }
 
-function createIdeas(header, description, askedSum, userId) {
+function createIdea(header, description, askedSum, userId) {
     validateHeader(header);
 
     validateDescription(description);
@@ -35,7 +35,7 @@ function createIdeas(header, description, askedSum, userId) {
 
     validateUserId(userId);
 
-    createIdea(header, description, askedSum, userId);
+    create(header, description, askedSum, userId);
 }
 
 function updateIdeasStatus(ideaId, isApproved) {
@@ -77,8 +77,8 @@ function rejectedIdeasList() {
 
 module.exports = {
     getIdeas,
-    sortedByDonationSumIdeas,
-    createIdeas,
+    sortIdeasByDonationsSum,
+    createIdea,
     updateIdeasStatus,
     pendingIdeasList,
     approvedIdeasList,

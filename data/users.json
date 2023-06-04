@@ -298,5 +298,25 @@
         "lastName": "Incognito",
         "session": null,
         "role": "user"
+    },
+    {
+        "id": "afef695e-2948-4ae0-a0d5-16869a3df312",
+        "picture": "./img/default_userpic.webp",
+        "userName": "VKarin3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Karin",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
+        "picture": "./img/default_userpic.webp",
+        "userName": "VKarin4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Vladimir",
+        "lastName": "Incognito",
+        "session": "4074df08bb38afda47c375bd8667dfd8",
+        "role": "user"
     }
 ]

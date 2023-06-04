@@ -264,5 +264,32 @@
         "sum": 50,
         "userId": "81c3be9a-009b-4c44-b034-ae2a4276c850",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
+    },
+    {
+        "id": "4897ce3f-741d-4006-8126-7ca02c02e3ef",
+        "firstName": "Bobba",
+        "sum": 25,
+        "userId": "d6e15668-dcc1-49e6-9343-4972d100f329",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "169055a6-3772-497b-9d9e-b709ed8ea85f",
+        "firstName": "Anonymous",
+        "sum": 25,
+        "userId": "889b51e7-54c3-4e8b-bcd8-cff3551b5de6",
+        "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
+    },
+    {
+        "id": "bfbedfdc-9c19-48a8-9463-fa906bccff6a",
+        "sum": 25,
+        "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
+        "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
+    },
+    {
+        "id": "13e46853-a4fc-46f7-9c8b-ada2a6fcdb0b",
+        "firstName": "Vladimir",
+        "sum": 25,
+        "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
+        "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
     }
 ]

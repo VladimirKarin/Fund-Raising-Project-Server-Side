@@ -6,6 +6,7 @@ const {
     findIdeaWithTotalDonationSum,
 } = require('../validations/donations.js');
 const { findUser } = require('../validations/users');
+const { getUsers } = require('../utils/storage');
 
 function createDonationByUnregisteredUser(sum, userId, ideaId) {
     findIdea(ideaId);
@@ -14,7 +15,7 @@ function createDonationByUnregisteredUser(sum, userId, ideaId) {
     let users = getUsers();
     const user = users.find((user) => userId === user.id);
 
-    let firstName, userId;
+    let firstName;
 
     if (!user) {
         const generateId = v4();
@@ -45,7 +46,8 @@ function getIdeasTotalDonationSum(ideaId) {
 }
 
 function getIdeasSumDifference(ideaId) {
-    let idea = findIdea(ideaId);
+    let searchResults = findIdea(ideaId);
+    let idea = searchResults[1];
 
     const ideasSum = idea.askedSum;
 

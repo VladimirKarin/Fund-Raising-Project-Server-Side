@@ -84,7 +84,7 @@ function deleteUser(userId) {
 
     let updatedUsers = users.filter((user) => userId !== user.id);
 
-    setIdeas(updatedUsers);
+    setUsers(updatedUsers);
 }
 
 function checkIfLoggedIn(userLoginSession) {
