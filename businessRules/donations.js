@@ -6,13 +6,11 @@ const {
     findIdeaWithTotalDonationSum,
 } = require('../validations/donations.js');
 const { findUser } = require('../validations/users');
-const { getUsers } = require('../utils/storage');
 
 function createDonationByUnregisteredUser(sum, userId, ideaId) {
     findIdea(ideaId);
     validateSum(sum);
 
-    const users = getUsers();
     const user = findUser(userId);
 
     let firstName;
