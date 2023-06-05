@@ -12,8 +12,8 @@ function createDonationByUnregisteredUser(sum, userId, ideaId) {
     findIdea(ideaId);
     validateSum(sum);
 
-    let users = getUsers();
-    const user = users.find((user) => userId === user.id);
+    const users = getUsers();
+    const user = findUser(userId);
 
     let firstName;
 
@@ -28,26 +28,23 @@ function createDonationByUnregisteredUser(sum, userId, ideaId) {
 }
 
 function createDonationByRegisteredUser(sum, userId, ideaId) {
-    findIdea(ideaId);
     validateSum(sum);
 
-    const searchResults = findUser(userId);
-    let user = searchResults[1];
+    const user = findUser(userId);
 
-    let firstName = user.firstName;
+    const firstName = user.firstName;
 
     createDonation(firstName, sum, userId, ideaId);
 }
 
 function getIdeasTotalDonationSum(ideaId) {
-    let idea = findIdeaWithTotalDonationSum(ideaId);
+    const idea = findIdeaWithTotalDonationSum(ideaId);
 
     return idea.totalDonationSum;
 }
 
 function getIdeasSumDifference(ideaId) {
-    let searchResults = findIdea(ideaId);
-    let idea = searchResults[1];
+    const idea = findIdea(ideaId);
 
     const ideasSum = idea.askedSum;
 

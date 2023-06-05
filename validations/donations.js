@@ -1,4 +1,4 @@
-const { getAllIdeas } = require('../models/ideas');
+const { findIdea } = require('./ideas');
 
 function validateSum(sum) {
     if (!Number.isInteger(sum)) {
@@ -7,13 +7,8 @@ function validateSum(sum) {
 }
 
 function findIdeaWithTotalDonationSum(ideaId) {
-    const ideas = getAllIdeas();
-    const idea = ideas.find((idea) => idea.id === ideaId);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
-    return idea;
+    const idea = findIdea(ideaId);
+    return idea.totalDonationSum;
 }
 
 module.exports = {

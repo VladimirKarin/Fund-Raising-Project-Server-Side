@@ -24,7 +24,7 @@ const {
     sortIdeasByDonationsSum,
     pendingIdeasList,
     approvedIdeasList,
-    createIdeas,
+    createIdea,
     updateIdeasStatus,
     rejectedIdeasList,
 } = require('./businessRules/ideas');
@@ -83,7 +83,7 @@ app.get('/ideas', (req, res) => {
 
 app.post('/ideas', (req, res) => {
     try {
-        createIdeas(
+        createIdea(
             req.body.header,
             req.body.description,
             req.body.askedSum,

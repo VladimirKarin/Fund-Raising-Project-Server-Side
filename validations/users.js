@@ -55,7 +55,7 @@ function findUser(userId) {
         throw new Error('Error. No such user.');
     }
 
-    return [users, user];
+    return user;
 }
 
 function validateKey(key) {

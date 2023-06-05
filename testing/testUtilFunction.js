@@ -28,6 +28,8 @@ const { getAllIdeas } = require('../models/ideas');
 const { deleteIdea } = require('../models/ideas');
 const { create } = require('../models/ideas');
 const { createUser } = require('../models/users');
+const { findIdeaWithTotalDonationSum } = require('../validations/donations');
+const { findIdea } = require('../validations/ideas');
 /*
 // Create User (models)
 createUser();

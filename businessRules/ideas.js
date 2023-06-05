@@ -13,10 +13,6 @@ const IDEA_STATUS = {
     rejected: 'rejected',
 };
 
-function getIdeas() {
-    return getAllIdeas();
-}
-
 function sortIdeasByDonationsSum() {
     const ideasList = getIdeas();
 
@@ -76,7 +72,7 @@ function rejectedIdeasList() {
 }
 
 module.exports = {
-    getIdeas,
+    getIdeas: getAllIdeas,
     sortIdeasByDonationsSum,
     createIdea,
     updateIdeasStatus,

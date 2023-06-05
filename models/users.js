@@ -22,9 +22,8 @@ function createUser(userName, password, firstName, lastName) {
 }
 
 function deleteUser(userId) {
-    let validationResults = findUser(userId);
-    let users = validationResults[0],
-        userToDelete = validationResults[1];
+    let users = getUsers();
+    let userToDelete = findUser(userId);
 
     if (userToDelete.role === 'admin') {
         throw new Error("You cant't delete 'Admin'.");

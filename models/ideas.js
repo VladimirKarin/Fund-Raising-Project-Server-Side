@@ -25,9 +25,8 @@ function updateIdea(ideaId, key, value) {
 
     validateValue(value);
 
-    let validationResults = findIdea(ideaId);
-    let ideas = validationResults[0];
-    let idea = validationResults[1];
+    const ideas = getIdeas();
+    const idea = findIdea(ideaId);
 
     const updatedIdea = {
         ...idea,
@@ -48,10 +47,9 @@ function updateIdea(ideaId, key, value) {
 }
 
 function deleteIdea(ideaId) {
-    let validationResults = findIdea(ideaId);
-    let ideas = validationResults[0];
+    const ideas = getIdeas();
 
-    let updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
+    const updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
 
     setIdeas(updatedIdeas);
 }

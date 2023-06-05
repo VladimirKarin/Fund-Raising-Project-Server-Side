@@ -1,7 +1,7 @@
-const { getIdeas } = require('../utils/storage');
+const { getAllIdeas } = require('../models/ideas');
 
 function findIdea(ideaId) {
-    let ideas = getIdeas();
+    let ideas = getAllIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
 
@@ -9,7 +9,7 @@ function findIdea(ideaId) {
         throw new Error('Error. No idea with such ID found.');
     }
 
-    return [ideas, idea];
+    return idea;
 }
 
 function validateHeader(header) {

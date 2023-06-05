@@ -55,10 +55,8 @@ function updateUser(userId, key, value) {
 
     validateValue(value);
 
-    let validationResults = findUser(userId);
-
-    let users = validationResults[0],
-        user = validationResults[1];
+    const users = getUsers(),
+        user = findUser(userId);
 
     const updatedUser = {
         ...user,
@@ -79,10 +77,9 @@ function updateUser(userId, key, value) {
 }
 
 function deleteUser(userId) {
-    let validationResults = findUser(userId);
-    let users = validationResults[0];
+    const users = getUsers();
 
-    let updatedUsers = users.filter((user) => userId !== user.id);
+    const updatedUsers = users.filter((user) => userId !== user.id);
 
     setUsers(updatedUsers);
 }
