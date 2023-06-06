@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
-const { findUser } = require('../validations/users.js');
+const { getUser } = require('../validations/users.js');
 
 function createUser(userName, password, firstName, lastName) {
     let users = getUsers();
@@ -23,7 +23,7 @@ function createUser(userName, password, firstName, lastName) {
 
 function deleteUser(userId) {
     let users = getUsers();
-    let userToDelete = findUser(userId);
+    let userToDelete = getUser(userId);
 
     if (userToDelete.role === 'admin') {
         throw new Error("You cant't delete 'Admin'.");

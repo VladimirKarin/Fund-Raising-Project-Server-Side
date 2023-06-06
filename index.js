@@ -12,7 +12,7 @@ const {
 const { getUsers } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
 const {
-    getIdeasTotalDonationSum,
+    getTotalSumDonatedForIdea,
     getIdeasSumDifference,
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
@@ -28,7 +28,7 @@ const {
     updateIdeasStatus,
     rejectedIdeasList,
 } = require('./businessRules/ideas');
-const { findUser } = require('./validations/users');
+const { getUser } = require('./validations/users');
 
 const app = express();
 const port = 3003;
@@ -163,7 +163,7 @@ app.delete('/users', (req, res) => {
 //DONATION METHODS
 
 app.get('/donations', (req, res) => {
-    res.status(200).json(getIdeasTotalDonationSum(req.body.ideaId));
+    res.status(200).json(getTotalSumDonatedForIdea(req.body.ideaId));
 });
 
 app.get('/donations/sumDifference', (req, res) => {
@@ -172,7 +172,7 @@ app.get('/donations/sumDifference', (req, res) => {
 
 app.post('/donations', (req, res) => {
     try {
-        let searchResults = findUser(req.body.userId);
+        let searchResults = getUser(req.body.userId);
         let user = searchResults[1];
 
         if (!user) {

@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
 const { validateKey, validateValue } = require('../validations/users');
-const { findIdea } = require('../validations/ideas');
+const { getIdea } = require('../validations/ideas');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -26,7 +26,7 @@ function updateIdea(ideaId, key, value) {
     validateValue(value);
 
     const ideas = getIdeas();
-    const idea = findIdea(ideaId);
+    const idea = getIdea(ideaId);
 
     const updatedIdea = {
         ...idea,

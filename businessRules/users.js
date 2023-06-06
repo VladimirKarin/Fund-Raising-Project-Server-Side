@@ -5,10 +5,10 @@ const { getUsers, setUsers } = require('../utils/storage');
 const {
     validateUserName,
     validatePassword,
-    findUserWithSameUserNameAndPassword,
+    getUserWithSameUserNameAndPassword,
     validateLoginSession,
-    findUserByUserLoginSession,
-    findUser,
+    getUserByUserLoginSession,
+    getUser,
     validateValue,
     validateKey,
 } = require('../validations/users.js');
@@ -29,7 +29,7 @@ function login(userName, password) {
 
     validatePassword(password);
 
-    const user = findUserWithSameUserNameAndPassword(userName, password);
+    const user = getUserWithSameUserNameAndPassword(userName, password);
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
 
@@ -45,7 +45,7 @@ function deleteUserSession(userId) {
 function logout(userLoginSession) {
     validateLoginSession(userLoginSession);
 
-    const user = findUserByUserLoginSession(userLoginSession);
+    const user = getUserByUserLoginSession(userLoginSession);
 
     deleteUserSession(user.id);
 }
@@ -56,7 +56,7 @@ function updateUser(userId, key, value) {
     validateValue(value);
 
     const users = getUsers(),
-        user = findUser(userId);
+        user = getUser(userId);
 
     const updatedUser = {
         ...user,
@@ -85,7 +85,7 @@ function deleteUser(userId) {
 }
 
 function checkIfLoggedIn(userLoginSession) {
-    const user = findUserByUserLoginSession(userLoginSession);
+    const user = getUserByUserLoginSession(userLoginSession);
     return user;
 }
 
