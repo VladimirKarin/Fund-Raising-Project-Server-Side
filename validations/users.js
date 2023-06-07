@@ -12,7 +12,7 @@ function validatePassword(password) {
     }
 }
 
-function getUserWithSameUserNameAndPassword(userName, password) {
+function findUserWithSameUserNameAndPassword(userName, password) {
     let users = getUsers();
 
     const user = users.find(
@@ -32,7 +32,7 @@ function validateLoginSession(userLoginSession) {
     }
 }
 
-function getUserByUserLoginSession(userLoginSession) {
+function findUserByUserLoginSession(userLoginSession) {
     let users = getUsers();
 
     const user = userLoginSession
@@ -73,9 +73,9 @@ function validateValue(value) {
 module.exports = {
     validateUserName,
     validatePassword,
-    getUserWithSameUserNameAndPassword,
+    findUserWithSameUserNameAndPassword,
     validateLoginSession,
-    getUserByUserLoginSession,
+    findUserByUserLoginSession,
     getUser,
     validateKey,
     validateValue,
