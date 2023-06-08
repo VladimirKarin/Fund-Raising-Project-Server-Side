@@ -5,10 +5,7 @@ const { getUsers, setUsers } = require('../utils/storage');
 const {
     validateUserName,
     validatePassword,
-    findUserWithSameUserNameAndPassword,
     validateLoginSession,
-    findUserByUserLoginSession,
-    getUser,
     validateValue,
     validateKey,
 } = require('../validations/users.js');
@@ -24,16 +21,60 @@ function registerUser(userName, password, firstName, lastName) {
     createUser(userName, password, firstName, lastName);
 }
 
+function getUser(userId) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    if (!user) {
+        throw new Error('Error. No such user.');
+    }
+
+    return user;
+}
+
+function findRegisteredUser(userName, password) {
+    let users = getUsers();
+
+    const user = users.find(
+        (user) => user.userName === userName && user.password === password
+    );
+
+    if (!user) {
+        throw new Error('Error. No such user.');
+    }
+
+    return user;
+}
+
+function findLoggedInUser(userLoginSession) {
+    let users = getUsers();
+
+    const user = userLoginSession
+        ? users.find((user) => user.session === userLoginSession)
+        : null;
+
+    if (!user) {
+        throw new Error('You are not logged in.');
+    }
+
+    return user;
+}
+
+function setSessionId(userId, sessionId) {
+    updateUser(user.id, 'session', sessionId);
+}
+
 function login(userName, password) {
     validateUserName(userName);
 
     validatePassword(password);
 
-    const user = findUserWithSameUserNameAndPassword(userName, password);
+    const user = findRegisteredUser(userName, password);
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
 
-    updateUser(user.id, 'session', sessionId);
+    setSessionId(user.id, sessionId);
 
     return sessionId;
 }
@@ -45,7 +86,7 @@ function deleteUserSession(userId) {
 function logout(userLoginSession) {
     validateLoginSession(userLoginSession);
 
-    const user = findUserByUserLoginSession(userLoginSession);
+    const user = findLoggedInUser(userLoginSession);
 
     deleteUserSession(user.id);
 }
@@ -55,8 +96,8 @@ function updateUser(userId, key, value) {
 
     validateValue(value);
 
-    const users = getUsers(),
-        user = getUser(userId);
+    const users = getUsers();
+    const user = getUser(userId);
 
     const updatedUser = {
         ...user,
@@ -85,12 +126,15 @@ function deleteUser(userId) {
 }
 
 function checkIfLoggedIn(userLoginSession) {
-    const user = findUserByUserLoginSession(userLoginSession);
+    const user = findLoggedInUser(userLoginSession);
     return user;
 }
 
 module.exports = {
     registerUser,
+    getUser,
+    findRegisteredUser,
+    findLoggedInUser,
     login,
     usersList: getUsers,
     updateUser,

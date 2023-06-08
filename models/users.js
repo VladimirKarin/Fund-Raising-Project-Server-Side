@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
-const { getUser } = require('../validations/users.js');
+const { getUser } = require('../businessRules/users');
 
 function createUser(userName, password, firstName, lastName) {
     let users = getUsers();

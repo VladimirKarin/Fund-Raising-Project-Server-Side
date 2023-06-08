@@ -259,3 +259,9 @@ console.log(getIdeasTotalDonationSum('99566354-2870-4003-b399-bd7e65eeed9a'));
 
 console.log(getIdeasSumDifference('99566354-2870-4003-b399-bd7e65eeed9a'));
 */
+
+createDonationByUnregisteredUser(
+    25,
+    undefined,
+    '6ae1ea20-6e79-45f8-8265-eba8a3d22677'
+);

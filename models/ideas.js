@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
 const { validateKey, validateValue } = require('../validations/users');
-const { getIdea } = require('../validations/ideas');
+const { getIdea } = require('../businessRules/ideas');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -91,7 +91,7 @@ function getAllIdeas() {
 }
 
 module.exports = {
-    create: createIdea,
+    createNewIdea: createIdea,
     updateIdea,
     deleteIdea,
     getAllIdeas,

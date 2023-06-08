@@ -1,17 +1,5 @@
 const { getAllIdeas } = require('../models/ideas');
 
-function getIdea(ideaId) {
-    let ideas = getAllIdeas();
-
-    const idea = ideas.find((idea) => ideaId === idea.id);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
-
-    return idea;
-}
-
 function validateIdea(ideaId) {
     let ideas = getAllIdeas();
 
@@ -51,7 +39,6 @@ function validateUserId(userId) {
 }
 
 module.exports = {
-    getIdea,
     validateIdea,
     validateHeader,
     validateDescription,

@@ -1,4 +1,4 @@
-const { getAllIdeas, create, updateIdea } = require('../models/ideas');
+const { getAllIdeas, createNewIdea, updateIdea } = require('../models/ideas');
 const {
     validateHeader,
     validateDescription,
@@ -12,6 +12,18 @@ const IDEA_STATUS = {
     accepted: 'accepted',
     rejected: 'rejected',
 };
+
+function getIdea(ideaId) {
+    let ideas = getAllIdeas();
+
+    const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error('Error. No idea with such ID found.');
+    }
+
+    return idea;
+}
 
 function sortIdeasByDonationsSum() {
     const ideasList = getIdeas();
@@ -31,7 +43,7 @@ function createIdea(header, description, askedSum, userId) {
 
     validateUserId(userId);
 
-    create(header, description, askedSum, userId);
+    createNewIdea(header, description, askedSum, userId);
 }
 
 function updateIdeasStatus(ideaId, isApproved) {
@@ -72,6 +84,7 @@ function rejectedIdeasList() {
 }
 
 module.exports = {
+    getIdea,
     getIdeas: getAllIdeas,
     sortIdeasByDonationsSum,
     createIdea,

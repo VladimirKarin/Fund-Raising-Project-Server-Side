@@ -1,5 +1,3 @@
-const { getUsers } = require('../utils/storage');
-
 function validateUserName(userName) {
     if (!userName) {
         throw new Error('Error. There was no username provided.');
@@ -12,50 +10,10 @@ function validatePassword(password) {
     }
 }
 
-function findUserWithSameUserNameAndPassword(userName, password) {
-    let users = getUsers();
-
-    const user = users.find(
-        (user) => user.userName === userName && user.password === password
-    );
-
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
-
-    return user;
-}
-
 function validateLoginSession(userLoginSession) {
     if (!userLoginSession) {
         throw new Error('Error. There was no users session data provided.');
     }
-}
-
-function findUserByUserLoginSession(userLoginSession) {
-    let users = getUsers();
-
-    const user = userLoginSession
-        ? users.find((user) => user.session === userLoginSession)
-        : null;
-
-    if (!user) {
-        throw new Error('You are not logged in.');
-    }
-
-    return user;
-}
-
-function getUser(userId) {
-    let users = getUsers();
-
-    const user = users.find((user) => userId === user.id);
-
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
-
-    return user;
 }
 
 function validateKey(key) {
@@ -73,10 +31,7 @@ function validateValue(value) {
 module.exports = {
     validateUserName,
     validatePassword,
-    findUserWithSameUserNameAndPassword,
     validateLoginSession,
-    findUserByUserLoginSession,
-    getUser,
     validateKey,
     validateValue,
 };
