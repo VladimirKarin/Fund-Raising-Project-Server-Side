@@ -33,19 +33,20 @@ function createAnonymousUser(firstName) {
     return anonymousUser;
 }
 
-function createDonationByUnregisteredUser(sum, firstName, ideaId) {
+function createDonationByUnregisteredUser(ideaId, firstName, sum) {
     validateIdea(ideaId);
     validateSum(sum);
     const anonymousUser = createAnonymousUser(firstName);
-    createDonation(anonymousUser.firstName, sum, anonymousUser.id, ideaId);
+    createDonation(ideaId, anonymousUser.id, sum);
 }
 
-function createDonationByRegisteredUser(sum, userId, ideaId) {
+function createDonationByRegisteredUser(userId, ideaId, sum) {
+    validateIdea(ideaId);
     validateSum(sum);
 
     const user = getUser(userId);
 
-    createDonation(user.firstName, sum, user.id, ideaId);
+    createDonation(ideaId, user.id, sum);
 }
 
 function getTotalSumDonatedForIdea(ideaId) {

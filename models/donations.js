@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const { getDonations, setDonations } = require('../utils/storage');
 
-function createDonation(firstName, sum, userId, ideaId) {
+function createDonation(ideaId, userId, sum) {
     const newDonation = {};
     let donations = getDonations();
 
