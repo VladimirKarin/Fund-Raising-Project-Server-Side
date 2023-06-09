@@ -13,7 +13,6 @@ const { getUsers } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
 const {
     getTotalSumDonatedForIdea,
-    getIdeasSumLeftToDonate,
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
 } = require('./businessRules/donations.js');
@@ -164,10 +163,6 @@ app.delete('/users', (req, res) => {
 
 app.get('/donations', (req, res) => {
     res.status(200).json(getTotalSumDonatedForIdea(req.body.ideaId));
-});
-
-app.get('/donations/sumDifference', (req, res) => {
-    res.status(200).json(getIdeasSumLeftToDonate(req.body.ideaId));
 });
 
 app.post('/donations', (req, res) => {

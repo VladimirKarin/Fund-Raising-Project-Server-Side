@@ -54,23 +54,8 @@ function getTotalSumDonatedForIdea(ideaId) {
 
     return idea.totalDonationSum;
 }
-
-function getIdeasSumLeftToDonate(ideaId) {
-    const idea = getIdea(ideaId);
-
-    const ideasSum = idea.askedSum;
-
-    const totalDonationSumForThisIdea = getTotalSumDonatedForIdea(ideaId);
-
-    const askedSumAndDonationSumDifference =
-        ideasSum - totalDonationSumForThisIdea;
-
-    return askedSumAndDonationSumDifference;
-}
-
 module.exports = {
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
     getTotalSumDonatedForIdea,
-    getIdeasSumLeftToDonate,
 };
