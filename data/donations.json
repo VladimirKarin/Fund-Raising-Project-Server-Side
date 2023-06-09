@@ -403,5 +403,30 @@
         "id": "08269960-c56c-455f-86a2-fa2aa4868a2e",
         "sum": 5,
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "724aa37c-a2a2-4718-9735-e529d7158f11",
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "5e813025-c065-4b33-b90d-e9a9eacbf083",
+        "sum": 5,
+        "userId": "9d4c9e39-48d4-48fb-b47b-f777ec2ea6f0",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "dabab236-5729-493c-95d8-722bd93baaf4",
+        "firstName": "Anonymous",
+        "sum": 5,
+        "userId": "2fa43ebd-4913-4e7d-a188-d775d6f0b7db",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "d0e65781-fd07-4088-a7c6-b9e465fe9661",
+        "firstName": "Anonymous",
+        "sum": 5,
+        "userId": "752c7a64-ba44-4269-be16-3fc7165ae117",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     }
 ]
