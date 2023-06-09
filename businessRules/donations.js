@@ -4,9 +4,11 @@ const { validateIdea } = require('../validations/ideas');
 const { validateSum } = require('../validations/donations.js');
 const { getUser } = require('./users');
 const { getIdea } = require('./ideas');
-const { setUsers } = require('../utils/storage');
+const { setUsers, getUsers } = require('../utils/storage');
 
 function createAnonymousUser(firstName) {
+    let users = getUsers();
+
     const userId = v4();
     const defaultFirstName = 'Anonymous';
     const defaultUsername = 'none';
@@ -29,7 +31,8 @@ function createAnonymousUser(firstName) {
         session: defaultSession,
         role: defaultRole,
     };
-    setUsers(anonymousUser);
+    const newAnonymousUsers = [...users, anonymousUser];
+    setUsers(newAnonymousUsers);
     return anonymousUser;
 }
 
