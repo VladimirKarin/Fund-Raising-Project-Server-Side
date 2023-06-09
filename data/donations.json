@@ -335,5 +335,73 @@
         "sum": 25,
         "userId": "f1036d1b-4f0b-4f4c-b963-62aa2cc5ca80",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "a1549382-f6b3-4149-aebd-c4d44407b333",
+        "firstName": null,
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "758f2314-4680-4853-a77f-69072a9ddad4",
+        "firstName": null,
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "0a5fa3cf-7bb1-4e14-bbad-227e69d600d4",
+        "firstName": null,
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "32d8b57f-f698-4cc3-a0da-78f63b28ada9",
+        "firstName": "Anonymous",
+        "sum": 5,
+        "userId": "c7ce4318-6dd8-4634-b613-99f44b0e95c0",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "d3df3613-b54b-4de0-bc18-98b7787f947d",
+        "firstName": "Anonymous",
+        "sum": 5,
+        "userId": "ff0f0dc7-8cb1-4e7b-aa64-68beeddafb75",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "2ae9a51b-604c-4159-b239-2b189238a869",
+        "firstName": null,
+        "sum": 5,
+        "userId": "787a9868-6ec6-4174-a4fa-adadbc00c653",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "f6f7b6db-ab43-4120-aeb2-d51a8863b003",
+        "firstName": null,
+        "sum": 5,
+        "userId": "744ddaa8-3e79-4785-920e-12c0ee09b246",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "9eebc83e-3dbc-4f9f-8b38-b8260b877cb8",
+        "firstName": "Anonymous",
+        "sum": 5,
+        "userId": "8965b1cf-2679-4165-a3fe-39532cd2f76d",
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "cdb17164-bf1e-4963-a613-72e951f60292",
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "e2c27cb4-ddc7-499c-a64a-74dd71e99367",
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
+    },
+    {
+        "id": "08269960-c56c-455f-86a2-fa2aa4868a2e",
+        "sum": 5,
+        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     }
 ]

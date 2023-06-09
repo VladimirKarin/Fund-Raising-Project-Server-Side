@@ -5,10 +5,10 @@ const { validateSum } = require('../validations/donations.js');
 const { getUser } = require('./users');
 const { getIdea } = require('./ideas');
 
-function createAnonymousUser(firstName, userId) {
+function createAnonymousUser(firstName) {
     userId = v4();
-    const anonymous = 'Anonymous';
 
+    const anonymous = 'Anonymous';
     firstName = firstName || anonymous;
 }
 
@@ -16,9 +16,7 @@ function createDonationByUnregisteredUser(sum, firstName, ideaId) {
     validateIdea(ideaId);
     validateSum(sum);
     let userId;
-    if (!firstName) {
-        createAnonymousUser(firstName, userId);
-    }
+    createAnonymousUser(firstName);
     createDonation(firstName, sum, userId, ideaId);
 }
 
@@ -27,9 +25,7 @@ function createDonationByRegisteredUser(sum, userId, ideaId) {
 
     const user = getUser(userId);
 
-    const firstName = user.firstName;
-
-    createDonation(firstName, sum, userId, ideaId);
+    createDonation(user.firstName, sum, user.id, ideaId);
 }
 
 function getTotalSumDonatedForIdea(ideaId) {

@@ -26,7 +26,7 @@ function getIdea(ideaId) {
 }
 
 function sortIdeasByDonationsSum() {
-    const ideasList = getIdeas();
+    const ideasList = getAllIdeas();
 
     const sortedIdeasList = ideasList.sort(
         (ideaA, ideaB) => ideaA.totalDonationSum - ideaB.totalDonationSum
