@@ -31,8 +31,8 @@ function createAnonymousUser(firstName) {
         session: defaultSession,
         role: defaultRole,
     };
-    const newAnonymousUsers = [...users, anonymousUser];
-    setUsers(newAnonymousUsers);
+    const updatedUsers = [...users, anonymousUser];
+    setUsers(updatedUsers);
     return anonymousUser;
 }
 

@@ -29,22 +29,51 @@ const { deleteIdea } = require('../models/ideas');
 const { create } = require('../models/ideas');
 const { createUser } = require('../models/users');
 const { findIdeaWithTotalDonationSum } = require('../validations/donations');
-const { findIdea } = require('../validations/ideas');
+const { findIdea, validateHeader } = require('../validations/ideas');
 /*
 // Create User (models)
-createUser();
+createUser('NewUser', '123', 'New', 'User');
 
 // Delete User (models)
-deleteUser();
-
+deleteUser('e6e9ea25-ab16-47fd-a1fc-363fea2f1124');
+*/
 // Create Idea(models)
+console.log('Test 1. No header.');
 createIdea(
-    'Funky Header',
-    'Funky Description',
-    500,
+    null,
+    'Freaking Description',
+    1500,
     '1970becf-4aeb-4b79-954b-fb318949cb53'
-    );
+);
 
+console.log('Test 2. No description.');
+createIdea(
+    'Freaking Header',
+    null,
+    1500,
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
+);
+
+console.log('Test 3. Sum not a number.');
+createIdea(
+    'Freaking Header',
+    'Freaking Description',
+    '1500',
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
+);
+
+console.log('Test 4. No userId.');
+createIdea('Freaking Header', 'Freaking Description', '1500', null);
+
+console.log('Test 5. All data.');
+createIdea(
+    'Freaking Header',
+    'Freaking Description',
+    1500,
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
+);
+
+/*
 // Update Idea (models)
 updateIdea(
         '337b36b6-6f6b-4d5f-93e3-e7d0777393dd',
@@ -258,10 +287,11 @@ console.log(getIdeasTotalDonationSum('99566354-2870-4003-b399-bd7e65eeed9a'));
 //Get Ideas sum difference
 
 console.log(getIdeasSumDifference('99566354-2870-4003-b399-bd7e65eeed9a'));
-*/
+
 
 createDonationByUnregisteredUser(
     '6ae1ea20-6e79-45f8-8265-eba8a3d22677',
     undefined,
     5
 );
+*/

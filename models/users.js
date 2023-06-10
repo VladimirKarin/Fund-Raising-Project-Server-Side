@@ -3,12 +3,12 @@ const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
 const { getUser } = require('../businessRules/users');
 
-function createUser(userName, password, firstName, lastName) {
+function createUser(username, password, firstName, lastName) {
     let users = getUsers();
     const newUser = {};
     newUser.id = v4();
     newUser.picture = './img/default_userpic.webp';
-    newUser.userName = userName;
+    newUser.username = username;
     newUser.password = md5(password);
     newUser.firstName = firstName;
     newUser.lastName = lastName;

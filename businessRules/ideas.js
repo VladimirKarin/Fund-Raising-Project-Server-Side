@@ -2,10 +2,10 @@ const { getAllIdeas, createNewIdea, updateIdea } = require('../models/ideas');
 const {
     validateHeader,
     validateDescription,
-    validateUserId,
     validateAskedSum,
     validateIdea,
-} = require('../validations/ideas.js');
+} = require('../validations/ideas');
+const { validateUserId } = require('../validations/users');
 
 const IDEA_STATUS = {
     pending: 'pending',
@@ -25,7 +25,7 @@ function getIdea(ideaId) {
     return idea;
 }
 
-function sortIdeasByDonationsSum() {
+function sortIdeasByTotalDonationSum() {
     const ideasList = getAllIdeas();
 
     const sortedIdeasList = ideasList.sort(
@@ -86,7 +86,7 @@ function rejectedIdeasList() {
 module.exports = {
     getIdea,
     getIdeas: getAllIdeas,
-    sortIdeasByDonationsSum,
+    sortIdeasByTotalDonationSum,
     createIdea,
     updateIdeasStatus,
     pendingIdeasList,

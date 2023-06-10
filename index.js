@@ -20,7 +20,7 @@ const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea } = require('./models/ideas');
 const {
     getIdeas,
-    sortIdeasByDonationsSum,
+    sortIdeasByTotalDonationSum,
     pendingIdeasList,
     approvedIdeasList,
     createIdea,
@@ -59,7 +59,7 @@ app.get('/ideas', (req, res) => {
     if (req.query.sortBy === 'all') {
         sortedIdeasList = getIdeas();
     } else if (req.query.sortBy === 'totalDonationSum') {
-        sortedIdeasList = sortIdeasByDonationsSum();
+        sortedIdeasList = sortIdeasByTotalDonationSum();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'accepted'

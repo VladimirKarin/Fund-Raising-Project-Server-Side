@@ -3,22 +3,22 @@ const md5 = require('md5');
 const { createUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
 const {
-    validateUserName,
+    validateUsername,
     validatePassword,
     validateLoginSession,
     validateValue,
     validateKey,
 } = require('../validations/users.js');
 
-function registerUser(userName, password, firstName, lastName) {
-    validateUserName(userName);
+function registerUser(username, password, firstName, lastName) {
+    validateUsername(username);
 
     validatePassword(password);
 
     firstName = firstName || 'Anonymous';
     lastName = lastName || 'Incognito';
 
-    createUser(userName, password, firstName, lastName);
+    createUser(username, password, firstName, lastName);
 }
 
 function getUser(userId) {
@@ -33,11 +33,11 @@ function getUser(userId) {
     return user;
 }
 
-function findRegisteredUser(userName, password) {
+function findRegisteredUser(username, password) {
     let users = getUsers();
 
     const user = users.find(
-        (user) => user.userName === userName && user.password === password
+        (user) => user.username === username && user.password === password
     );
 
     if (!user) {
@@ -65,12 +65,12 @@ function setSessionId(userId, sessionId) {
     updateUser(user.id, 'session', sessionId);
 }
 
-function login(userName, password) {
-    validateUserName(userName);
+function login(username, password) {
+    validateUsername(username);
 
     validatePassword(password);
 
-    const user = findRegisteredUser(userName, password);
+    const user = findRegisteredUser(username, password);
 
     const sessionId = md5(v4()); //Should be REAL cryptography.
 

@@ -26,22 +26,11 @@ function validateAskedSum(askedSum) {
     if (!askedSum) {
         throw new Error('Error. Please, check your asked sum.');
     }
-
-    if (!Number.isInteger(askedSum)) {
-        throw new Error('Sum should be a number.');
-    }
-}
-
-function validateUserId(userId) {
-    if (!userId) {
-        throw new Error('Error. Please, check if you are logged in.');
-    }
 }
 
 module.exports = {
-    validateIdea,
     validateHeader,
+    validateIdea,
     validateDescription,
     validateAskedSum,
-    validateUserId,
 };

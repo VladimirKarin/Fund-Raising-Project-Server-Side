@@ -1,6 +1,6 @@
-function validateUserName(userName) {
-    if (!userName) {
-        throw new Error('Error. There was no username provided.');
+function validateUsername(Username) {
+    if (!Username) {
+        throw new Error('Error. There was no Username provided.');
     }
 }
 
@@ -28,10 +28,17 @@ function validateValue(value) {
     }
 }
 
+function validateUserId(userId) {
+    if (!userId) {
+        throw new Error('Error. Please, check if you are logged in.');
+    }
+}
+
 module.exports = {
-    validateUserName,
+    validateUsername,
     validatePassword,
     validateLoginSession,
     validateKey,
     validateValue,
+    validateUserId,
 };
