@@ -1,6 +1,6 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
-const { createUser } = require('../models/users');
+const { createUser, getUser } = require('../models/users');
 const { getUsers, setUsers } = require('../utils/storage');
 const {
     validateUsername,
@@ -19,18 +19,6 @@ function registerUser(username, password, firstName, lastName) {
     lastName = lastName || 'Incognito';
 
     createUser(username, password, firstName, lastName);
-}
-
-function getUser(userId) {
-    let users = getUsers();
-
-    const user = users.find((user) => userId === user.id);
-
-    if (!user) {
-        throw new Error('Error. No such user.');
-    }
-
-    return user;
 }
 
 function findRegisteredUser(username, password) {
@@ -62,7 +50,7 @@ function findLoggedInUser(userLoginSession) {
 }
 
 function setSessionId(userId, sessionId) {
-    updateUser(user.id, 'session', sessionId);
+    updateUser(userId, 'session', sessionId);
 }
 
 function login(username, password) {
@@ -132,7 +120,6 @@ function checkIfLoggedIn(userLoginSession) {
 
 module.exports = {
     registerUser,
-    getUser,
     findRegisteredUser,
     findLoggedInUser,
     login,

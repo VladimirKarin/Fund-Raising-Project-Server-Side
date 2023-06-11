@@ -26,6 +26,9 @@ function validateAskedSum(askedSum) {
     if (!askedSum) {
         throw new Error('Error. Please, check your asked sum.');
     }
+    if (!Number.isInteger(askedSum)) {
+        throw new Error('Asked sum should be a number.');
+    }
 }
 
 module.exports = {

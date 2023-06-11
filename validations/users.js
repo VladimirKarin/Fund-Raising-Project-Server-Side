@@ -1,5 +1,5 @@
-function validateUsername(Username) {
-    if (!Username) {
+function validateUsername(username) {
+    if (!username) {
         throw new Error('Error. There was no Username provided.');
     }
 }

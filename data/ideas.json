@@ -51,6 +51,67 @@
         "description": "Descriptive description",
         "askedSum": 750,
         "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
-        "status": "rejected"
+        "status": "rejected",
+        "donations": [
+            {
+                "id": "169055a6-3772-497b-9d9e-b709ed8ea85f",
+                "firstName": "Anonymous",
+                "sum": 25,
+                "userId": "889b51e7-54c3-4e8b-bcd8-cff3551b5de6",
+                "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
+            },
+            {
+                "id": "bfbedfdc-9c19-48a8-9463-fa906bccff6a",
+                "sum": 25,
+                "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
+                "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
+            },
+            {
+                "id": "13e46853-a4fc-46f7-9c8b-ada2a6fcdb0b",
+                "firstName": "Vladimir",
+                "sum": 25,
+                "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
+                "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
+            }
+        ],
+        "totalDonationSum": 75
+    },
+    {
+        "id": "55b27a57-394b-4df4-87f3-ea47dccb040e",
+        "picture": "./img/default_idea.png",
+        "header": "Freaking Header",
+        "description": "Freaking Description",
+        "askedSum": 1500,
+        "userId": "1970becf-4aeb-4b79-954b-fb318949cb53",
+        "status": "pending"
+    },
+    {
+        "id": "e735898a-b6e7-48a0-b3bc-5064972cc5e3",
+        "picture": "./img/default_idea.png",
+        "header": "Freaking Header 999",
+        "description": "Freaking Description999",
+        "askedSum": 500,
+        "userId": "1970becf-4aeb-4b79-954b-fb318949cb53",
+        "status": "pending"
+    },
+    {
+        "id": "1abe9594-259a-4b80-a12c-3267d6fce9e0",
+        "picture": "./img/default_idea.png",
+        "header": "Headering header",
+        "description": "Descriptive description",
+        "askedSum": 750,
+        "userId": "9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8",
+        "status": "pending"
+    },
+    {
+        "id": "02196e3d-f4b0-4959-adc5-af36b7f6b5b9",
+        "picture": "./img/default_idea.png",
+        "header": "Headering header",
+        "description": "Descriptive description",
+        "askedSum": 750,
+        "userId": "9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8",
+        "status": "rejected",
+        "donations": [],
+        "totalDonationSum": 0
     }
 ]

@@ -1,7 +1,6 @@
 const { v4 } = require('uuid');
 const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
-const { getUser } = require('../businessRules/users');
 
 function createUser(username, password, firstName, lastName) {
     let users = getUsers();
@@ -33,7 +32,20 @@ function deleteUser(userId) {
     setUsers(updatedUsers);
 }
 
+function getUser(userId) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    if (!user) {
+        throw new Error('Error. No such user.');
+    }
+
+    return user;
+}
+
 module.exports = {
     createUser,
     deleteUser,
+    getUser,
 };

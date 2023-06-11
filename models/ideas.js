@@ -1,7 +1,5 @@
 const { v4 } = require('uuid');
 const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
-const { validateKey, validateValue } = require('../validations/users');
-const { getIdea } = require('../businessRules/ideas');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -21,10 +19,6 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
-    validateKey(key);
-
-    validateValue(value);
-
     const ideas = getIdeas();
     const idea = getIdea(ideaId);
 
@@ -90,9 +84,22 @@ function getAllIdeas() {
     return ideasWithDonations;
 }
 
+function getIdea(ideaId) {
+    const ideas = getAllIdeas();
+
+    const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error('Error. No idea with such ID found.');
+    }
+
+    return idea;
+}
+
 module.exports = {
     createNewIdea: createIdea,
     updateIdea,
     deleteIdea,
     getAllIdeas,
+    getIdea,
 };

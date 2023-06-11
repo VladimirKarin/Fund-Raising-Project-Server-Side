@@ -2,9 +2,9 @@ const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
 const { validateIdea } = require('../validations/ideas');
 const { validateSum } = require('../validations/donations.js');
-const { getUser } = require('./users');
-const { getIdea } = require('./ideas');
 const { setUsers, getUsers } = require('../utils/storage');
+const { getUser } = require('../models/users');
+const { getIdea } = require('../models/ideas');
 
 function createAnonymousUser(firstName) {
     let users = getUsers();
@@ -44,10 +44,10 @@ function createDonationByUnregisteredUser(ideaId, firstName, sum) {
 }
 
 function createDonationByRegisteredUser(userId, ideaId, sum) {
+    const user = getUser(userId);
+
     validateIdea(ideaId);
     validateSum(sum);
-
-    const user = getUser(userId);
 
     createDonation(ideaId, user.id, sum);
 }

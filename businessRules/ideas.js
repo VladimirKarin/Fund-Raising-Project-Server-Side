@@ -13,18 +13,6 @@ const IDEA_STATUS = {
     rejected: 'rejected',
 };
 
-function getIdea(ideaId) {
-    let ideas = getAllIdeas();
-
-    const idea = ideas.find((idea) => ideaId === idea.id);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
-
-    return idea;
-}
-
 function sortIdeasByTotalDonationSum() {
     const ideasList = getAllIdeas();
 
@@ -84,8 +72,6 @@ function rejectedIdeasList() {
 }
 
 module.exports = {
-    getIdea,
-    getIdeas: getAllIdeas,
     sortIdeasByTotalDonationSum,
     createIdea,
     updateIdeasStatus,
