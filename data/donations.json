@@ -470,5 +470,29 @@
         "sum": 10,
         "userId": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
         "ideaId": "1abe9594-259a-4b80-a12c-3267d6fce9e0"
+    },
+    {
+        "id": "c6b42858-383e-4dd9-b646-b26c661b6fd5",
+        "sum": 10,
+        "userId": "891a7b64-9940-4c8c-b4a0-c83a164303b7",
+        "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
+    },
+    {
+        "id": "51457eee-4a98-42f0-a521-1f7ea8ce702a",
+        "sum": 10,
+        "userId": "8abab804-53cf-4cdd-9c52-f874928f0e8a",
+        "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
+    },
+    {
+        "id": "f33fd42c-bc2d-4049-a1a0-3f78ce427eb3",
+        "sum": 10,
+        "userId": "4429f767-ce48-4b4a-b1be-975aca7313c9",
+        "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
+    },
+    {
+        "id": "4d7b101e-cd94-4a33-8dbb-d1d60466a91a",
+        "sum": 10,
+        "userId": "4429f767-ce48-4b4a-b1be-975aca7313c9",
+        "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
     }
 ]

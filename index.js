@@ -10,16 +10,15 @@ const {
     checkIfLoggedIn,
 } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
-const { deleteUser } = require('./models/users');
+const { deleteUser, getUser } = require('./models/users');
 const {
     getTotalSumDonatedForIdea,
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
 } = require('./businessRules/donations.js');
 const bodyParser = require('body-parser');
-const { updateIdea, deleteIdea } = require('./models/ideas');
+const { updateIdea, deleteIdea, getAllIdeas } = require('./models/ideas');
 const {
-    getIdeas,
     sortIdeasByTotalDonationSum,
     pendingIdeasList,
     approvedIdeasList,
@@ -27,7 +26,6 @@ const {
     updateIdeasStatus,
     rejectedIdeasList,
 } = require('./businessRules/ideas');
-const { getUser } = require('./validations/users');
 
 const app = express();
 const port = 3003;
@@ -57,7 +55,7 @@ app.get('/ideas', (req, res) => {
     let sortedIdeasList;
 
     if (req.query.sortBy === 'all') {
-        sortedIdeasList = getIdeas();
+        sortedIdeasList = getAllIdeas();
     } else if (req.query.sortBy === 'totalDonationSum') {
         sortedIdeasList = sortIdeasByTotalDonationSum();
     } else if (
@@ -130,7 +128,7 @@ app.get('/users', (req, res) => {
 app.post('/users', (req, res) => {
     try {
         registerUser(
-            req.body.userName,
+            req.body.username,
             req.body.password,
             req.body.firstName,
             req.body.lastName
@@ -171,17 +169,15 @@ app.post('/donations', (req, res) => {
 
         if (!user) {
             createDonationByUnregisteredUser(
+                req.body.ideaId,
                 req.body.firstName,
-                req.body.sum,
-                req.body.userId,
-                req.body.ideaId
+                req.body.sum
             );
         } else {
             createDonationByRegisteredUser(
-                req.body.firstName,
-                req.body.sum,
                 req.body.userId,
-                req.body.ideaId
+                req.body.ideaId,
+                req.body.sum
             );
         }
     } catch (error) {
@@ -194,7 +190,7 @@ app.post('/donations', (req, res) => {
 
 app.post('/login', (req, res) => {
     try {
-        const sessionId = login(req.body.userName, md5(req.body.password));
+        const sessionId = login(req.body.username, md5(req.body.password));
 
         res.cookie('userLoginSession', sessionId, {
             sameSite: 'None',

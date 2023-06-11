@@ -32,7 +32,7 @@ function deleteUser(userId) {
     setUsers(updatedUsers);
 }
 
-function getUser(userId) {
+function findUser(userId) {
     let users = getUsers();
 
     const user = users.find((user) => userId === user.id);
@@ -40,11 +40,18 @@ function getUser(userId) {
     if (!user) {
         throw new Error('Error. No such user.');
     }
+}
+
+function getUser(userId) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
 
     return user;
 }
 
 module.exports = {
+    findUser,
     createUser,
     deleteUser,
     getUser,

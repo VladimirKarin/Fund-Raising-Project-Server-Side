@@ -19,6 +19,7 @@ const {
     updateUser,
     deleteUser,
     checkIfLoggedIn,
+    findRegisteredUser,
 } = require('../businessRules/users');
 const { createDonation } = require('../models/donations');
 const { updateIdea, createNewIdea } = require('../models/ideas');
@@ -357,3 +358,5 @@ createDonationByRegisteredUser(
 // Get Ideas total donation sum
 console.log(getTotalSumDonatedForIdea('02196e3d-f4b0-4959-adc5-af36b7f6b5b9'));
 */
+// console.log(login('DVader', '202cb962ac59075b964b07152d234b70'));
+console.log(findRegisteredUser('DVader', 123));
