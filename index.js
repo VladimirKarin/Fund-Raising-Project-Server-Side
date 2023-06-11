@@ -7,7 +7,7 @@ const {
     registerUser,
     updateUser,
     logout,
-    checkIfLoggedIn,
+    isUserLoggedIn,
 } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 const { deleteUser, getUser } = require('./models/users');
@@ -15,16 +15,16 @@ const {
     getTotalSumDonatedForIdea,
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
-} = require('./businessRules/donations.js');
+} = require('./businessRules/donations');
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea, getAllIdeas } = require('./models/ideas');
 const {
     sortIdeasByTotalDonationSum,
-    pendingIdeasList,
-    approvedIdeasList,
+    getPendingIdeasList,
+    getApprovedIdeasList,
     createIdea,
     updateIdeasStatus,
-    rejectedIdeasList,
+    getRejectedIdeasList,
 } = require('./businessRules/ideas');
 
 const app = express();
@@ -62,17 +62,17 @@ app.get('/ideas', (req, res) => {
         req.query.sortBy === 'status' &&
         req.query.status === 'accepted'
     ) {
-        sortedIdeasList = approvedIdeasList();
+        sortedIdeasList = getApprovedIdeasList();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'pending'
     ) {
-        sortedIdeasList = pendingIdeasList();
+        sortedIdeasList = getPendingIdeasList();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'rejected'
     ) {
-        sortedIdeasList = rejectedIdeasList();
+        sortedIdeasList = getRejectedIdeasList();
     }
 
     res.status(200).json(sortedIdeasList);
@@ -175,8 +175,8 @@ app.post('/donations', (req, res) => {
             );
         } else {
             createDonationByRegisteredUser(
-                req.body.userId,
                 req.body.ideaId,
+                req.body.userId,
                 req.body.sum
             );
         }
@@ -207,7 +207,7 @@ app.post('/login', (req, res) => {
 
 app.get('/login', (req, res) => {
     try {
-        const user = checkIfLoggedIn(req.body.userLoginSession);
+        const user = isUserLoggedIn(req.body.userLoginSession);
         res.status(200).json({
             status: 'OK',
             message: 'You are Logged in.',

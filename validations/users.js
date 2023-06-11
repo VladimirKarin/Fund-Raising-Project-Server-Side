@@ -23,7 +23,7 @@ function validateKey(key) {
 }
 
 function validateValue(value) {
-    if (value === undefined || value === 'undefined') {
+    if (value === undefined) {
         throw new Error("Error. You didn't provide any value to update.");
     }
 }

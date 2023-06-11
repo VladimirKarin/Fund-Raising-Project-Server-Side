@@ -44,7 +44,7 @@ function updateIdeasStatus(ideaId, isApproved) {
     updateIdea(ideaId, 'status', ideaStatus);
 }
 
-function pendingIdeasList() {
+function getPendingIdeasList() {
     const ideas = getAllIdeas();
 
     const pendingIdeas = ideas.filter(
@@ -53,7 +53,7 @@ function pendingIdeasList() {
     return pendingIdeas;
 }
 
-function approvedIdeasList() {
+function getApprovedIdeasList() {
     const ideas = getAllIdeas();
 
     const approvedIdeas = ideas.filter(
@@ -62,7 +62,7 @@ function approvedIdeasList() {
     return approvedIdeas;
 }
 
-function rejectedIdeasList() {
+function getRejectedIdeasList() {
     const ideas = getAllIdeas();
 
     const rejectedIdeas = ideas.filter(
@@ -75,7 +75,7 @@ module.exports = {
     sortIdeasByTotalDonationSum,
     createIdea,
     updateIdeasStatus,
-    pendingIdeasList,
-    approvedIdeasList,
-    rejectedIdeasList,
+    getPendingIdeasList,
+    getApprovedIdeasList,
+    getRejectedIdeasList,
 };

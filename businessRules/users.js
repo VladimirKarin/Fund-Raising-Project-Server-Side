@@ -8,7 +8,7 @@ const {
     validateLoginSession,
     validateValue,
     validateKey,
-} = require('../validations/users.js');
+} = require('../validations/users');
 
 function registerUser(username, password, firstName, lastName) {
     validateUsername(username);
@@ -113,7 +113,7 @@ function deleteUser(userId) {
     setUsers(updatedUsers);
 }
 
-function checkIfLoggedIn(userLoginSession) {
+function isUserLoggedIn(userLoginSession) {
     const user = findLoggedInUser(userLoginSession);
     return user;
 }
@@ -123,9 +123,9 @@ module.exports = {
     findRegisteredUser,
     findLoggedInUser,
     login,
-    usersList: getUsers,
+    getUsersList: getUsers,
     updateUser,
     logout,
     deleteUser,
-    checkIfLoggedIn,
+    isUserLoggedIn,
 };

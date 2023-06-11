@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
 const { validateIdea } = require('../validations/ideas');
-const { validateSum } = require('../validations/donations.js');
+const { validateSum } = require('../validations/donations');
 const { setUsers, getUsers } = require('../utils/storage');
 const { getUser } = require('../models/users');
 const { getIdea } = require('../models/ideas');
@@ -11,10 +11,10 @@ function createAnonymousUser(firstName) {
 
     const userId = v4();
     const defaultFirstName = 'Anonymous';
-    const defaultUsername = 'none';
-    const defaultPassword = 'none';
-    const defaultLastName = 'none';
-    const defaultSession = 'none';
+    const defaultUsername = null;
+    const defaultPassword = null;
+    const defaultLastName = null;
+    const defaultSession = null;
     const defaultRole = 'guest';
 
     if (!firstName) {
@@ -43,7 +43,7 @@ function createDonationByUnregisteredUser(ideaId, firstName, sum) {
     createDonation(ideaId, anonymousUser.id, sum);
 }
 
-function createDonationByRegisteredUser(userId, ideaId, sum) {
+function createDonationByRegisteredUser(ideaId, userId, sum) {
     const user = getUser(userId);
 
     validateIdea(ideaId);
