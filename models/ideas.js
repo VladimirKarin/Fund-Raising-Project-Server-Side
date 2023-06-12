@@ -48,7 +48,7 @@ function deleteIdea(ideaId) {
     setIdeas(updatedIdeas);
 }
 
-function getAllIdeas() {
+function getIdeas() {
     const ideas = getIdeas(); //Get all ideas
     const donations = getDonations(); //Get all donation
 
@@ -85,7 +85,7 @@ function getAllIdeas() {
 }
 
 function getIdea(ideaId) {
-    const ideas = getAllIdeas();
+    const ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
 
@@ -97,9 +97,9 @@ function getIdea(ideaId) {
 }
 
 module.exports = {
-    createNewIdea: createIdea,
+    createIdea,
     updateIdea,
     deleteIdea,
-    getAllIdeas,
+    getIdeas,
     getIdea,
 };

@@ -1,4 +1,9 @@
-const { getAllIdeas, createNewIdea, updateIdea } = require('../models/ideas');
+const {
+    getIdeas,
+    createNewIdea,
+    updateIdea,
+    createIdea,
+} = require('../models/ideas');
 const {
     validateHeader,
     validateDescription,
@@ -14,15 +19,15 @@ const IDEA_STATUS = {
 };
 
 function sortIdeasByTotalDonationSum() {
-    const ideasList = getAllIdeas();
+    const ideas = getIdeas();
 
-    const sortedIdeasList = ideasList.sort(
+    const sortedIdeasList = ideas.sort(
         (ideaA, ideaB) => ideaA.totalDonationSum - ideaB.totalDonationSum
     );
     return sortedIdeasList;
 }
 
-function createIdea(header, description, askedSum, userId) {
+function createNewIdea(header, description, askedSum, userId) {
     validateHeader(header);
 
     validateDescription(description);
@@ -31,7 +36,7 @@ function createIdea(header, description, askedSum, userId) {
 
     validateUserId(userId);
 
-    createNewIdea(header, description, askedSum, userId);
+    createIdea(header, description, askedSum, userId);
 }
 
 function updateIdeasStatus(ideaId, isApproved) {
@@ -44,8 +49,8 @@ function updateIdeasStatus(ideaId, isApproved) {
     updateIdea(ideaId, 'status', ideaStatus);
 }
 
-function getPendingIdeasList() {
-    const ideas = getAllIdeas();
+function getPendingIdeas() {
+    const ideas = getIdeas();
 
     const pendingIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.pending
@@ -53,8 +58,8 @@ function getPendingIdeasList() {
     return pendingIdeas;
 }
 
-function getApprovedIdeasList() {
-    const ideas = getAllIdeas();
+function getApprovedIdeas() {
+    const ideas = getIdeas();
 
     const approvedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.accepted
@@ -62,8 +67,8 @@ function getApprovedIdeasList() {
     return approvedIdeas;
 }
 
-function getRejectedIdeasList() {
-    const ideas = getAllIdeas();
+function getRejectedIdeas() {
+    const ideas = getIdeas();
 
     const rejectedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.rejected
@@ -73,9 +78,9 @@ function getRejectedIdeasList() {
 
 module.exports = {
     sortIdeasByTotalDonationSum,
-    createIdea,
+    createNewIdea,
     updateIdeasStatus,
-    getPendingIdeasList,
-    getApprovedIdeasList,
-    getRejectedIdeasList,
+    getPendingIdeas,
+    getApprovedIdeas,
+    getRejectedIdeas,
 };

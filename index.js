@@ -7,7 +7,8 @@ const {
     registerUser,
     updateUser,
     logout,
-    isUserLoggedIn,
+    findLoggedInUser,
+    findLoggedInUser,
 } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 const { deleteUser, getUser } = require('./models/users');
@@ -17,14 +18,14 @@ const {
     createDonationByRegisteredUser,
 } = require('./businessRules/donations');
 const bodyParser = require('body-parser');
-const { updateIdea, deleteIdea, getAllIdeas } = require('./models/ideas');
+const { updateIdea, deleteIdea, getIdeas } = require('./models/ideas');
 const {
     sortIdeasByTotalDonationSum,
-    getPendingIdeasList,
-    getApprovedIdeasList,
-    createIdea,
+    getPendingIdeas,
+    getApprovedIdeas,
+    createNewIdea,
     updateIdeasStatus,
-    getRejectedIdeasList,
+    getRejectedIdeas,
 } = require('./businessRules/ideas');
 
 const app = express();
@@ -52,35 +53,35 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
-    let sortedIdeasList;
+    let sortedIdeas;
 
     if (req.query.sortBy === 'all') {
-        sortedIdeasList = getAllIdeas();
+        sortedIdeas = getIdeas();
     } else if (req.query.sortBy === 'totalDonationSum') {
-        sortedIdeasList = sortIdeasByTotalDonationSum();
+        sortedIdeas = sortIdeasByTotalDonationSum();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'accepted'
     ) {
-        sortedIdeasList = getApprovedIdeasList();
+        sortedIdeas = getApprovedIdeas();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'pending'
     ) {
-        sortedIdeasList = getPendingIdeasList();
+        sortedIdeas = getPendingIdeas();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'rejected'
     ) {
-        sortedIdeasList = getRejectedIdeasList();
+        sortedIdeas = getRejectedIdeas();
     }
 
-    res.status(200).json(sortedIdeasList);
+    res.status(200).json(sortedIdeas);
 });
 
 app.post('/ideas', (req, res) => {
     try {
-        createIdea(
+        createNewIdea(
             req.body.header,
             req.body.description,
             req.body.askedSum,
@@ -207,7 +208,7 @@ app.post('/login', (req, res) => {
 
 app.get('/login', (req, res) => {
     try {
-        const user = isUserLoggedIn(req.body.userLoginSession);
+        const user = findLoggedInUser(req.body.userLoginSession);
         res.status(200).json({
             status: 'OK',
             message: 'You are Logged in.',

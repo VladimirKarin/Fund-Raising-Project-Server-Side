@@ -113,19 +113,12 @@ function deleteUser(userId) {
     setUsers(updatedUsers);
 }
 
-function isUserLoggedIn(userLoginSession) {
-    const user = findLoggedInUser(userLoginSession);
-    return user;
-}
-
 module.exports = {
     registerUser,
     findRegisteredUser,
     findLoggedInUser,
     login,
-    getUsersList: getUsers,
     updateUser,
     logout,
     deleteUser,
-    isUserLoggedIn,
 };

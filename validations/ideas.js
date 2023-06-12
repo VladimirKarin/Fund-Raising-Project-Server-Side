@@ -1,7 +1,7 @@
-const { getAllIdeas } = require('../models/ideas');
+const { getIdeas } = require('../models/ideas');
 
 function validateIdea(ideaId) {
-    let ideas = getAllIdeas();
+    let ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
 
