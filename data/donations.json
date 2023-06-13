@@ -226,14 +226,14 @@
     {
         "id": "c458ff39-83ae-46bf-a66a-d5b5728ff30b",
         "firstName": "Anonymous",
-        "sum": null,
+        "sum": 10,
         "userId": "d625d14c-2a10-4ac9-9e7b-07af329dbe03",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "df220a0b-3b51-48ce-89c9-4261e0e56a79",
         "firstName": "Any",
-        "sum": null,
+        "sum": 10,
         "userId": "cebc2d6b-4de4-4cb5-9d9f-b5fc7dd3a3f7",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
@@ -247,7 +247,7 @@
     {
         "id": "3a71aa46-6d39-454a-8884-168885a00703",
         "firstName": "Anonymous",
-        "sum": null,
+        "sum": 10,
         "userId": "81c3be9a-009b-4c44-b034-ae2a4276c850",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
@@ -307,7 +307,7 @@
     },
     {
         "id": "c538c922-98d9-4b93-8589-7e8aaea82b83",
-        "firstName": null,
+        "firstName": "Anonymous",
         "sum": 25,
         "userId": "24093c95-df35-45f4-8c38-14f0cf6f2134",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
@@ -338,19 +338,19 @@
     },
     {
         "id": "a1549382-f6b3-4149-aebd-c4d44407b333",
-        "firstName": null,
+        "firstName": "Anonymous",
         "sum": 5,
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "758f2314-4680-4853-a77f-69072a9ddad4",
-        "firstName": null,
+        "firstName": "Anonymous",
         "sum": 5,
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "0a5fa3cf-7bb1-4e14-bbad-227e69d600d4",
-        "firstName": null,
+        "firstName": "Anonymous",
         "sum": 5,
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
@@ -370,14 +370,14 @@
     },
     {
         "id": "2ae9a51b-604c-4159-b239-2b189238a869",
-        "firstName": null,
+        "firstName": "Anonymous",
         "sum": 5,
         "userId": "787a9868-6ec6-4174-a4fa-adadbc00c653",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "f6f7b6db-ab43-4120-aeb2-d51a8863b003",
-        "firstName": null,
+        "firstName": "Anonymous",
         "sum": 5,
         "userId": "744ddaa8-3e79-4785-920e-12c0ee09b246",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
