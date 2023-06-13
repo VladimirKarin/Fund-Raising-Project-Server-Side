@@ -37,7 +37,7 @@ function setDonations(donations) {
 module.exports = {
     getUsers,
     setUsers,
-    getIdeas,
+    getIdeasUtil: getIdeas,
     setIdeas,
     getDonations,
     setDonations,

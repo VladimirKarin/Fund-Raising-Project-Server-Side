@@ -1,5 +1,5 @@
 const { v4 } = require('uuid');
-const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
+const { getIdeasUtil, setIdeas, getDonations } = require('../utils/storage');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeas();
@@ -49,7 +49,7 @@ function deleteIdea(ideaId) {
 }
 
 function getIdeas() {
-    const ideas = getIdeas(); //Get all ideas
+    const ideas = getIdeasUtil(); //Get all ideas
     const donations = getDonations(); //Get all donation
 
     const ideasWithDonations = ideas.reduce((updatedIdeas, idea) => {

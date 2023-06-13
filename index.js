@@ -8,7 +8,6 @@ const {
     updateUser,
     logout,
     findLoggedInUser,
-    findLoggedInUser,
 } = require('./businessRules/users');
 const { getUsers } = require('./utils/storage');
 const { deleteUser, getUser } = require('./models/users');
@@ -54,26 +53,26 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     let sortedIdeas;
-
+    const ideas = getIdeas();
     if (req.query.sortBy === 'all') {
         sortedIdeas = getIdeas();
     } else if (req.query.sortBy === 'totalDonationSum') {
-        sortedIdeas = sortIdeasByTotalDonationSum();
+        sortedIdeas = sortIdeasByTotalDonationSum(ideas);
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'accepted'
     ) {
-        sortedIdeas = getApprovedIdeas();
+        sortedIdeas = getApprovedIdeas(ideas);
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'pending'
     ) {
-        sortedIdeas = getPendingIdeas();
+        sortedIdeas = getPendingIdeas(ideas);
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'rejected'
     ) {
-        sortedIdeas = getRejectedIdeas();
+        sortedIdeas = getRejectedIdeas(ideas);
     }
 
     res.status(200).json(sortedIdeas);

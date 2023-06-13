@@ -1,9 +1,4 @@
-const {
-    getIdeas,
-    createNewIdea,
-    updateIdea,
-    createIdea,
-} = require('../models/ideas');
+const { getIdeas, createIdea, updateIdea } = require('../models/ideas');
 const {
     validateHeader,
     validateDescription,
@@ -18,9 +13,7 @@ const IDEA_STATUS = {
     rejected: 'rejected',
 };
 
-function sortIdeasByTotalDonationSum() {
-    const ideas = getIdeas();
-
+function sortIdeasByTotalDonationSum(ideas) {
     const sortedIdeasList = ideas.sort(
         (ideaA, ideaB) => ideaA.totalDonationSum - ideaB.totalDonationSum
     );
@@ -49,27 +42,21 @@ function updateIdeasStatus(ideaId, isApproved) {
     updateIdea(ideaId, 'status', ideaStatus);
 }
 
-function getPendingIdeas() {
-    const ideas = getIdeas();
-
+function getPendingIdeas(ideas) {
     const pendingIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.pending
     );
     return pendingIdeas;
 }
 
-function getApprovedIdeas() {
-    const ideas = getIdeas();
-
+function getApprovedIdeas(ideas) {
     const approvedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.accepted
     );
     return approvedIdeas;
 }
 
-function getRejectedIdeas() {
-    const ideas = getIdeas();
-
+function getRejectedIdeas(ideas) {
     const rejectedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.rejected
     );
