@@ -42,21 +42,24 @@ function updateIdeasStatus(ideaId, isApproved) {
     updateIdea(ideaId, 'status', ideaStatus);
 }
 
-function getPendingIdeas(ideas) {
+function getPendingIdeas() {
+    const ideas = getIdeas();
     const pendingIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.pending
     );
     return pendingIdeas;
 }
 
-function getApprovedIdeas(ideas) {
+function getApprovedIdeas() {
+    const ideas = getIdeas();
     const approvedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.accepted
     );
     return approvedIdeas;
 }
 
-function getRejectedIdeas(ideas) {
+function getRejectedIdeas() {
+    const ideas = getIdeas();
     const rejectedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.rejected
     );

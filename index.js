@@ -62,17 +62,17 @@ app.get('/ideas', (req, res) => {
         req.query.sortBy === 'status' &&
         req.query.status === 'accepted'
     ) {
-        sortedIdeas = getApprovedIdeas(ideas);
+        sortedIdeas = getApprovedIdeas();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'pending'
     ) {
-        sortedIdeas = getPendingIdeas(ideas);
+        sortedIdeas = getPendingIdeas();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'rejected'
     ) {
-        sortedIdeas = getRejectedIdeas(ideas);
+        sortedIdeas = getRejectedIdeas();
     }
 
     res.status(200).json(sortedIdeas);
