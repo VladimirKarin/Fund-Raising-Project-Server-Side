@@ -2,7 +2,7 @@ const { v4 } = require('uuid');
 const { getIdeasUtil, setIdeas, getDonations } = require('../utils/storage');
 
 function createIdea(header, description, askedSum, userId) {
-    let ideas = getIdeas();
+    let ideas = getIdeasUtil();
 
     const newIdea = {};
     newIdea.id = v4();
@@ -19,7 +19,7 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
-    const ideas = getIdeas();
+    const ideas = getIdeasUtil();
     const idea = getIdea(ideaId);
 
     const updatedIdea = {
@@ -41,7 +41,7 @@ function updateIdea(ideaId, key, value) {
 }
 
 function deleteIdea(ideaId) {
-    const ideas = getIdeas();
+    const ideas = getIdeasUtil();
 
     const updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
 
@@ -85,7 +85,7 @@ function getIdeas() {
 }
 
 function getIdea(ideaId) {
-    const ideas = getIdeas();
+    const ideas = getIdeasUtil();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
 

@@ -358,5 +358,35 @@
         "lastName": "none",
         "session": "none",
         "role": "guest"
+    },
+    {
+        "id": "1da2ed29-cc44-4b61-bc1f-559811c4eeaf",
+        "picture": "./img/default_userpic.webp",
+        "userName": null,
+        "password": null,
+        "firstName": "Vovchik",
+        "lastName": null,
+        "session": null,
+        "role": "guest"
+    },
+    {
+        "id": "84d513ed-2d9b-4612-9ceb-ce7f7304ada4",
+        "picture": "./img/default_userpic.webp",
+        "userName": null,
+        "password": null,
+        "firstName": "Anonymous",
+        "lastName": null,
+        "session": null,
+        "role": "guest"
+    },
+    {
+        "id": "f7ea38c6-d4d5-4676-a58f-e4bf5255e996",
+        "picture": "./img/default_userpic.webp",
+        "userName": null,
+        "password": null,
+        "firstName": "Anonymous",
+        "lastName": null,
+        "session": null,
+        "role": "guest"
     }
 ]

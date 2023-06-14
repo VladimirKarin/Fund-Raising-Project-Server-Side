@@ -1,280 +1,240 @@
 [
     {
         "id": "d6667fd3-0182-4730-9f20-866602f87ff8",
-        "firstName": "Darth",
         "sum": 20,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "70c8e131-ac49-453f-85f6-d18160b7be19"
     },
     {
         "id": "7a739df1-7629-4743-8387-0334af332692",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "70c8e131-ac49-453f-85f6-d18160b7be19"
     },
     {
         "id": "714e9de1-fa10-4a3b-8c31-028fb99a9220",
-        "firstName": "Darth",
         "sum": 30,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "1977004d-1750-476e-94ca-1a694b062d99"
     },
     {
         "id": "fef0ac7d-9bed-49dc-af6d-bfec3e63682d",
-        "firstName": "Darth",
         "sum": 20,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "1977004d-1750-476e-94ca-1a694b062d99"
     },
     {
         "id": "f7a76a49-8d03-417d-9511-91cfed825d7d",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "1977004d-1750-476e-94ca-1a694b062d99"
     },
     {
         "id": "61b4813f-7faf-4d80-84ae-01af061170fb",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "75705c83-ebaa-46e5-a54b-e382e645e7e6",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "65eb17de-9ac8-445b-85e8-a73db41ecc5f",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "9dcb9e4d-3530-438d-a6cc-76203f6fad52",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "0c6f4e2b-3d74-42fd-a7b8-571187cf7601",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "7de6a805-58a2-42bc-9da8-7345648964a5",
-        "firstName": "Darth",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "57e9db40-9f0a-4583-813c-045cdf65302a",
-        "firstName": "Anonymous",
         "sum": 10,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "3b50f07e-8cca-4565-a601-c4490fa1d7f8",
-        "firstName": "Vladimir",
         "sum": 10,
         "userId": "297dffa2-26bc-46f2-af83-d4ad459dd6b6",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "3d8552c4-7cd3-4446-9ec6-8429240e0df9",
-        "firstName": "Anonymous",
         "sum": 10,
         "userId": "4e263c63-8534-4dbb-a48c-33407a138ea4",
         "ideaId": "4e94a388-268d-46c9-b888-b2279c469ecd"
     },
     {
         "id": "4f20a350-658e-4a9e-ad26-8ec6f8880c0b",
-        "firstName": "Master",
         "sum": 10,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "3f7e11fc-e74d-4e2d-babd-e5fdd35be320",
-        "firstName": "Master",
         "sum": 10,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "232512f7-c421-428b-a666-bfe5dd4d9e26",
-        "firstName": "Anonymous",
         "sum": 10,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "6b7dd61b-1872-4ca1-964a-72ba024b3cea",
-        "firstName": "Master",
         "sum": 10,
         "userId": "66b1d7c9-6d24-4cf0-a38a-c3f8cdee441e",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "0d1ce406-7c97-4e4b-813e-72d41f5c67b2",
-        "firstName": "Anonymous",
         "sum": 10,
         "userId": "ac6feb2f-d6e4-4670-a63d-cce7455e5b32",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "0552555b-4fcc-4fd0-acd6-c3e5a50e1366",
-        "firstName": "Master",
         "sum": 13,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "449a3d1c-5fcc-4c1f-ae30-a5f370644209",
-        "firstName": "Anonymous",
         "sum": 13,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "23c9cee9-7834-45e0-9dc2-2192c8127800",
-        "firstName": "Master",
         "sum": 13,
         "userId": "b1bb6cc7-b51f-4dd8-9e24-e690710475c4",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "995834e4-331b-49fc-9612-98599f226739",
-        "firstName": "Anonymous",
         "sum": 13,
         "userId": "81d5a27c-135f-4929-99f0-1182f3c5273c",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "3fc64a96-4e0d-4cd9-8e07-4ad6036ee96e",
-        "firstName": "Master",
         "sum": 17,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "38413423-7f64-4ffd-b47d-53c8d51887c1",
-        "firstName": "Anonymous",
         "sum": 17,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "e75fd362-c75f-4cfe-b8ee-895267c533b8",
-        "firstName": "Master",
         "sum": 17,
         "userId": "1c3ff07b-8ce8-443d-9682-27864335ddf3",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "fcfeaad3-e001-4076-a520-4b6fd63f03f6",
-        "firstName": "Anonymous",
         "sum": 17,
         "userId": "6b611d09-5f4b-48f1-93d5-00273792915a",
         "ideaId": "a6bbff48-113a-46fb-9338-9e5844275e1f"
     },
     {
         "id": "43c63f87-583c-4180-936e-8a33a78f7350",
-        "firstName": "AnonymousDroid",
         "sum": 25,
         "userId": "388bd17f-0e66-4d2e-beed-5f7001b4b555",
         "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     },
     {
         "id": "622e5ed3-84b9-4767-9171-86819a8da134",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "388bd17f-0e66-4d2e-beed-5f7001b4b555",
         "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     },
     {
         "id": "354893e1-ae69-40fc-8948-11482ee999f0",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "e209f3fa-1187-4760-9ece-eac85f0ac6c3",
         "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     },
     {
         "id": "4164fe69-ee41-4584-a549-6986a10d1912",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "0ec19c93-7ee9-45cb-b1fe-fa00d26f9355",
         "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     },
     {
         "id": "f072e28e-0e14-4812-9356-66d0cd3eb593",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "74e1510f-46d4-4d53-a4ac-98a70703c9b0",
         "ideaId": "e4a253af-d5b9-4384-9f4b-868d99205915"
     },
     {
         "id": "c458ff39-83ae-46bf-a66a-d5b5728ff30b",
-        "firstName": "Anonymous",
         "sum": 10,
         "userId": "d625d14c-2a10-4ac9-9e7b-07af329dbe03",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "df220a0b-3b51-48ce-89c9-4261e0e56a79",
-        "firstName": "Any",
         "sum": 10,
         "userId": "cebc2d6b-4de4-4cb5-9d9f-b5fc7dd3a3f7",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "bbdd7df3-4e92-4171-9bb5-afd6b839a272",
-        "firstName": "Anonymous",
         "sum": 50,
         "userId": "d47450ec-627d-4baa-9160-2a2c481e8545",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "3a71aa46-6d39-454a-8884-168885a00703",
-        "firstName": "Anonymous",
         "sum": 10,
         "userId": "81c3be9a-009b-4c44-b034-ae2a4276c850",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "af5d08b5-9e88-47de-a0ce-23011cf9fe21",
-        "firstName": "Anonymous",
         "sum": 50,
         "userId": "81c3be9a-009b-4c44-b034-ae2a4276c850",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "cbe8abac-20c3-43c9-8dfc-a83ebcae4aca",
-        "firstName": "Any",
         "sum": 50,
         "userId": "81c3be9a-009b-4c44-b034-ae2a4276c850",
         "ideaId": "6055e10e-1b89-4213-81cf-360c2e6dc6a1"
     },
     {
         "id": "4897ce3f-741d-4006-8126-7ca02c02e3ef",
-        "firstName": "Bobba",
         "sum": 25,
         "userId": "d6e15668-dcc1-49e6-9343-4972d100f329",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "169055a6-3772-497b-9d9e-b709ed8ea85f",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "889b51e7-54c3-4e8b-bcd8-cff3551b5de6",
         "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
@@ -287,7 +247,6 @@
     },
     {
         "id": "13e46853-a4fc-46f7-9c8b-ada2a6fcdb0b",
-        "firstName": "Vladimir",
         "sum": 25,
         "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
         "ideaId": "99566354-2870-4003-b399-bd7e65eeed9a"
@@ -300,14 +259,12 @@
     },
     {
         "id": "36331fa2-be1c-4521-9c58-c64db0c124ff",
-        "firstName": "Bobba",
         "sum": 25,
         "userId": "d6e15668-dcc1-49e6-9343-4972d100f329",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "c538c922-98d9-4b93-8589-7e8aaea82b83",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "24093c95-df35-45f4-8c38-14f0cf6f2134",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
@@ -319,94 +276,39 @@
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
-        "id": "55edef29-3f05-4e32-96cc-7374bbd56004",
-        "sum": 25,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "dcf68fe2-f3cc-437d-a442-d10fd587db2a",
-        "firstName": "Vladimir",
-        "sum": 25,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
         "id": "bc1e46c4-56c8-4f45-8dbc-d08827335ce3",
-        "firstName": "Anonymous",
         "sum": 25,
         "userId": "f1036d1b-4f0b-4f4c-b963-62aa2cc5ca80",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
-        "id": "a1549382-f6b3-4149-aebd-c4d44407b333",
-        "firstName": "Anonymous",
-        "sum": 5,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "758f2314-4680-4853-a77f-69072a9ddad4",
-        "firstName": "Anonymous",
-        "sum": 5,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "0a5fa3cf-7bb1-4e14-bbad-227e69d600d4",
-        "firstName": "Anonymous",
-        "sum": 5,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
         "id": "32d8b57f-f698-4cc3-a0da-78f63b28ada9",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "c7ce4318-6dd8-4634-b613-99f44b0e95c0",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "d3df3613-b54b-4de0-bc18-98b7787f947d",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "ff0f0dc7-8cb1-4e7b-aa64-68beeddafb75",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "2ae9a51b-604c-4159-b239-2b189238a869",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "787a9868-6ec6-4174-a4fa-adadbc00c653",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "f6f7b6db-ab43-4120-aeb2-d51a8863b003",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "744ddaa8-3e79-4785-920e-12c0ee09b246",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "9eebc83e-3dbc-4f9f-8b38-b8260b877cb8",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "8965b1cf-2679-4165-a3fe-39532cd2f76d",
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "cdb17164-bf1e-4963-a613-72e951f60292",
-        "sum": 5,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "e2c27cb4-ddc7-499c-a64a-74dd71e99367",
-        "sum": 5,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "08269960-c56c-455f-86a2-fa2aa4868a2e",
-        "sum": 5,
-        "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
-    },
-    {
-        "id": "724aa37c-a2a2-4718-9735-e529d7158f11",
-        "sum": 5,
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
@@ -417,14 +319,12 @@
     },
     {
         "id": "dabab236-5729-493c-95d8-722bd93baaf4",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "2fa43ebd-4913-4e7d-a188-d775d6f0b7db",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
     },
     {
         "id": "d0e65781-fd07-4088-a7c6-b9e465fe9661",
-        "firstName": "Anonymous",
         "sum": 5,
         "userId": "752c7a64-ba44-4269-be16-3fc7165ae117",
         "ideaId": "6ae1ea20-6e79-45f8-8265-eba8a3d22677"
@@ -494,5 +394,23 @@
         "sum": 10,
         "userId": "4429f767-ce48-4b4a-b1be-975aca7313c9",
         "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
+    },
+    {
+        "id": "36c2b288-efc4-4623-a603-2cbe412c2518",
+        "sum": 25,
+        "userId": "1da2ed29-cc44-4b61-bc1f-559811c4eeaf",
+        "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
+    },
+    {
+        "id": "04621fe9-e7e9-49a2-a082-d97aef1d52a1",
+        "sum": 25,
+        "userId": "f7ea38c6-d4d5-4676-a58f-e4bf5255e996",
+        "ideaId": "5001b5d8-8b31-41d2-a02c-731e77d06d76"
+    },
+    {
+        "id": "0b4c6f9e-eed7-4bb8-aa27-c4a29509a2f6",
+        "sum": 25,
+        "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "ideaId": "b8f40262-d265-419d-a769-e0299901b73b"
     }
 ]

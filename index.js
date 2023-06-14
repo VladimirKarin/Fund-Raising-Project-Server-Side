@@ -53,9 +53,9 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     let sortedIdeas;
-    const ideas = getIdeas();
-    if (req.query.sortBy === 'all') {
-        sortedIdeas = getIdeas();
+    const ideas = getIdeasUtil();
+    if (req.query.sortBy === 'allIdeas') {
+        sortedIdeas = getIdeasUtil();
     } else if (req.query.sortBy === 'totalDonationSum') {
         sortedIdeas = sortIdeasByTotalDonationSum(ideas);
     } else if (
