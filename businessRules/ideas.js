@@ -14,10 +14,10 @@ const IDEA_STATUS = {
 };
 
 function sortIdeasByTotalDonationSum(ideas) {
-    const sortedIdeasList = ideas.sort(
+    const sortedIdeas = ideas.sort(
         (ideaA, ideaB) => ideaA.totalDonationSum - ideaB.totalDonationSum
     );
-    return sortedIdeasList;
+    return sortedIdeas;
 }
 
 function createNewIdea(header, description, askedSum, userId) {
