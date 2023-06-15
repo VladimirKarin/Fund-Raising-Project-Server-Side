@@ -1,5 +1,9 @@
 const { v4 } = require('uuid');
-const { getIdeasUtil, setIdeas, getDonations } = require('../utils/storage');
+const {
+    getIdeas: getIdeasUtil,
+    setIdeas,
+    getDonations,
+} = require('../utils/storage');
 
 function createIdea(header, description, askedSum, userId) {
     let ideas = getIdeasUtil();

@@ -9,7 +9,7 @@ const {
     logout,
     findLoggedInUser,
 } = require('./businessRules/users');
-const { getUsers } = require('./utils/storage');
+const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
 const { deleteUser, getUser } = require('./models/users');
 const {
     getTotalSumDonatedForIdea,
@@ -17,7 +17,7 @@ const {
     createDonationByRegisteredUser,
 } = require('./businessRules/donations');
 const bodyParser = require('body-parser');
-const { updateIdea, deleteIdea, getIdeas } = require('./models/ideas');
+const { updateIdea, deleteIdea, getIdeas, getIdea } = require('./models/ideas');
 const {
     sortIdeasByTotalDonationSum,
     getPendingIdeas,
@@ -53,8 +53,8 @@ app.use(express.json());
 
 app.get('/ideas', (req, res) => {
     let sortedIdeas;
-    const ideas = getIdeasUtil();
-    if (req.query.sortBy === 'allIdeas') {
+    const ideas = getIdeas();
+    if (req.query.sortBy === 'ideas') {
         sortedIdeas = getIdeasUtil();
     } else if (req.query.sortBy === 'totalDonationSum') {
         sortedIdeas = sortIdeasByTotalDonationSum(ideas);
