@@ -52,11 +52,10 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
-    let sortedIdeas;
+    let sortedIdeas = getIdeasUtil();
     const ideas = getIdeas();
-    if (Object.keys(req.query).length === 0) {
-        sortedIdeas = getIdeasUtil();
-    } else if (req.query.sortBy === 'totalDonationSum') {
+
+    if (req.query.sortBy === 'totalDonationSum') {
         sortedIdeas = sortIdeasByTotalDonationSum(ideas);
     } else if (
         req.query.sortBy === 'status' &&
