@@ -1,4 +1,11 @@
-const { getAllIdeas, createIdea, updateIdea } = require('../models/ideas');
+const { getIdeas, createIdea, updateIdea } = require('../models/ideas');
+const {
+    validateHeader,
+    validateDescription,
+    validateAskedSum,
+    validateIdea,
+} = require('../validations/ideas');
+const { validateUserId } = require('../validations/users');
 
 const IDEA_STATUS = {
     pending: 'pending',
@@ -6,74 +13,53 @@ const IDEA_STATUS = {
     rejected: 'rejected',
 };
 
-function getIdeas() {
-    return getAllIdeas();
-}
-
-function sortedByDonationSumIdeas() {
-    const ideasList = getIdeas();
-
-    const sortedIdeasList = ideasList.sort(
+function sortIdeasByTotalDonationSum(ideas) {
+    const sortedIdeas = ideas.sort(
         (ideaA, ideaB) => ideaA.totalDonationSum - ideaB.totalDonationSum
     );
-    return sortedIdeasList;
+    return sortedIdeas;
 }
 
-function createIdeas(header, description, askedSum, userId) {
-    if (!header) {
-        throw new Error('Error. Please, check your header.');
-    }
+function createNewIdea(header, description, askedSum, userId) {
+    validateHeader(header);
 
-    if (!description) {
-        throw new Error('Error. Please, check your description.');
-    }
+    validateDescription(description);
 
-    if (!askedSum) {
-        throw new Error('Error. Please, check your asked sum.');
-    }
+    validateAskedSum(askedSum);
 
-    if (!userId) {
-        throw new Error('Error. Please, check if you are logged in.');
-    }
+    validateUserId(userId);
 
     createIdea(header, description, askedSum, userId);
 }
 
 function updateIdeasStatus(ideaId, isApproved) {
     // Check if idea with this ideaId exists.
-    const ideas = getAllIdeas();
-    const idea = ideas.find((idea) => idea.id === ideaId);
+    validateIdea(ideaId);
 
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
     // Idea exists.
     const ideaStatus = isApproved ? IDEA_STATUS.accepted : IDEA_STATUS.rejected;
 
     updateIdea(ideaId, 'status', ideaStatus);
 }
 
-function pendingIdeasList() {
-    const ideas = getAllIdeas();
-
+function getPendingIdeas() {
+    const ideas = getIdeas();
     const pendingIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.pending
     );
     return pendingIdeas;
 }
 
-function approvedIdeasList() {
-    const ideas = getAllIdeas();
-
+function getApprovedIdeas() {
+    const ideas = getIdeas();
     const approvedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.accepted
     );
     return approvedIdeas;
 }
 
-function rejectedIdeasList() {
-    const ideas = getAllIdeas();
-
+function getRejectedIdeas() {
+    const ideas = getIdeas();
     const rejectedIdeas = ideas.filter(
         (idea) => idea.status === IDEA_STATUS.rejected
     );
@@ -81,11 +67,10 @@ function rejectedIdeasList() {
 }
 
 module.exports = {
-    getIdeas,
-    sortedByDonationSumIdeas,
-    createIdeas,
+    sortIdeasByTotalDonationSum,
+    createNewIdea,
     updateIdeasStatus,
-    pendingIdeasList,
-    approvedIdeasList,
-    rejectedIdeasList,
+    getPendingIdeas,
+    getApprovedIdeas,
+    getRejectedIdeas,
 };

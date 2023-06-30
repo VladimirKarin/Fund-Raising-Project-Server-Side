@@ -27,12 +27,78 @@
         "status": "rejected"
     },
     {
-        "id": "a6bbff48-113a-46fb-9338-9e5844275333",
+        "id": "6055e10e-1b89-4213-81cf-360c2e6dc6a1",
         "picture": "./img/default_idea.png",
-        "header": "Simply Amazing HEADER 1",
-        "description": "Yet another interesting text. Just read it",
-        "askedSum": 300,
-        "userId": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "header": "New liver, for Alcoholics",
+        "description": "Perhaps it you need one?",
+        "askedSum": 1500,
+        "userId": "7a693f37-ccb4-4ecb-be2b-8e34749430b5",
+        "status": "pending"
+    },
+    {
+        "id": "6ae1ea20-6e79-45f8-8265-eba8a3d22677",
+        "picture": "./img/default_idea.png",
+        "header": "Epic Star Wars Header",
+        "description": "Epic description, that will astonish you!",
+        "askedSum": 500,
+        "userId": "d6e15668-dcc1-49e6-9343-4972d100f329",
+        "status": "accepted"
+    },
+    {
+        "id": "99566354-2870-4003-b399-bd7e65eeed9a",
+        "picture": "./img/default_idea.png",
+        "header": "Headering header",
+        "description": "Descriptive description",
+        "askedSum": 750,
+        "userId": "26877c11-30ac-4f93-8a89-8136c3ddb2e4",
+        "status": "rejected",
+        "totalDonationSum": 75
+    },
+    {
+        "id": "55b27a57-394b-4df4-87f3-ea47dccb040e",
+        "picture": "./img/default_idea.png",
+        "header": "Freaking Header",
+        "description": "Freaking Description",
+        "askedSum": 1500,
+        "userId": "1970becf-4aeb-4b79-954b-fb318949cb53",
+        "status": "pending"
+    },
+    {
+        "id": "e735898a-b6e7-48a0-b3bc-5064972cc5e3",
+        "picture": "./img/default_idea.png",
+        "header": "Freaking Header 999",
+        "description": "Freaking Description999",
+        "askedSum": 500,
+        "userId": "1970becf-4aeb-4b79-954b-fb318949cb53",
+        "status": "pending"
+    },
+    {
+        "id": "1abe9594-259a-4b80-a12c-3267d6fce9e0",
+        "picture": "./img/default_idea.png",
+        "header": "Headering header",
+        "description": "Descriptive description",
+        "askedSum": 750,
+        "userId": "9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8",
+        "status": "accepted",
+        "totalDonationSum": 10
+    },
+    {
+        "id": "5001b5d8-8b31-41d2-a02c-731e77d06d76",
+        "picture": "./img/default_idea.png",
+        "header": "UPDATED Header from the POSTMAN",
+        "description": "Description from the POSTMAN",
+        "askedSum": 5000,
+        "userId": "9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8",
+        "status": "accepted",
+        "totalDonationSum": 0
+    },
+    {
+        "id": "b8f40262-d265-419d-a769-e0299901b73b",
+        "picture": "./img/default_idea.png",
+        "header": "HEADER Nr. 1",
+        "description": "DESCRIPTION Nr. 1",
+        "askedSum": 2500,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208",
         "status": "pending"
     }
 ]

@@ -1,180 +1,362 @@
 /* Testing App */
-
-const { createUser, deleteUser } = require('../models/users');
-// const { createUser } = require('./models/users.js');
-const { createDonation } = require('../models/donations');
-const { createIdea, deleteIdea, getAllIdeas } = require('../models/ideas');
 const {
-    getIdeas,
-    sortedByDonationSumIdeas,
-    createIdeas,
-    ideasStatusApproval,
-    pendingIdeasList,
-    approvedIdeasList,
-} = require('../businessRules/ideas');
-const {
-    createDonationsWithDataValidation,
-    ideasDonationSum,
-    ideasSumDifference,
+    createDonationByUnregisteredUser,
+    createDonationByRegisteredUser,
+    getTotalSumDonatedForIdea,
 } = require('../businessRules/donations');
 const {
+    createIdea,
+    updateIdeasStatus,
+    pendingIdeasList,
+    approvedIdeasList,
+    rejectedIdeasList,
+    sortIdeasByTotalDonationSum,
+} = require('../businessRules/ideas');
+const {
     registerUser,
-    usersList,
-    updateUser,
     login,
+    logout,
+    updateUser,
+    deleteUser,
+    checkIfLoggedIn,
+    findRegisteredUser,
 } = require('../businessRules/users');
+const { createDonation } = require('../models/donations');
+const { updateIdea, createNewIdea } = require('../models/ideas');
+const { getAllIdeas } = require('../models/ideas');
+const { deleteIdea } = require('../models/ideas');
+const { createUser } = require('../models/users');
+const {
+    validateHeader,
+    validateAskedSum,
+    validateDescription,
+} = require('../validations/ideas');
+const { validateUserId } = require('../validations/users');
 /*
-FR-31 testin user creation function
+// Create User (models)
+createUser('NewUser', '123', 'New', 'User');
 
-createUser('DVader', '202cb962ac59075b964b07152d234b70', 'Darth', 'Vader');
-console.log(createUser('masterYoda', '202cb962ac59075b964b07152d234b70', 'Master', 'Yoda'));
+// Delete User (models)
+deleteUser('e601cb0e-e7fa-4d95-b30d-44404476525b');
 
-FR-32 test delete user function
+validateHeader(null);
+validateAskedSum('500');
+validateDescription(null);
+validateUserId(null);
 
-deleteUser('48ba4d1a-cf29-46ea-9252-292c4c486a54');
-
-FR 33-- testing idea creation function
-
+//Create Idea(models)i
+console.log('Test 1. No header.');
 createIdea(
-    'New Brains2',
-    'Think about having a spare pair of new brains',
-    '200002',
-    'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
+    null,
+    'Freaking Description',
+    1500,
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
 );
 
-FR-34 testin idea delete function
-
-deleteIdea('6f871b10-9462-4ead-b3a3-c63505e0f5c1');
-
-FR-36 testing create donation function
-
-createDonation(
-    'Master',
-    '5000',
-    '45ff012c-be0d-487e-9b9d-7f53471821b0',
-    'c1ca74ae-c42d-4b51-b814-2edcd8af35ec'
-);
-
-FR-26 testing idea update function
-updateIdea('333e02ba-8e79-472f-8441-a4da39884253', 'askedSum', 50);
+console.log('Test 2. No description.');
 createIdea(
-    'header2',
-    'description2',
-    20,
-    'e6328604-cd5b-46ff-920d-ea6c91e5eb88'
-);
-getIdeas();
-
-console.log(sortedByDonationSumIdeas());
-
-DonationData Tests
-
-createDonationsWithDataValidation(
-    'Master',
-    17,
-    'a9670cd0-85fa-4847-966b-ab10d58e7a67',
-    'a6bbff48-113a-46fb-9338-9e5844275e1f'
-);
-
-createDonationsWithDataValidation(
+    'Freaking Header 999',
     null,
-    17,
-    'a9670cd0-85fa-4847-966b-ab10d58e7a67',
-    'a6bbff48-113a-46fb-9338-9e5844275e1f'
-);
-createDonationsWithDataValidation(
-    'Master',
-    17,
-    null,
-    'a6bbff48-113a-46fb-9338-9e5844275e1f'
-);
-createDonationsWithDataValidation(
-    null,
-    17,
-    null,
-    'a6bbff48-113a-46fb-9338-9e5844275e1f'
+    1500,
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
 );
 
-RegisterUser Test
-
-registerUser('RU1', '123', 'R', 'U1');
-registerUser('RU2', '123', null, 'U2');
-registerUser('RU3', '123', 'R', null);
-registerUser('RU4', '123', null, null);
-
-Testing createIdea function
-
-createIdeas(
-    'HEADER',
-    'Description.Description.Description.',
-    500,
-    '57226ce8-3e44-4f98-83b1-eff8e257a842'
-);
-createIdeas(
+console.log('Test 3. No askedSum.');
+createIdea(
+    'Freaking Header 999',
+    'Freaking Description999',
     null,
-    'Description.Description.Description.',
-    500,
-    '57226ce8-3e44-4f98-83b1-eff8e257a842'
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
 );
-createIdeas('HEADER', null, 500, '57226ce8-3e44-4f98-83b1-eff8e257a842');
-createIdeas(
-    'HEADER',
-    'Description.Description.Description.',
-    null,
-    '57226ce8-3e44-4f98-83b1-eff8e257a842'
+
+console.log('Test 4. AskesSum not a number.');
+createIdea(
+    'Freaking Header 999',
+    'Freaking Description999',
+    '500',
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
 );
-createIdeas('HEADER', 'Description.Description.Description.', 500, null);
-FR-46 Create ideas donation sum function testing.
+
+console.log('Test 5. No UserId.');
+createIdea('Freaking Header 999', 'Freaking Description999', 500, null);
+
+console.log('Test 6. All data.');
+createIdea(
+    'Freaking Header 999',
+    'Freaking Description',
+    1500,
+    '1970becf-4aeb-4b79-954b-fb318949cb53'
+);
+
+//Update Idea (models)
+updateIdea(
+    '5aaf7249-62f1-4bd0-88db-4a3b8ea8a309',
+    'header',
+    'Best Description Ever'
+);
+
+// Delete Idea (models)
+deleteIdea('5aaf7249-62f1-4bd0-88db-4a3b8ea8a309');
+
+//Get All Ideas (models)
 console.log(getAllIdeas());
 
-console.log(ideasDonationSum('4e94a388-268d-46c9-b888-b2279c469ecd'));
-
-Testing a function that calculates difference between ideas sum and sum of all donations for the idea
-ideasSumDifference('4e94a388-268d-46c9-b888-b2279c469ecd');
-
-FR-47 Testing function that updated ideas approve status. And deletes if not approved.
-createIdea(
-    'Test-HEADER-Test',
-    'Test-Description-Test',
-    1500,
-    'bf51ee23-9707-432a-9f76-6f43b36860cc'
+//Create Donation (models)
+console.log('Test 1. No idea id.');
+createDonation(
+    'e735898a-b6e7-48a0-b3bc-5064972cc5e3',
+    '64d896f0-8dd9-4439-a713-214f46198382',
+    50
 );
 
-ideasStatusApproval('1e1368ee-e95e-4e0d-83af-91c1e0d85050', 'approved');
+console.log('Test 2. No user id.');
+createDonation('e735898a-b6e7-48a0-b3bc-5064972cc5e3', null, '50');
 
-createIdea(
-    'Test-HEADER-Test-TO-DELETE',
-    'Test-Description-Test-TO-DELETE',
-    1500,
-    'bf51ee23-9707-432a-9f76-6f43b36860cc'
+console.log('Test 3. No sum.');
+createDonation(
+    'e735898a-b6e7-48a0-b3bc-5064972cc5e3',
+    '64d896f0-8dd9-4439-a713-214f46198382',
+    null
 );
-ideasStatusApproval('e3987170-6bd8-42f2-8040-7ad4fe97d2aa', 'denied');
 
-FR-48 testing function that show ideas with 'pending' status only
-ideasStatusApproval('a852a6b6-1b0c-4836-a9a6-07c23845280e', 'approved');
-ideasStatusApproval('70c8e131-ac49-453f-85f6-d18160b7be19', 'approved');
+console.log('Test 4. Sum is not a number.');
+createDonation(
+    'e735898a-b6e7-48a0-b3bc-5064972cc5e3',
+    '64d896f0-8dd9-4439-a713-214f46198382',
+    '50'
+);
 
+console.log('Test 5. All data.');
+createDonation(
+    'e735898a-b6e7-48a0-b3bc-5064972cc5e3',
+    '64d896f0-8dd9-4439-a713-214f46198382',
+    50
+);
+
+// Register User (businessRules)
+
+console.log('Test 1. No userName.');
+registerUser(null, '123', 'Vladimir', 'Karin');
+
+console.log('Test 2. No password.');
+registerUser('VKarin2', null, 'Vladimir', 'Karin');
+
+console.log('Test 3. No firstName.');
+registerUser('VKarin3', '123', null, 'Karin');
+
+console.log('Test 4. No lastName');
+registerUser('VKarin4', '123', 'Vladimir', null);
+
+console.log('Test 5. All data.');
+registerUser('VKarin5', '123', 'Vladimir', 'Karin');
+
+
+// Login User (businessRules)
+
+console.log('Test 1. No userName.');
+login(null, '123');
+
+console.log('Test 2. No password.');
+login('VKarin5', null);
+
+console.log('Test 3. Wrong password.');
+login('VKarin4', '111');
+
+console.log('Test 4. All data.');
+login('VKarin4', '202cb962ac59075b964b07152d234b70');
+
+// Check if User logged in.
+console.log('Test 1  No user session');
+checkIfLoggedIn(null);
+
+console.log('Test 2  User session');
+checkIfLoggedIn('a07fd15cf173d045ef51b1dc17296f5b');
+
+// Logout User (businessRules)
+console.log('Test 1. No Login Session.');
+logout(null);
+
+console.log('Test 1. All data.');
+logout('a07fd15cf173d045ef51b1dc17296f5b');
+
+//Update User (businessRules)
+console.log('Test 1. No Id.');
+updateUser(null, 'firstName', 'Vovchik');
+
+console.log('Test 2. Wrong Id.');
+updateUser('b9147f51-8050-443e-9480-81cb621aca55', 'firstName', 'Vovchik');
+
+console.log('Test 3. No key.');
+updateUser('b9147f51-8050-443e-9480-81cb621aca5a', null, 'Vovchik');
+
+console.log('Test 4. No value.');
+updateUser('b9147f51-8050-443e-9480-81cb621aca5a', 'firstName', undefined);
+
+console.log('Test 5. All data.');
+updateUser('b9147f51-8050-443e-9480-81cb621aca5a', 'firstName', 'Vovchik');
+
+//Delete User (businessRules)
+console.log('Test 1. No Id.');
+deleteUser(null);
+
+console.log('Test 2. All data.');
+deleteUser('b9147f51-8050-443e-9480-81cb621aca5a');
+
+//Checked if logged in
+console.log('Test 1. No login session');
+checkIfLoggedIn(null);
+
+console.log('Test 2. Wrong login session');
+checkIfLoggedIn('4074df08bb38afda47c375bd8667dfss');
+
+console.log('Test 1. Correct login session');
+console.log(checkIfLoggedIn('e20a72bf8f1bab53495e0b810fd3e24c'));
+
+//Get Ideas (businessRules)
+console.log(getIdeas());
+
+//Sorted by donation sum ideas (businessRules)
+console.log(sortIdeasByTotalDonationSum());
+
+// Create Idea (businessRules)
+console.log('Test 1. No header. ');
+createIdea(
+    null,
+    'Descriptive description',
+    750,
+    '9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8'
+);
+
+console.log('Test 2. No description. ');
+createIdea(
+    'Headering header',
+    null,
+    750,
+    '9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8'
+);
+
+console.log('Test 3. Asked Sum not a number. ');
+createIdea(
+    'Headering header',
+    'Descriptive description',
+    '750',
+    '9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8'
+);
+
+console.log('Test 4. No asked sum. ');
+createIdea(
+    'Headering header',
+    'Descriptive description',
+    null,
+    '9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8'
+);
+
+console.log('Test 5. No user ID. ');
+createIdea('Headering header', 'Descriptive description', 750, null);
+
+console.log('Test 6. All data. ');
+createIdea(
+    'Headering header',
+    'Descriptive description',
+    750,
+    '9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8'
+);
+
+//Update Ideas Status (business Rules)
+console.log('Test 1. No Idea Id.');
+updateIdeasStatus(null, true);
+
+console.log('Test 2. No status.');
+updateIdeasStatus('02196e3d-f4b0-4959-adc5-af36b7f6b5b9', undefined);
+
+console.log('Test 3. All data (true).');
+updateIdeasStatus('02196e3d-f4b0-4959-adc5-af36b7f6b5b9', true);
+
+console.log('Test 4. All data (false).');
+updateIdeasStatus('02196e3d-f4b0-4959-adc5-af36b7f6b5b9', false);
+
+// Pending ideas list
 console.log(pendingIdeasList());
 
-
-FR-49 Testing function that shows ideas with 'approved status only
+// Approved ideas list
 console.log(approvedIdeasList());
 
-FR-50 testing Function that returns users list
-console.log(usersList());
+// Rejected ideas list
+console.log(rejectedIdeasList());
 
-FR-53 Testing updateUser function
 
-updateUser('d70207a2-32bb-4e08-9878-e3174b7490c1', 'firstName', 'NOTanonymous');
+// Create Donation by unregistered user
+console.log('Test 1. No ideaId');
+createDonationByUnregisteredUser(null, 'Vovchik', 25);
 
-updateUser('8f29d0e6-afda-4171-b309-84ece4f95cb7', 'lastName', 'NOTincognito');
-updateUser(
-    '8f29d0e6-afda-4171-b309-84ece4f95cb7',
-    'picture',
-    './img/strangeDefaultPicture.jpeg'
+console.log('Test 2. No firstName');
+createDonationByUnregisteredUser(
+    '02196e3d-f4b0-4959-adc5-af36b7f6b5b9',
+    null,
+    25
 );
 
-FR-54 Testing deleteUser function
+console.log('Test 3. No sum');
+createDonationByUnregisteredUser(
+    '02196e3d-f4b0-4959-adc5-af36b7f6b5b9',
+    'Vovchik',
+    null
+);
 
-deleteUser('19e4f79f-4776-4612-8ff2-1a6d2cd88eca'); // should delete RU3 user
+console.log('Test 4. Sum is not a number');
+createDonationByUnregisteredUser(
+    '02196e3d-f4b0-4959-adc5-af36b7f6b5b9',
+    'Vovchik',
+    '250'
+);
+
+console.log('Test 5. All data');
+createDonationByUnregisteredUser(
+    '02196e3d-f4b0-4959-adc5-af36b7f6b5b9',
+    'Vovchik',
+    10
+);
+
+// Create Donation by registered user
+
+console.log('Test 1. No user id');
+createDonationByRegisteredUser(
+    null,
+    '26877c11-30ac-4f93-8a89-8136c3ddb2e4',
+    10
+);
+
+console.log('Test 2. No idea id');
+createDonationByRegisteredUser(
+    '8f29d0e6-afda-4171-b309-84ece4f95cb7',
+    null,
+    10
+);
+
+console.log('Test 3. No sum');
+createDonationByRegisteredUser(
+    '8f29d0e6-afda-4171-b309-84ece4f95cb7',
+    '1abe9594-259a-4b80-a12c-3267d6fce9e0',
+    null
+);
+
+console.log('Test 3. Sum is not a number');
+createDonationByRegisteredUser(
+    '8f29d0e6-afda-4171-b309-84ece4f95cb7',
+    '1abe9594-259a-4b80-a12c-3267d6fce9e0',
+    '50'
+);
+
+
+console.log('Test 4. All data');
+createDonationByRegisteredUser(
+    '8f29d0e6-afda-4171-b309-84ece4f95cb7',
+    '1abe9594-259a-4b80-a12c-3267d6fce9e0',
+    10
+);
+
+// Get Ideas total donation sum
+console.log(getTotalSumDonatedForIdea('02196e3d-f4b0-4959-adc5-af36b7f6b5b9'));
 */
+// console.log(login('DVader', '202cb962ac59075b964b07152d234b70'));
+console.log(findRegisteredUser('DVader', 123));

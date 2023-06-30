@@ -2,12 +2,12 @@ const { v4 } = require('uuid');
 const md5 = require('md5');
 const { getUsers, setUsers } = require('../utils/storage');
 
-function createUser(userName, password, firstName, lastName) {
+function createUser(username, password, firstName, lastName) {
     let users = getUsers();
     const newUser = {};
     newUser.id = v4();
     newUser.picture = './img/default_userpic.webp';
-    newUser.userName = userName;
+    newUser.username = username;
     newUser.password = md5(password);
     newUser.firstName = firstName;
     newUser.lastName = lastName;
@@ -22,11 +22,7 @@ function createUser(userName, password, firstName, lastName) {
 
 function deleteUser(userId) {
     let users = getUsers();
-    const userToDelete = users.find((user) => userId === user.id);
-
-    if (!userToDelete) {
-        throw new Error('No such user.');
-    }
+    let userToDelete = getUser(userId);
 
     if (userToDelete.role === 'admin') {
         throw new Error("You cant't delete 'Admin'.");
@@ -36,7 +32,27 @@ function deleteUser(userId) {
     setUsers(updatedUsers);
 }
 
+function findUser(userId) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    if (!user) {
+        throw new Error('Error. No such user.');
+    }
+}
+
+function getUser(userId) {
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+
+    return user;
+}
+
 module.exports = {
+    findUser,
     createUser,
     deleteUser,
+    getUser,
 };

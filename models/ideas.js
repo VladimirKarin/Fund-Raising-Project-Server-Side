@@ -1,8 +1,12 @@
 const { v4 } = require('uuid');
-const { getIdeas, setIdeas, getDonations } = require('../utils/storage');
+const {
+    getIdeas: getIdeasUtil,
+    setIdeas,
+    getDonations,
+} = require('../utils/storage');
 
 function createIdea(header, description, askedSum, userId) {
-    let ideas = getIdeas();
+    let ideas = getIdeasUtil();
 
     const newIdea = {};
     newIdea.id = v4();
@@ -19,20 +23,8 @@ function createIdea(header, description, askedSum, userId) {
 }
 
 function updateIdea(ideaId, key, value) {
-    if (!key) {
-        throw new Error("Error. You didn't provide any key to update");
-    }
-    if (!value) {
-        throw new Error("Error. You didn't provide any value to update");
-    }
-
-    let ideas = getIdeas();
-
-    const idea = ideas.find((idea) => ideaId === idea.id);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
+    const ideas = getIdeasUtil();
+    const idea = getIdea(ideaId);
 
     const updatedIdea = {
         ...idea,
@@ -53,21 +45,15 @@ function updateIdea(ideaId, key, value) {
 }
 
 function deleteIdea(ideaId) {
-    let ideas = getIdeas();
+    const ideas = getIdeasUtil();
 
-    const idea = ideas.find((idea) => ideaId === idea.id);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
-
-    let updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
+    const updatedIdeas = ideas.filter((idea) => ideaId !== idea.id);
 
     setIdeas(updatedIdeas);
 }
 
-function getAllIdeas() {
-    const ideas = getIdeas(); //Get all ideas
+function getIdeas() {
+    const ideas = getIdeasUtil(); //Get all ideas
     const donations = getDonations(); //Get all donation
 
     const ideasWithDonations = ideas.reduce((updatedIdeas, idea) => {
@@ -102,9 +88,22 @@ function getAllIdeas() {
     return ideasWithDonations;
 }
 
+function getIdea(ideaId) {
+    const ideas = getIdeasUtil();
+
+    const idea = ideas.find((idea) => ideaId === idea.id);
+
+    if (!idea) {
+        throw new Error('Error. No idea with such ID found.');
+    }
+
+    return idea;
+}
+
 module.exports = {
     createIdea,
     updateIdea,
     deleteIdea,
-    getAllIdeas,
+    getIdeas,
+    getIdea,
 };

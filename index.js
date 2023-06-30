@@ -7,25 +7,24 @@ const {
     registerUser,
     updateUser,
     logout,
-    checkIfLoggedIn,
+    findLoggedInUser,
 } = require('./businessRules/users');
-const { getUsers } = require('./utils/storage');
-const { deleteUser } = require('./models/users');
+const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
+const { deleteUser, getUser } = require('./models/users');
 const {
-    ideasDonationSum,
-    ideasSumDifference,
-    createDonation,
+    getTotalSumDonatedForIdea,
+    createDonationByUnregisteredUser,
+    createDonationByRegisteredUser,
 } = require('./businessRules/donations');
 const bodyParser = require('body-parser');
-const { updateIdea, deleteIdea } = require('./models/ideas');
+const { updateIdea, deleteIdea, getIdeas, getIdea } = require('./models/ideas');
 const {
-    getIdeas,
-    sortedByDonationSumIdeas,
-    pendingIdeasList,
-    approvedIdeasList,
-    createIdeas,
+    sortIdeasByTotalDonationSum,
+    getPendingIdeas,
+    getApprovedIdeas,
+    createNewIdea,
     updateIdeasStatus,
-    rejectedIdeasList,
+    getRejectedIdeas,
 } = require('./businessRules/ideas');
 
 const app = express();
@@ -53,35 +52,33 @@ app.use(express.json());
 // IDEAS METHODS
 
 app.get('/ideas', (req, res) => {
-    let sortedIdeasList;
+    let sortedIdeas = getIdeas();
 
-    if (req.query.sortBy === 'all') {
-        sortedIdeasList = getIdeas();
-    } else if (req.query.sortBy === 'totalDonationSum') {
-        sortedIdeasList = sortedByDonationSumIdeas();
+    if (req.query.sortBy === 'totalDonationSum') {
+        sortedIdeas = sortIdeasByTotalDonationSum(ideas);
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'accepted'
     ) {
-        sortedIdeasList = approvedIdeasList();
+        sortedIdeas = getApprovedIdeas();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'pending'
     ) {
-        sortedIdeasList = pendingIdeasList();
+        sortedIdeas = getPendingIdeas();
     } else if (
         req.query.sortBy === 'status' &&
         req.query.status === 'rejected'
     ) {
-        sortedIdeasList = rejectedIdeasList();
+        sortedIdeas = getRejectedIdeas();
     }
 
-    res.status(200).json(sortedIdeasList);
+    res.status(200).json(sortedIdeas);
 });
 
 app.post('/ideas', (req, res) => {
     try {
-        createIdeas(
+        createNewIdea(
             req.body.header,
             req.body.description,
             req.body.askedSum,
@@ -121,7 +118,6 @@ app.delete('/ideas', (req, res) => {
     res.status(200).send('Ideas successfully deleted.');
 });
 
-
 //USER METHODS
 app.get('/users', (req, res) => {
     res.status(200).json(getUsers());
@@ -130,7 +126,7 @@ app.get('/users', (req, res) => {
 app.post('/users', (req, res) => {
     try {
         registerUser(
-            req.body.userName,
+            req.body.username,
             req.body.password,
             req.body.firstName,
             req.body.lastName
@@ -157,25 +153,31 @@ app.delete('/users', (req, res) => {
         res.status(400).send(error.message);
     }
     res.status(200).send('User successfully deleted.');
+});
 
 //DONATION METHODS
 
 app.get('/donations', (req, res) => {
-    res.status(200).json(ideasDonationSum(req.body.ideaId));
-});
-
-app.get('/donations/sumDifference', (req, res) => {
-    res.status(200).json(ideasSumDifference(req.body.ideaId));
+    res.status(200).json(getTotalSumDonatedForIdea(req.body.ideaId));
 });
 
 app.post('/donations', (req, res) => {
     try {
-        createDonation(
-            req.body.firstName,
-            req.body.sum,
-            req.body.userId,
-            req.body.ideaId
-        );
+        let user = getUser(req.body.userId);
+
+        if (!user) {
+            createDonationByUnregisteredUser(
+                req.body.ideaId,
+                req.body.firstName,
+                req.body.sum
+            );
+        } else {
+            createDonationByRegisteredUser(
+                req.body.ideaId,
+                req.body.userId,
+                req.body.sum
+            );
+        }
     } catch (error) {
         res.status(404).send(error.message);
     }
@@ -186,7 +188,7 @@ app.post('/donations', (req, res) => {
 
 app.post('/login', (req, res) => {
     try {
-        const sessionId = login(req.body.userName, md5(req.body.password));
+        const sessionId = login(req.body.username, md5(req.body.password));
 
         res.cookie('userLoginSession', sessionId, {
             sameSite: 'None',
@@ -203,7 +205,7 @@ app.post('/login', (req, res) => {
 
 app.get('/login', (req, res) => {
     try {
-        const user = checkIfLoggedIn(req.body.userLoginSession);
+        const user = findLoggedInUser(req.body.userLoginSession);
         res.status(200).json({
             status: 'OK',
             message: 'You are Logged in.',

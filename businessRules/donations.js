@@ -1,54 +1,64 @@
 const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
-const { getAllIdeas } = require('../models/ideas');
-const { getIdeas } = require('../utils/storage');
+const { validateIdea } = require('../validations/ideas');
+const { validateSum } = require('../validations/donations');
+const { setUsers, getUsers } = require('../utils/storage');
+const { getUser } = require('../models/users');
+const { getIdea } = require('../models/ideas');
 
-function createDonation(firstName, sum, userId, ideaId) {
-    let ideas = getIdeas();
-    const idea = ideas.find((idea) => ideaId === idea.id);
+function createAnonymousUser(firstName) {
+    let users = getUsers();
 
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
+    const userId = v4();
+    const defaultFirstName = 'Anonymous';
+    const defaultUsername = null;
+    const defaultPassword = null;
+    const defaultLastName = null;
+    const defaultSession = null;
+    const defaultRole = 'guest';
+
+    if (!firstName) {
+        firstName = defaultFirstName;
     }
 
-    const generateId = v4();
-    const anonymous = 'Anonymous';
-
-    firstName = firstName || anonymous;
-    userId = userId || generateId;
-
-    createDonation(firstName, sum, userId, ideaId);
+    const anonymousUser = {
+        id: userId,
+        picture: './img/default_userpic.webp',
+        userName: defaultUsername,
+        password: defaultPassword,
+        firstName,
+        lastName: defaultLastName,
+        session: defaultSession,
+        role: defaultRole,
+    };
+    const updatedUsers = [...users, anonymousUser];
+    setUsers(updatedUsers);
+    return anonymousUser;
 }
 
-function ideasDonationSum(ideaId) {
-    const ideas = getAllIdeas();
-    const idea = ideas.find((idea) => idea.id === ideaId);
+function createDonationByUnregisteredUser(ideaId, firstName, sum) {
+    validateIdea(ideaId);
+    validateSum(sum);
+    const anonymousUser = createAnonymousUser(firstName);
+    createDonation(ideaId, anonymousUser.id, sum);
+}
 
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
+function createDonationByRegisteredUser(ideaId, userId, sum) {
+    const user = getUser(userId);
+
+    validateIdea(ideaId);
+    validateSum(sum);
+
+    createDonation(ideaId, user.id, sum);
+}
+
+function getTotalSumDonatedForIdea(ideaId) {
+    const idea = getIdea(ideaId);
+
     return idea.totalDonationSum;
 }
-
-function ideasSumDifference(ideaId) {
-    const ideas = getAllIdeas();
-    const idea = ideas.find((idea) => idea.id === ideaId);
-
-    if (!idea) {
-        throw new Error('Error. No idea with such ID found.');
-    }
-
-    const ideasSum = idea.askedSum;
-
-    const totalDonationSumForThisIdea = ideasDonationSum(ideaId);
-    const askedSumAndDonationSumDifference =
-        ideasSum - totalDonationSumForThisIdea;
-
-    return askedSumAndDonationSumDifference;
-}
-
 module.exports = {
-    createDonation,
-    ideasDonationSum,
-    ideasSumDifference,
+    createDonationByUnregisteredUser,
+    createDonationByRegisteredUser,
+    getTotalSumDonatedForIdea,
 };
