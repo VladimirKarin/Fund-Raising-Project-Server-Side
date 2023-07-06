@@ -1,0 +1,392 @@
+[
+    {
+        "id": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+        "picture": "./img/default_userpic.webp",
+        "username": "DVader",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Darth",
+        "lastName": "Vader",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "picture": "./img/default_userpic.webp",
+        "username": "MasterYoda",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Master",
+        "lastName": "Yoda",
+        "session": "000e1fb3a675b7094b5836b85217015d",
+        "role": "user"
+    },
+    {
+        "id": "388bd17f-0e66-4d2e-beed-5f7001b4b555",
+        "picture": "./img/default_userpic.webp",
+        "username": "AnonymousDroid",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Droid",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "7a693f37-ccb4-4ecb-be2b-8e34749430b5",
+        "picture": "./img/default_userpic.webp",
+        "username": "MrSpaceNalls",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Mr",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "bf51ee23-9707-432a-9f76-6f43b36860cc",
+        "picture": "./img/default_userpic.webp",
+        "username": "Chewbacca",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "57226ce8-3e44-4f98-83b1-eff8e257a842",
+        "picture": "./img/default_userpic.webp",
+        "username": "TheEvoke",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "The",
+        "lastName": "Evoke",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "cd0973ff-9e25-459e-98f8-028caa2c04da",
+        "picture": "./img/default_userpic.webp",
+        "username": "AnonymouseEvoke",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Evoke",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "c5df826f-8091-48ef-8534-709aef828ae0",
+        "picture": "./img/default_userpic.webp",
+        "username": "MrEvoke",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Mr",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "187675ab-f500-41fc-8aee-a9a706f79089",
+        "picture": "./img/default_userpic.webp",
+        "username": "EvokeUnkonown",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "f7b388d0-b344-48ef-a2d3-f463ae78a591",
+        "picture": "./img/default_userpic.webp",
+        "username": "RegUser1",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Reg",
+        "lastName": "User1",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "a8274e4e-dd7b-48f4-b490-6a73684dcb89",
+        "picture": "./img/default_userpic.webp",
+        "username": "RegUser2",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "User2",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "76c39bf2-fc03-40e6-be8a-9d338a41537b",
+        "picture": "./img/default_userpic.webp",
+        "username": "RegUser3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Reg",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "79af6e83-097e-4d09-91f0-26be592be570",
+        "picture": "./img/default_userpic.webp",
+        "username": "RegUser4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "cb7c5caa-73e4-4dc1-97e4-8ff6ebb18193",
+        "picture": "./img/default_userpic.webp",
+        "username": "UserReg1",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "User",
+        "lastName": "Reg1",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "e023324c-2af6-40d8-83d3-b8ab4374c059",
+        "picture": "./img/default_userpic.webp",
+        "username": "UserReg2",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Reg2",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "5cc2d271-d13f-4781-8017-78ff8ba16033",
+        "picture": "./img/default_userpic.webp",
+        "username": "UserReg3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "User",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "332bf814-41dc-49fd-b866-552289c50e8f",
+        "picture": "./img/default_userpic.webp",
+        "username": "UserReg4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "840c5c94-d19a-4653-a7fc-283a04319da4",
+        "picture": "./img/default_userpic.webp",
+        "username": "RU1",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "R",
+        "lastName": "U1",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "d70207a2-32bb-4e08-9878-e3174b7490c1",
+        "picture": "./img/default_userpic.webp",
+        "username": "RU2",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "NOTanonymous",
+        "lastName": "U2",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "19e4f79f-4776-4612-8ff2-1a6d2cd88eca",
+        "picture": "./img/default_userpic.webp",
+        "username": "RU3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "R",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
+        "picture": "./img/default_userpic.webp",
+        "username": "RU4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "81c3be9a-009b-4c44-b034-ae2a4276c850",
+        "picture": "./img/default_userpic.webp",
+        "username": "AnySkywalker",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anakyn",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "0acad09f-7cd4-4455-b889-1d4f05021d07",
+        "picture": "./img/default_userpic.webp",
+        "username": "AnySkywalkerTEST1",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "Anonymous",
+        "lastName": "Skywalker",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "b0b19eba-7b42-420c-aa1e-3e8e2ee8a102",
+        "picture": "./img/default_userpic.webp",
+        "username": "AnySkywalkerTEST3",
+        "password": "5289df737df57326fcdd22597afb1fac",
+        "firstName": "AnonymousAnakyn",
+        "lastName": "Incognito",
+        "session": "7d322e4b51d715bc7ce2bdee7f57984f",
+        "role": "user"
+    },
+    {
+        "id": "8f29d0e6-afda-4171-b309-84ece4f95cb7",
+        "picture": "./img/strangeDefaultPicture.jpeg",
+        "username": "RU4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "NOTanonymous",
+        "lastName": "NOTincognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "64d896f0-8dd9-4439-a713-214f46198382",
+        "picture": "./img/default_userpic.webp",
+        "username": "none",
+        "password": "none",
+        "firstName": "Anonymous",
+        "lastName": "none",
+        "session": "none",
+        "role": "guest"
+    },
+    {
+        "id": "8de06583-af1c-406c-9e62-154032e9fa39",
+        "picture": "./img/default_userpic.webp",
+        "username": "VKarin3",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Anonymous",
+        "lastName": "Karin",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "9c87f20a-e9a4-4ed3-8922-ac8f1ae087b8",
+        "picture": "./img/default_userpic.webp",
+        "username": "VKarin4",
+        "password": "202cb962ac59075b964b07152d234b70",
+        "firstName": "Vladimir",
+        "lastName": "Incognito",
+        "session": "e20a72bf8f1bab53495e0b810fd3e24c",
+        "role": "user"
+    },
+    {
+        "id": "a5bd4c14-e483-49a7-accf-fa6ce85c3ed9",
+        "picture": "./img/default_userpic.webp",
+        "username": "none",
+        "password": "none",
+        "firstName": "Anonymous",
+        "lastName": "none",
+        "session": "none",
+        "role": "guest"
+    },
+    {
+        "id": "8a35f6e7-22c5-4db9-a45a-cd8b7ed8bf0b",
+        "picture": "./img/default_userpic.webp",
+        "username": "none",
+        "password": "none",
+        "firstName": "Anonymous",
+        "lastName": "none",
+        "session": "none",
+        "role": "guest"
+    },
+    {
+        "id": "e0ad3c38-ef73-4496-ac48-d40b915de6ae",
+        "picture": "./img/default_userpic.webp",
+        "username": "none",
+        "password": "none",
+        "firstName": "Vovchik",
+        "lastName": "none",
+        "session": "none",
+        "role": "guest"
+    },
+    {
+        "id": "6db43117-2c7f-4b2a-86f9-362c405049f5",
+        "picture": "./img/default_userpic.webp",
+        "username": "PostmanUsername",
+        "password": "bd821f16ca2c767ee626122cbd7a2556",
+        "firstName": "Postman",
+        "lastName": "Namtsop",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "49a63f21-453f-4653-80d6-d4d5feba19e5",
+        "picture": "./img/default_userpic.webp",
+        "username": "PostmanUsername",
+        "password": "bd821f16ca2c767ee626122cbd7a2556",
+        "firstName": "Anonymous",
+        "lastName": "Namtsop",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "4429f767-ce48-4b4a-b1be-975aca7313c9",
+        "picture": "./img/default_userpic.webp",
+        "username": "PostmanUsername",
+        "password": "bd821f16ca2c767ee626122cbd7a2556",
+        "firstName": "Postman",
+        "lastName": "Incognito",
+        "session": null,
+        "role": "user"
+    },
+    {
+        "id": "891a7b64-9940-4c8c-b4a0-c83a164303b7",
+        "picture": "./img/default_userpic.webp",
+        "username": "none",
+        "password": "none",
+        "firstName": "Anonymous",
+        "lastName": "none",
+        "session": "none",
+        "role": "guest"
+    },
+    {
+        "id": "8abab804-53cf-4cdd-9c52-f874928f0e8a",
+        "picture": "./img/default_userpic.webp",
+        "username": "none",
+        "password": "none",
+        "firstName": "Vladimir",
+        "lastName": "none",
+        "session": "none",
+        "role": "guest"
+    },
+    {
+        "id": "1da2ed29-cc44-4b61-bc1f-559811c4eeaf",
+        "picture": "./img/default_userpic.webp",
+        "userName": null,
+        "password": null,
+        "firstName": "Vovchik",
+        "lastName": null,
+        "session": null,
+        "role": "guest"
+    },
+    {
+        "id": "84d513ed-2d9b-4612-9ceb-ce7f7304ada4",
+        "picture": "./img/default_userpic.webp",
+        "userName": null,
+        "password": null,
+        "firstName": "Anonymous",
+        "lastName": null,
+        "session": null,
+        "role": "guest"
+    },
+    {
+        "id": "f7ea38c6-d4d5-4676-a58f-e4bf5255e996",
+        "picture": "./img/default_userpic.webp",
+        "userName": null,
+        "password": null,
+        "firstName": "Anonymous",
+        "lastName": null,
+        "session": null,
+        "role": "guest"
+    }
+]
