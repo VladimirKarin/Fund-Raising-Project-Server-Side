@@ -1,1 +1,200 @@
-# Fund-Raising-Project-Server-Side
+# 🚀 Fund-Raising-Project-Server-Side Documentation
+
+---
+
+This documentation provides an overview and details about the Fund-Raising-Project-Server-Side implemented in the provided code. The server is built using the Express.js framework and includes various endpoints for managing ideas, users, donations, login, and logout functionality.
+
+## Table of Contents
+
+1. 🛠️ [Server Setup](#server-setup)
+2. 💡 [Ideas Endpoints](#ideas-endpoints)
+    - 📥 [GET /ideas](#get-ideas)
+    - 📤 [POST /ideas](#post-ideas)
+    - 🔧 [PUT /ideas](#put-ideas)
+    - 🔧 [PUT /ideas/status](#put-ideas-status)
+    - 🗑️ [DELETE /ideas](#delete-ideas)
+3. 👥 [Users Endpoints](#users-endpoints)
+    - 📥 [GET /users](#get-users)
+    - 📤 [POST /users](#post-users)
+    - 🔧 [PUT /users](#put-users)
+    - 🗑️ [DELETE /users](#delete-users)
+4. 💰 [Donations Endpoints](#donations-endpoints)
+    - 📥 [GET /donations](#get-donations)
+    - 📤 [POST /donations](#post-donations)
+5. 🔒 [Login and Logout Endpoints](#login-and-logout-endpoints)
+    - 📤 [POST /login](#post-login)
+    - 📥 [GET /login](#get-login)
+    - 📤 [POST /logout](#post-logout)
+
+---
+
+## 🛠️ Server Setup
+
+The server is set up using Node.js, Express.js framework and includes necessary middleware and configurations. Here are the important details regarding server setup:
+
+-   The server listens on port 3003.
+-   CORS (Cross-Origin Resource Sharing) is enabled to allow requests from 'http://localhost:3000'.
+-   Body parsing middleware is used for handling JSON and URL-encoded data.
+-   The server uses cookies for session management.
+
+---
+
+## 💡 Ideas Endpoints
+
+📥 GET /ideas
+
+-   Description: Retrieves a list of ideas based on optional query parameters.
+-   Query Parameters:
+    -   sortBy (optional): Sorts the ideas based on specific criteria. Accepted values: 'totalDonationSum', 'status'
+    -   status (optional): Filters ideas based on the status. Accepted values: 'accepted', 'pending', 'rejected'
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: An array of ideas in the requested order and filter criteria.
+
+📥 POST /ideas
+
+-   Description: Creates a new idea.
+-   Request Body:
+    -   header: Idea's header/title.
+    -   description: Idea's description.
+    -   askedSum: The requested sum for the idea.
+    -   userId: ID of the user associated with the idea.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the idea was created successfully.
+
+🔧 PUT /ideas
+
+-   Description: Updates an existing idea.
+-   Request Body:
+    -   ideaId: ID of the idea to be updated.
+    -   key: The property/key to be updated.
+    -   value: The new value for the specified property/key.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the idea was updated successfully.
+
+🔧 PUT /ideas/status
+
+-   Description: Updates the status (approval) of an existing idea.
+-   Request Body:
+    -   ideaId: ID of the idea to update the status.
+    -   isApproved: Boolean value representing the new status (true for approved, false for rejected).
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the idea'sstatus was updated successfully.
+
+🗑️ DELETE /ideas
+
+-   Description: Deletes an existing idea.
+-   Request Body:
+    -   ideaId: ID of the idea to be deleted.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the idea was deleted successfully.
+
+---
+
+## 👥 Users Endpoints
+
+📥 GET /users
+
+-   Description: Retrieves a list of all users.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: An array of user objects representing all the users.
+
+📥 POST /users
+
+-   Description: Creates a new user.
+-   Request Body:
+    -   username: User's username.
+    -   password: User's password.
+    -   firstName: User's first name.
+    -   lastName: User's last name.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was created successfully.
+
+🔧 PUT /users
+
+-   Description: Updates an existing user.
+-   Request Body:
+    -   userId: ID of the user to be updated.
+    -   key: The property/key to be updated.
+    -   value: The new value for the specified property/key.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was updated successfully.
+
+🗑️ DELETE /users
+
+-   Description: Deletes an existing user.
+-   Request Body:
+    -   userId: ID of the user to be deleted.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was deleted successfully.
+
+---
+
+## 💰 Donations Endpoints
+
+📥 GET /donations
+
+-   Description: Retrieves the total sum donated for a specific idea.
+-   Request Body:
+    -   ideaId: ID of the idea to get the total sum donated for.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: The total sum donated for the specified idea.
+
+📥 POST /donations
+
+-   Description: Creates a new donation for an idea, either by a registered or an unregistered user.
+-   Request Body:
+    -   ideaId: ID of the idea for which the donation is made.
+    -   userId (optional): ID of the registered user making the donation.
+    -   firstName (optional): First name of the unregistered user making the donation.
+    -   sum: The amount being donated.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the donation was created successfully.
+
+---
+
+## 🔒 Login and Logout Endpoints
+
+📥 POST /login
+
+-   Description: Logs in a user and creates a session.
+-   Request Body:
+    -   username: User's username.
+    -   password: User's password.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was logged in successfully.
+
+📥 GET /login
+
+-   Description: Retrieves the information of the logged-in user.
+-   Request Body:
+    -   userLoginSession: Session ID of the logged-in user.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: JSON object containing information about the logged-in user, including name and role.
+
+📥 POST /logout
+
+-   Description: Logs out the user and clears the session.
+-   Request Body:
+    -   userLoginSession: Session ID of the user to be logged out.
+-   Response:
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was logged out successfully.
+
+---
+
+📖 This concludes the documentation for the Fund-Raising-Project-Server-Side. The provided code includes various endpoints for managing ideas, users, donations, login, and logout functionality. Each endpoint is described with its purpose, request/response details, and any required parameters or bodies.
+
+📝 Please note that this documentation assumes familiarity with the Express.js framework and the usage of the provided code within a larger application or system. Make sure to adapt and integrate the code as needed based on your specific requirements and project structure.
