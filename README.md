@@ -455,12 +455,12 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     }
     ```
 -   Response:
--   Status Code: 200 (OK)
--   Body: Success message indicating that the user was logged in successfully.
-    -   Message example:
-    ```
-    Successfully logged in.
-    ```
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was logged in successfully.
+        -   Message example:
+        ```
+        Successfully logged in.
+        ```
 
 <a name="get-login"></a>
 📥 GET /login
@@ -504,12 +504,12 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     }
     ```
 -   Response:
--   Status Code: 200 (OK)
--   Body: Success message indicating that the user was logged out successfully.
-    -   Message example:
-    ```
-    You have successfully logged out.
-    ```
+    -   Status Code: 200 (OK)
+    -   Body: Success message indicating that the user was logged out successfully.
+        -   Message example:
+        ```
+        You have successfully logged out.
+        ```
 
 ---
 
