@@ -477,17 +477,17 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     }
     ```
 -   Response:
--   Status Code: 200 (OK)
--   Body: `JSON` object containing information about the logged-in user, including name and role.
-    -   `JSON` example:
-    ```json
-    {
-        "status": "OK",
-        "message": "You are Logged in.",
-        "name": "Master",
-        "role": "user"
-    }
-    ```
+    -   Status Code: 200 (OK)
+    -   Body: `JSON` object containing information about the logged-in user, including name and role.
+        -   `JSON` example:
+        ```json
+        {
+            "status": "OK",
+            "message": "You are Logged in.",
+            "name": "Master",
+            "role": "user"
+        }
+        ```
 
 <a name="post-logout"></a>
 📥 POST /logout
