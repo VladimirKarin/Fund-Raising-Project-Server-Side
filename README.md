@@ -41,8 +41,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 ---
 
+<a name="ideas-endpoints"></a>
+
 ## 💡 Ideas Endpoints
 
+<a name="get-ideas"></a>
 📥 GET /ideas
 
 -   Description: Retrieves a list of ideas based on optional query parameters.
@@ -53,6 +56,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: An array of ideas in the requested order and filter criteria.
 
+<a name="post-ideas"></a>
 📥 POST /ideas
 
 -   Description: Creates a new idea.
@@ -65,6 +69,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was created successfully.
 
+<a name="put-ideas"></a>
 🔧 PUT /ideas
 
 -   Description: Updates an existing idea.
@@ -76,6 +81,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was updated successfully.
 
+<a name="put-ideas-status"></a>
 🔧 PUT /ideas/status
 
 -   Description: Updates the status (approval) of an existing idea.
@@ -86,6 +92,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea'sstatus was updated successfully.
 
+<a name="delete-ideas"></a>
 🗑️ DELETE /ideas
 
 -   Description: Deletes an existing idea.
@@ -97,8 +104,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 ---
 
+<a name="users-endpoints"></a>
+
 ## 👥 Users Endpoints
 
+<a name="get-users"></a>
 📥 GET /users
 
 -   Description: Retrieves a list of all users.
@@ -106,6 +116,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: An array of user objects representing all the users.
 
+<a name="post-users"></a>
 📥 POST /users
 
 -   Description: Creates a new user.
@@ -118,6 +129,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was created successfully.
 
+<a name="put-users"></a>
 🔧 PUT /users
 
 -   Description: Updates an existing user.
@@ -129,6 +141,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was updated successfully.
 
+<a name="delete-users"></a>
 🗑️ DELETE /users
 
 -   Description: Deletes an existing user.
@@ -140,8 +153,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 ---
 
+<a name="donations-endpoints"></a>
+
 ## 💰 Donations Endpoints
 
+<a name="get-donations"></a>
 📥 GET /donations
 
 -   Description: Retrieves the total sum donated for a specific idea.
@@ -151,6 +167,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: The total sum donated for the specified idea.
 
+<a name="post-donations"></a>
 📥 POST /donations
 
 -   Description: Creates a new donation for an idea, either by a registered or an unregistered user.
@@ -165,8 +182,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 ---
 
+<a name="login-and-logout-endpoints"></a>
+
 ## 🔒 Login and Logout Endpoints
 
+<a name="post-login"></a>
 📥 POST /login
 
 -   Description: Logs in a user and creates a session.
@@ -177,6 +197,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was logged in successfully.
 
+<a name="get-login"></a>
 📥 GET /login
 
 -   Description: Retrieves the information of the logged-in user.
@@ -186,6 +207,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   Status Code: 200 (OK)
     -   Body: JSON object containing information about the logged-in user, including name and role.
 
+<a name="post-logout"></a>
 📥 POST /logout
 
 -   Description: Logs out the user and clears the session.
