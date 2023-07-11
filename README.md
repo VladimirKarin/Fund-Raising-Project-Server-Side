@@ -107,19 +107,21 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-        -   'header': Idea's header/title.
-        -   'description': Idea's description.
-        -   'askedSum': The requested sum for the idea.
-        -   'userId': ID of the user associated with the idea.
-        -   'JSON' example:
-
-    ```json
-    {
+    -   'header': Idea's header/title.
+    -   'description': Idea's description.
+    -   'askedSum': The requested sum for the idea.
+    -   'userId': ID of the user associated with the idea.
+    -   'JSON' example:  
+         ```json
+        {
         "header": "Header For Example",
         "description": "Description for example",
         "askedSum": 10000,
         "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208"
-    }
+        }
+
+    ```
+
     ```
 
 -   Response:
