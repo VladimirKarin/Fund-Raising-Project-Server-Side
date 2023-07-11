@@ -28,6 +28,8 @@ This documentation provides an overview and details about the Fund Raising Proje
 
 ---
 
+<a name="server-setup"></a>
+
 ## Server Setup 🛠️
 
 The server is set up using Node.js, Express.js framework and includes necessary middleware and configurations. Here are the important details regarding server setup:
