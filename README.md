@@ -514,7 +514,3 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 📖 This concludes the documentation for the Fund Raising Project Server Side. The provided code includes various endpoints for managing ideas, users, donations, login, and logout functionality. Each endpoint is described with its purpose, request/response details, and any required parameters or bodies.
 
 📝 Please note that this documentation assumes familiarity with the Node.js and Express.js framework and the usage of the provided code within a larger application or system. Make sure to adapt and integrate the code as needed based on your specific requirements and project structure.
-
-```
-
-```
