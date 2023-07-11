@@ -313,6 +313,21 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
         User successfully update.
         ```
+        -   'JSON' example:
+        ```json
+        [
+            {
+                "id": "4e97bd2a-b0ec-41fc-92bd-a286360f8be1",
+                "picture": "./img/default_userpic.webp",
+                "username": "GreateJedi",
+                "password": "8051013a166f52c8a71d886353ec528e",
+                "firstName": "The Greatest",
+                "lastName": "Jedi",
+                "session": null,
+                "role": "user"
+            }
+        ]
+        ```
 
 <a name="delete-users"></a>
 🗑️ DELETE /users
@@ -431,35 +446,67 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 -   Request Body: - 'username': User's username. - 'password': User's password.
     -   JSON example:
     ```json
-    { {
-    "username": "DVader",
-    "password": "123"
-    }
+    {
+        "username": "DVader",
+        "password": "123"
     }
     ```
 -   Response:
 -   Status Code: 200 (OK)
 -   Body: Success message indicating that the user was logged in successfully.
+    -   Message example:
+    ```
+    Successfully logged in.
+    ```
 
 <a name="get-login"></a>
 📥 GET /login
 
 -   Description: Retrieves the information of the logged-in user.
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/login
 -   Request Body:
 -   'userLoginSession': Session ID of the logged-in user.
+    -   'JSON' example:
+    ```json
+    {
+        "userLoginSession": "000e1fb3a675b7094b5836b85217015d"
+    }
+    ```
 -   Response:
 -   Status Code: 200 (OK)
 -   Body: JSON object containing information about the logged-in user, including name and role.
+    -   'JSON' example:
+    ```json
+    {
+        "status": "OK",
+        "message": "You are Logged in.",
+        "name": "Master",
+        "role": "user"
+    }
+    ```
 
 <a name="post-logout"></a>
 📥 POST /logout
 
 -   Description: Logs out the user and clears the session.
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/logout
 -   Request Body:
 -   'userLoginSession': Session ID of the user to be logged out.
+    -   'JSON' example:
+    ```json
+    {
+        "userLoginSession": "000e1fb3a675b7094b5836b85217015d"
+    }
+    ```
 -   Response:
 -   Status Code: 200 (OK)
 -   Body: Success message indicating that the user was logged out successfully.
+    -   Message example:
+    ```
+    You have successfully logged out.
+    ```
 
 ---
 

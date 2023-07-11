@@ -388,5 +388,15 @@
         "lastName": null,
         "session": null,
         "role": "guest"
+    },
+    {
+        "id": "4e97bd2a-b0ec-41fc-92bd-a286360f8be1",
+        "picture": "./img/default_userpic.webp",
+        "username": "GreateJedi",
+        "password": "8051013a166f52c8a71d886353ec528e",
+        "firstName": "The Greatest",
+        "lastName": "Jedi",
+        "session": null,
+        "role": "user"
     }
 ]
