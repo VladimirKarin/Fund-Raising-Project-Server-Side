@@ -48,18 +48,20 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 <a name="get-ideas"></a>
 📥 GET /ideas
 
--   Description: Retrieves a list of ideas based on optional query parameters. - URL example:
-    https://fund-raising-project-server-side.azurewebsites.net/ideas
+-   Description: Retrieves a list of ideas based on optional query parameters.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/ideas
 
 -   Query Parameters:
 
     -   'sortBy' (optional): Sorts the ideas based on specific criteria. Accepted values: 'totalDonationSum', 'status'
 
-        -   URL example:
+        -   URL example:  
             https://fund-raising-project-server-side.azurewebsites.net/ideas?sorBy=totalDonationSum
 
     -   'status' (optional): Filters ideas based on the status. Accepted values: 'accepted', 'pending', 'rejected'
-        -   URL example:
+        -   URL example:  
             https://fund-raising-project-server-side.azurewebsites.net/ideas?sortBy=status&status=rejected
 
 -   Response:
