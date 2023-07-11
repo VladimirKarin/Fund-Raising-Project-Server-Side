@@ -496,7 +496,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/logout
 -   Request Body:
--   `userLoginSession`: Session ID of the user to be logged out.
+    -   `userLoginSession`: Session ID of the user to be logged out.
     -   `JSON` example:
     ```json
     {
