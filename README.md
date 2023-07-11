@@ -1,8 +1,8 @@
-# 🚀 Fund-Raising-Project-Server-Side Documentation
+# 🚀 Fund Raising Project Server Side Documentation
 
 ---
 
-This documentation provides an overview and details about the Fund-Raising-Project-Server-Side implemented in the provided code. The server is built using the Express.js framework and includes various endpoints for managing ideas, users, donations, login, and logout functionality.
+This documentation provides an overview and details about the Fund Raising Project Server Side implemented in the provided code. The server is built using the Express.js framework and includes various endpoints for managing ideas, users, donations, login, and logout functionality.
 
 ## Table of Contents
 
@@ -33,9 +33,9 @@ This documentation provides an overview and details about the Fund-Raising-Proje
 The server is set up using Node.js, Express.js framework and includes necessary middleware and configurations. Here are the important details regarding server setup:
 
 -   The server listens on port 3003.
--   CORS (Cross-Origin Resource Sharing) is enabled to allow requests from 'http://localhost:3000'.
--   Body parsing middleware is used for handling JSON and URL-encoded data.
--   The server uses cookies for session management.
+-   'CORS' (Cross-Origin Resource Sharing) is enabled to allow requests from 'http://localhost:3000'.
+-   Body parsing middleware is used for handling 'JSON' and URL-encoded data.
+-   The server uses 'cookies' for session management.
 
 ---
 
@@ -45,8 +45,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Retrieves a list of ideas based on optional query parameters.
 -   Query Parameters:
-    -   sortBy (optional): Sorts the ideas based on specific criteria. Accepted values: 'totalDonationSum', 'status'
-    -   status (optional): Filters ideas based on the status. Accepted values: 'accepted', 'pending', 'rejected'
+    -   'sortBy' (optional): Sorts the ideas based on specific criteria. Accepted values: 'totalDonationSum', 'status'
+    -   'status' (optional): Filters ideas based on the status. Accepted values: 'accepted', 'pending', 'rejected'
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: An array of ideas in the requested order and filter criteria.
@@ -55,10 +55,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Creates a new idea.
 -   Request Body:
-    -   header: Idea's header/title.
-    -   description: Idea's description.
-    -   askedSum: The requested sum for the idea.
-    -   userId: ID of the user associated with the idea.
+    -   'header': Idea's header/title.
+    -   'description': Idea's description.
+    -   'askedSum': The requested sum for the idea.
+    -   'userId': ID of the user associated with the idea.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was created successfully.
@@ -67,9 +67,9 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Updates an existing idea.
 -   Request Body:
-    -   ideaId: ID of the idea to be updated.
-    -   key: The property/key to be updated.
-    -   value: The new value for the specified property/key.
+    -   'ideaId': ID of the idea to be updated.
+    -   'key': The property/key to be updated.
+    -   'value': The new value for the specified property/key.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was updated successfully.
@@ -78,8 +78,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Updates the status (approval) of an existing idea.
 -   Request Body:
-    -   ideaId: ID of the idea to update the status.
-    -   isApproved: Boolean value representing the new status (true for approved, false for rejected).
+    -   'ideaId': ID of the idea to update the status.
+    -   'isApproved': Boolean value representing the new status (true for approved, false for rejected).
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea'sstatus was updated successfully.
@@ -88,7 +88,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Deletes an existing idea.
 -   Request Body:
-    -   ideaId: ID of the idea to be deleted.
+    -   'ideaId': ID of the idea to be deleted.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was deleted successfully.
@@ -108,10 +108,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Creates a new user.
 -   Request Body:
-    -   username: User's username.
-    -   password: User's password.
-    -   firstName: User's first name.
-    -   lastName: User's last name.
+    -   'username': User's username.
+    -   'password': User's password.
+    -   'firstName': User's first name.
+    -   'lastName': User's last name.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was created successfully.
@@ -120,9 +120,9 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Updates an existing user.
 -   Request Body:
-    -   userId: ID of the user to be updated.
-    -   key: The property/key to be updated.
-    -   value: The new value for the specified property/key.
+    -   ' userId': ID of the user to be updated.
+    -   'key': The property/key to be updated.
+    -   'value': The new value for the specified property/key.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was updated successfully.
@@ -131,7 +131,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Deletes an existing user.
 -   Request Body:
-    -   userId: ID of the user to be deleted.
+    -   'userId': ID of the user to be deleted.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was deleted successfully.
@@ -144,7 +144,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Retrieves the total sum donated for a specific idea.
 -   Request Body:
-    -   ideaId: ID of the idea to get the total sum donated for.
+    -   'ideaId': ID of the idea to get the total sum donated for.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: The total sum donated for the specified idea.
@@ -153,10 +153,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Creates a new donation for an idea, either by a registered or an unregistered user.
 -   Request Body:
-    -   ideaId: ID of the idea for which the donation is made.
-    -   userId (optional): ID of the registered user making the donation.
-    -   firstName (optional): First name of the unregistered user making the donation.
-    -   sum: The amount being donated.
+    -   'ideaId': ID of the idea for which the donation is made.
+    -   'userId' (optional): ID of the registered user making the donation.
+    -   'firstName' (optional): First name of the unregistered user making the donation.
+    -   'sum': The amount being donated.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the donation was created successfully.
@@ -169,8 +169,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Logs in a user and creates a session.
 -   Request Body:
-    -   username: User's username.
-    -   password: User's password.
+    -   'username': User's username.
+    -   'password': User's password.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was logged in successfully.
@@ -179,7 +179,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Retrieves the information of the logged-in user.
 -   Request Body:
-    -   userLoginSession: Session ID of the logged-in user.
+    -   'userLoginSession': Session ID of the logged-in user.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: JSON object containing information about the logged-in user, including name and role.
@@ -188,13 +188,13 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Description: Logs out the user and clears the session.
 -   Request Body:
-    -   userLoginSession: Session ID of the user to be logged out.
+    -   'userLoginSession': Session ID of the user to be logged out.
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was logged out successfully.
 
 ---
 
-📖 This concludes the documentation for the Fund-Raising-Project-Server-Side. The provided code includes various endpoints for managing ideas, users, donations, login, and logout functionality. Each endpoint is described with its purpose, request/response details, and any required parameters or bodies.
+📖 This concludes the documentation for the Fund Raising Project Server Side. The provided code includes various endpoints for managing ideas, users, donations, login, and logout functionality. Each endpoint is described with its purpose, request/response details, and any required parameters or bodies.
 
-📝 Please note that this documentation assumes familiarity with the Express.js framework and the usage of the provided code within a larger application or system. Make sure to adapt and integrate the code as needed based on your specific requirements and project structure.
+📝 Please note that this documentation assumes familiarity with the Node.js and Express.js framework and the usage of the provided code within a larger application or system. Make sure to adapt and integrate the code as needed based on your specific requirements and project structure.
