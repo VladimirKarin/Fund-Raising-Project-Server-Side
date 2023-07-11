@@ -101,47 +101,122 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 📥 POST /ideas
 
 -   Description: Creates a new idea.
+
+    -   URL example:
+        https://fund-raising-project-server-side.azurewebsites.net/ideas
+
 -   Request Body:
-    -   'header': Idea's header/title.
-    -   'description': Idea's description.
-    -   'askedSum': The requested sum for the idea.
-    -   'userId': ID of the user associated with the idea.
+
+        -   'header': Idea's header/title.
+        -   'description': Idea's description.
+        -   'askedSum': The requested sum for the idea.
+        -   'userId': ID of the user associated with the idea.
+        -   'JSON' example:
+
+    ```json
+    {
+        "header": "Header For Example",
+        "description": "Description for example",
+        "askedSum": 10000,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208"
+    }
+    ```
+
 -   Response:
+
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was created successfully.
+
+        -   Message example:
+
+        ```
+        Idea created successfully.
+        ```
 
 <a name="put-ideas"></a>
 🔧 PUT /ideas
 
 -   Description: Updates an existing idea.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/ideas
+
 -   Request Body:
+
     -   'ideaId': ID of the idea to be updated.
     -   'key': The property/key to be updated.
     -   'value': The new value for the specified property/key.
+    -   'JSON' example:
+
+    ```json
+    {
+        "ideaId": "b8f40262-d265-419d-a769-e0299901b73b",
+        "key": "description",
+        "value": "UPDATED Description Example"
+    }
+    ```
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was updated successfully.
+        -   Message example:
+        ```
+        Idea updated successfully.
+        ```
 
 <a name="put-ideas-status"></a>
 🔧 PUT /ideas/status
 
 -   Description: Updates the status (approval) of an existing idea.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/ideas/status
+
 -   Request Body:
     -   'ideaId': ID of the idea to update the status.
     -   'isApproved': Boolean value representing the new status (true for approved, false for rejected).
+    -   'JSON' example:
+    ```json
+    {
+        "ideaId": "b8f40262-d265-419d-a769-e0299901b73b",
+        "key": "isApproved",
+        "value": "true"
+    }
+    ```
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea'sstatus was updated successfully.
+        -   Message example:
+        ```
+        Ideas status updated successfully.
+        ```
 
 <a name="delete-ideas"></a>
 🗑️ DELETE /ideas
 
 -   Description: Deletes an existing idea.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/ideas
+
 -   Request Body:
+
     -   'ideaId': ID of the idea to be deleted.
+    -   'JSON' example:
+
+    ```json
+    {
+        "ideaId": "b8f40262-d265-419d-a769-e0299901b73b"
+    }
+    ```
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the idea was deleted successfully.
+        -   Message example:
+        ```
+        Ideas successfully deleted.
+        ```
 
 ---
 
@@ -231,35 +306,49 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 📥 POST /login
 
 -   Description: Logs in a user and creates a session.
--   Request Body:
-    -   'username': User's username.
-    -   'password': User's password.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/login
+
+-   Request Body: - 'username': User's username. - 'password': User's password.
+    -   JSON example:
+    ```json
+    { {
+    "username": "DVader",
+    "password": "123"
+    }
+    }
+    ```
 -   Response:
-    -   Status Code: 200 (OK)
-    -   Body: Success message indicating that the user was logged in successfully.
+-   Status Code: 200 (OK)
+-   Body: Success message indicating that the user was logged in successfully.
 
 <a name="get-login"></a>
 📥 GET /login
 
 -   Description: Retrieves the information of the logged-in user.
 -   Request Body:
-    -   'userLoginSession': Session ID of the logged-in user.
+-   'userLoginSession': Session ID of the logged-in user.
 -   Response:
-    -   Status Code: 200 (OK)
-    -   Body: JSON object containing information about the logged-in user, including name and role.
+-   Status Code: 200 (OK)
+-   Body: JSON object containing information about the logged-in user, including name and role.
 
 <a name="post-logout"></a>
 📥 POST /logout
 
 -   Description: Logs out the user and clears the session.
 -   Request Body:
-    -   'userLoginSession': Session ID of the user to be logged out.
+-   'userLoginSession': Session ID of the user to be logged out.
 -   Response:
-    -   Status Code: 200 (OK)
-    -   Body: Success message indicating that the user was logged out successfully.
+-   Status Code: 200 (OK)
+-   Body: Success message indicating that the user was logged out successfully.
 
 ---
 
 📖 This concludes the documentation for the Fund Raising Project Server Side. The provided code includes various endpoints for managing ideas, users, donations, login, and logout functionality. Each endpoint is described with its purpose, request/response details, and any required parameters or bodies.
 
 📝 Please note that this documentation assumes familiarity with the Node.js and Express.js framework and the usage of the provided code within a larger application or system. Make sure to adapt and integrate the code as needed based on your specific requirements and project structure.
+
+```
+
+```
