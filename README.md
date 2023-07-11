@@ -56,19 +56,19 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Query Parameters:
 
-    -   'sortBy' (optional): Sorts the ideas based on specific criteria. Accepted values: 'totalDonationSum', 'status'
+    -   `sortBy` (optional): Sorts the ideas based on specific criteria. Accepted values: `totalDonationSum`, `status`
 
         -   URL example:  
             https://fund-raising-project-server-side.azurewebsites.net/ideas?sorBy=totalDonationSum
 
-    -   'status' (optional): Filters ideas based on the status. Accepted values: 'accepted', 'pending', 'rejected'
+    -   `status`(optional): Filters ideas based on the `status`. Accepted values: `accepted`, `pending`, `rejected`
         -   URL example:  
             https://fund-raising-project-server-side.azurewebsites.net/ideas?sortBy=status&status=rejected
 
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: An array of ideas in the requested order and filter criteria.
-    -   JSON example:
+    -   `JSON` example:
     ```json
     [
         {
@@ -108,11 +108,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'header': Idea's header/title.
-    -   'description': Idea's description.
-    -   'askedSum': The requested sum for the idea.
-    -   'userId': ID of the user associated with the idea.
-    -   'JSON' example:
+    -   `header`: Idea's header/title.
+    -   `description`: Idea's description.
+    -   `askedSum`: The requested sum for the idea.
+    -   `userId`: ID of the user associated with the idea.
+    -   `JSON` example:
         ```json
         {
             "header": "Header For Example",
@@ -143,10 +143,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'ideaId': ID of the idea to be updated.
-    -   'key': The property/key to be updated.
-    -   'value': The new value for the specified property/key.
-    -   'JSON' example:
+    -   `ideaId`: ID of the idea to be updated.
+    -   `key`: The property/key to be updated.
+    -   `value`: The new value for the specified property/key.
+    -   `JSON` example:
 
     ```json
     {
@@ -173,9 +173,9 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         https://fund-raising-project-server-side.azurewebsites.net/ideas/status
 
 -   Request Body:
-    -   'ideaId': ID of the idea to update the status.
-    -   'isApproved': Boolean value representing the new status (true for approved, false for rejected).
-    -   'JSON' example:
+    -   `ideaId`: ID of the idea to update the status.
+    -   `isApproved`: Boolean value representing the new status (true for approved, false for rejected).
+    -   `JSON` example:
     ```json
     {
         "ideaId": "b8f40262-d265-419d-a769-e0299901b73b",
@@ -201,8 +201,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'ideaId': ID of the idea to be deleted.
-    -   'JSON' example:
+    -   `ideaId`: ID of the idea to be deleted.
+    -   `JSON` example:
 
     ```json
     {
@@ -235,7 +235,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: An array of user objects representing all the users.
-    -   'JSON' example:
+    -   `JSON` example:
     ```json
     [
         {
@@ -261,11 +261,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'username': User's username.
-    -   'password': User's password.
-    -   'firstName': User's first name.
-    -   'lastName': User's last name.
-    -   'JSON' example:
+    -   `username`: User's username.
+    -   `password`: User's password.
+    -   `firstName`: User's first name.
+    -   `lastName`: User's last name.
+    -   `JSON` example:
 
     ```json
     {
@@ -294,10 +294,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'userId': ID of the user to be updated.
-    -   'key': The property/key to be updated.
-    -   'value': The new value for the specified property/key.
-    -   'JSON' example:
+    -   `userId`: ID of the user to be updated.
+    -   `key`: The property/key to be updated.
+    -   `value`: The new value for the specified property/key.
+    -   `JSON` example:
 
     ```json
     {
@@ -340,8 +340,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'userId': ID of the user to be deleted.
-    -   'JSON' example:
+    -   `userId`: ID of the user to be deleted.
+    -   `JSON` example:
 
     ```json
     {
@@ -372,8 +372,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         https://fund-raising-project-server-side.azurewebsites.net/donations
 
 -   Request Body:
-    -   'ideaId': ID of the idea to get the total sum donated for.
-    -   'JSON' example:
+    -   `ideaId`: ID of the idea to get the total sum donated for.
+    -   `JSON` example:
     ```json
     {
         "ideaId": "70c8e131-ac49-453f-85f6-d18160b7be19"
@@ -397,11 +397,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   Request Body:
 
-    -   'ideaId': ID of the idea for which the donation is made.
-    -   'userId' (optional): ID of the registered user making the donation.
-    -   'firstName' (optional): First name of the unregistered user making the donation.
-    -   'sum': The amount being donated.
-    -   'JSON' example:
+    -   `ideaId`: ID of the idea for which the donation is made.
+    -   `userId` (optional): ID of the registered user making the donation.
+    -   `firstName` (optional): First name of the unregistered user making the donation.
+    -   `sum`: The amount being donated.
+    -   `JSON` example:
 
     ```json
     {
@@ -444,8 +444,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/login
 
--   Request Body: - 'username': User's username. - 'password': User's password.
-    -   JSON example:
+-   Request Body:
+    -   `username`: User's username.
+    -   `password`: User's password.
+    -   `JSON` example:
     ```json
     {
         "username": "DVader",
@@ -467,8 +469,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/login
 -   Request Body:
--   'userLoginSession': Session ID of the logged-in user.
-    -   'JSON' example:
+    -   `userLoginSession`: Session ID of the logged-in user.
+    -   `JSON` example:
     ```json
     {
         "userLoginSession": "000e1fb3a675b7094b5836b85217015d"
@@ -476,8 +478,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     ```
 -   Response:
 -   Status Code: 200 (OK)
--   Body: JSON object containing information about the logged-in user, including name and role.
-    -   'JSON' example:
+-   Body: `JSON` object containing information about the logged-in user, including name and role.
+    -   `JSON` example:
     ```json
     {
         "status": "OK",
@@ -494,8 +496,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/logout
 -   Request Body:
--   'userLoginSession': Session ID of the user to be logged out.
-    -   'JSON' example:
+-   `userLoginSession`: Session ID of the user to be logged out.
+    -   `JSON` example:
     ```json
     {
         "userLoginSession": "000e1fb3a675b7094b5836b85217015d"
