@@ -359,4 +359,5 @@ createDonationByRegisteredUser(
 console.log(getTotalSumDonatedForIdea('02196e3d-f4b0-4959-adc5-af36b7f6b5b9'));
 */
 // console.log(login('DVader', '202cb962ac59075b964b07152d234b70'));
-console.log(findRegisteredUser('DVader', 123));
+// console.log(findRegisteredUser('DVader', 123));
+console.log(getTotalSumDonatedForIdea('70c8e131-ac49-453f-85f6-d18160b7be19'));

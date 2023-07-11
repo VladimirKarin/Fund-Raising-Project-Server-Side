@@ -351,24 +351,68 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 📥 GET /donations
 
 -   Description: Retrieves the total sum donated for a specific idea.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/donations
+
 -   Request Body:
     -   'ideaId': ID of the idea to get the total sum donated for.
+    -   'JSON' example:
+    ```json
+    {
+        "ideaId": "70c8e131-ac49-453f-85f6-d18160b7be19"
+    }
+    ```
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: The total sum donated for the specified idea.
+        -   Message example:
+        ```
+        30
+        ```
 
 <a name="post-donations"></a>
 📥 POST /donations
 
 -   Description: Creates a new donation for an idea, either by a registered or an unregistered user.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/donations
+
 -   Request Body:
+
     -   'ideaId': ID of the idea for which the donation is made.
     -   'userId' (optional): ID of the registered user making the donation.
     -   'firstName' (optional): First name of the unregistered user making the donation.
     -   'sum': The amount being donated.
+    -   'JSON' example:
+
+    ```json
+    {
+        "ideaId": "55b27a57-394b-4df4-87f3-ea47dccb040e",
+        "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "sum": 250
+    }
+    ```
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the donation was created successfully.
+        -   Message example:
+        ```
+        Donation created successfully.
+        ```
+    -   'JSON' example:
+    ```json
+    [
+        {
+            "id": "91dfc9ea-14fa-4f1b-b3c3-740ac1ce729d",
+            "sum": 250,
+            "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+            "ideaId": "55b27a57-394b-4df4-87f3-ea47dccb040e"
+        }
+    ]
+    ```
 
 ---
 
