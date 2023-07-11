@@ -227,44 +227,119 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 📥 GET /users
 
 -   Description: Retrieves a list of all users.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/users
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: An array of user objects representing all the users.
+    -   'JSON' example:
+    ```json
+    [
+        {
+            "id": "6fba75be-1f13-449e-b8ee-0d9287d70208",
+            "picture": "./img/default_userpic.webp",
+            "username": "DVader",
+            "password": "202cb962ac59075b964b07152d234b70",
+            "firstName": "Darth",
+            "lastName": "Vader",
+            "session": "542a7bf888c911a06bd2966cf87931d2",
+            "role": "user"
+        }
+    ]
+    ```
 
 <a name="post-users"></a>
 📥 POST /users
 
 -   Description: Creates a new user.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/users
+
 -   Request Body:
+
     -   'username': User's username.
     -   'password': User's password.
     -   'firstName': User's first name.
     -   'lastName': User's last name.
+    -   'JSON' example:
+
+    ```json
+    {
+        "username": "GreateJedi",
+        "password": "UltraStronPassword123",
+        "firstName": "The Greatest",
+        "lastName": "Jedi"
+    }
+    ```
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was created successfully.
+        -   Message example:
+        ```
+        User created successfully.
+        ```
 
 <a name="put-users"></a>
 🔧 PUT /users
 
 -   Description: Updates an existing user.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/users
+
 -   Request Body:
-    -   ' userId': ID of the user to be updated.
+
+    -   'userId': ID of the user to be updated.
     -   'key': The property/key to be updated.
     -   'value': The new value for the specified property/key.
+    -   'JSON' example:
+
+    ```json
+    {
+        "userId": "4429f767-ce48-4b4a-b1be-975aca7313c9",
+        "key": "firstName",
+        "value": "Jimmy"
+    }
+    ```
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was updated successfully.
+        -   Message example:
+        ```
+        User successfully update.
+        ```
 
 <a name="delete-users"></a>
 🗑️ DELETE /users
 
 -   Description: Deletes an existing user.
+
+    -   URL example:  
+        https://fund-raising-project-server-side.azurewebsites.net/users
+
 -   Request Body:
+
     -   'userId': ID of the user to be deleted.
+    -   'JSON' example:
+
+    ```json
+    {
+        "userId": "4429f767-ce48-4b4a-b1be-975aca7313c9"
+    }
+    ```
+
 -   Response:
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was deleted successfully.
+        -   Message example:
+        ```
+        User successfully deleted.
+        ```
 
 ---
 
