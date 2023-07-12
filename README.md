@@ -391,7 +391,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 <a name="get-donations"></a>
 
-📥 GET /donations
+### 📥 GET /donations
 
 -   Retrieves the total sum donated for a specific idea.
 
