@@ -338,21 +338,21 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         User successfully update.
         ```
 
-    -   `JSON` example:
-        ```json
-        [
-            {
-                "id": "4e97bd2a-b0ec-41fc-92bd-a286360f8be1",
-                "picture": "./img/default_userpic.webp",
-                "username": "GreateJedi",
-                "password": "8051013a166f52c8a71d886353ec528e",
-                "firstName": "The Greatest",
-                "lastName": "Jedi",
-                "session": null,
-                "role": "user"
-            }
-        ]
-        ```
+-   `JSON` example:
+    ```json
+    [
+        {
+            "id": "4e97bd2a-b0ec-41fc-92bd-a286360f8be1",
+            "picture": "./img/default_userpic.webp",
+            "username": "GreateJedi",
+            "password": "8051013a166f52c8a71d886353ec528e",
+            "firstName": "The Greatest",
+            "lastName": "Jedi",
+            "session": null,
+            "role": "user"
+        }
+    ]
+    ```
 
 <a name="delete-users"></a>
 
