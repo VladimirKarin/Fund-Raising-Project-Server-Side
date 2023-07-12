@@ -239,7 +239,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 <a name="get-users"></a>
 
-### ### 📥 GET /users
+### 📥 GET /users
 
 -   Retrieves a list of all users.
 
@@ -269,7 +269,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 <a name="post-users"></a>
 
-### ### 📥 POST /users
+### 📥 POST /users
 
 -   Creates a new user.
 
@@ -304,7 +304,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 <a name="put-users"></a>
 
-### ### 🔧 PUT /users
+### 🔧 PUT /users
 
 -   Updates an existing user.
 
@@ -356,7 +356,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 <a name="delete-users"></a>
 
-### ### 🗑️ DELETE /users
+### 🗑️ DELETE /users
 
 -   Deletes an existing user.
 
@@ -391,7 +391,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 <a name="get-donations"></a>
 
-### 📥 GET /donations
+📥 GET /donations
 
 -   Retrieves the total sum donated for a specific idea.
 
