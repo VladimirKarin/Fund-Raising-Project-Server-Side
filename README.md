@@ -47,9 +47,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 ## 💡 Ideas Endpoints
 
 <a name="get-ideas"></a>
-📥 GET /ideas
 
--   Description: Retrieves a list of ideas based on optional query parameters.
+### 📥 GET /ideas
+
+-   Retrieves a list of ideas based on optional query parameters.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/ideas
@@ -66,9 +67,11 @@ The server is set up using Node.js, Express.js framework and includes necessary 
             https://fund-raising-project-server-side.azurewebsites.net/ideas?sortBy=status&status=rejected
 
 -   Response:
+
     -   Status Code: 200 (OK)
     -   Body: An array of ideas in the requested order and filter criteria.
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     [
         {
@@ -99,9 +102,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     ```
 
 <a name="post-ideas"></a>
-📥 POST /ideas
 
--   Description: Creates a new idea.
+### 📥 POST /ideas
+
+-   Creates a new idea.
 
     -   URL example:
         https://fund-raising-project-server-side.azurewebsites.net/ideas
@@ -112,15 +116,17 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   `description`: Idea's description.
     -   `askedSum`: The requested sum for the idea.
     -   `userId`: ID of the user associated with the idea.
-    -   `JSON` example:
-        ```json
-        {
-            "header": "Header For Example",
-            "description": "Description for example",
-            "askedSum": 10000,
-            "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208"
-        }
-        ```
+
+-   `JSON` example:
+
+    ```json
+    {
+        "header": "Header For Example",
+        "description": "Description for example",
+        "askedSum": 10000,
+        "userId": "6fba75be-1f13-449e-b8ee-0d9287d70208"
+    }
+    ```
 
 -   Response:
 
@@ -134,9 +140,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="put-ideas"></a>
-🔧 PUT /ideas
 
--   Description: Updates an existing idea.
+### 🔧 PUT /ideas
+
+-   Updates an existing idea.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/ideas
@@ -146,7 +153,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   `ideaId`: ID of the idea to be updated.
     -   `key`: The property/key to be updated.
     -   `value`: The new value for the specified property/key.
-    -   `JSON` example:
+
+-   `JSON` example:
 
     ```json
     {
@@ -165,17 +173,20 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="put-ideas-status"></a>
-🔧 PUT /ideas/status
 
--   Description: Updates the status (approval) of an existing idea.
+### 🔧 PUT /ideas/status
+
+-   Updates the status (approval) of an existing idea.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/ideas/status
 
 -   Request Body:
+
     -   `ideaId`: ID of the idea to update the status.
     -   `isApproved`: Boolean value representing the new status (true for approved, false for rejected).
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     {
         "ideaId": "b8f40262-d265-419d-a769-e0299901b73b",
@@ -192,9 +203,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="delete-ideas"></a>
-🗑️ DELETE /ideas
 
--   Description: Deletes an existing idea.
+### 🗑️ DELETE /ideas
+
+-   Deletes an existing idea.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/ideas
@@ -202,7 +214,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 -   Request Body:
 
     -   `ideaId`: ID of the idea to be deleted.
-    -   `JSON` example:
+
+-   `JSON` example:
 
     ```json
     {
@@ -225,17 +238,20 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 ## 👥 Users Endpoints
 
 <a name="get-users"></a>
-📥 GET /users
 
--   Description: Retrieves a list of all users.
+### ### 📥 GET /users
+
+-   Retrieves a list of all users.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/users
 
 -   Response:
+
     -   Status Code: 200 (OK)
     -   Body: An array of user objects representing all the users.
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     [
         {
@@ -252,9 +268,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     ```
 
 <a name="post-users"></a>
-📥 POST /users
 
--   Description: Creates a new user.
+### ### 📥 POST /users
+
+-   Creates a new user.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/users
@@ -265,7 +282,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   `password`: User's password.
     -   `firstName`: User's first name.
     -   `lastName`: User's last name.
-    -   `JSON` example:
+
+-   `JSON` example:
 
     ```json
     {
@@ -285,9 +303,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="put-users"></a>
-🔧 PUT /users
 
--   Description: Updates an existing user.
+### ### 🔧 PUT /users
+
+-   Updates an existing user.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/users
@@ -297,7 +316,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   `userId`: ID of the user to be updated.
     -   `key`: The property/key to be updated.
     -   `value`: The new value for the specified property/key.
-    -   `JSON` example:
+
+-   `JSON` example:
 
     ```json
     {
@@ -308,13 +328,17 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     ```
 
 -   Response:
+
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the user was updated successfully.
+
         -   Message example:
+
         ```
         User successfully update.
         ```
-        -   'JSON' example:
+
+    -   `JSON` example:
         ```json
         [
             {
@@ -331,9 +355,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="delete-users"></a>
-🗑️ DELETE /users
 
--   Description: Deletes an existing user.
+### ### 🗑️ DELETE /users
+
+-   Deletes an existing user.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/users
@@ -341,7 +366,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 -   Request Body:
 
     -   `userId`: ID of the user to be deleted.
-    -   `JSON` example:
+
+-   `JSON` example:
 
     ```json
     {
@@ -364,16 +390,19 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 ## 💰 Donations Endpoints
 
 <a name="get-donations"></a>
-📥 GET /donations
 
--   Description: Retrieves the total sum donated for a specific idea.
+### 📥 GET /donations
+
+-   Retrieves the total sum donated for a specific idea.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/donations
 
 -   Request Body:
+
     -   `ideaId`: ID of the idea to get the total sum donated for.
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     {
         "ideaId": "70c8e131-ac49-453f-85f6-d18160b7be19"
@@ -388,9 +417,10 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="post-donations"></a>
-📥 POST /donations
 
--   Description: Creates a new donation for an idea, either by a registered or an unregistered user.
+### 📥 POST /donations
+
+-   Creates a new donation for an idea, either by a registered or an unregistered user.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/donations
@@ -401,7 +431,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   `userId` (optional): ID of the registered user making the donation.
     -   `firstName` (optional): First name of the unregistered user making the donation.
     -   `sum`: The amount being donated.
-    -   `JSON` example:
+
+-   `JSON` example:
 
     ```json
     {
@@ -412,13 +443,15 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     ```
 
 -   Response:
+
     -   Status Code: 200 (OK)
     -   Body: Success message indicating that the donation was created successfully.
         -   Message example:
         ```
         Donation created successfully.
         ```
-    -   'JSON' example:
+
+-   `JSON` example:
     ```json
     [
         {
@@ -437,17 +470,20 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 ## 🔒 Login and Logout Endpoints
 
 <a name="post-login"></a>
-📥 POST /login
 
--   Description: Logs in a user and creates a session.
+### 📥 POST /login
+
+-   Logs in a user and creates a session.
 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/login
 
 -   Request Body:
+
     -   `username`: User's username.
     -   `password`: User's password.
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     {
         "username": "DVader",
@@ -463,41 +499,49 @@ The server is set up using Node.js, Express.js framework and includes necessary 
         ```
 
 <a name="get-login"></a>
-📥 GET /login
 
--   Description: Retrieves the information of the logged-in user.
+### 📥 GET /login
+
+-   Retrieves the information of the logged-in user.
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/login
 -   Request Body:
+
     -   `userLoginSession`: Session ID of the logged-in user.
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     {
         "userLoginSession": "000e1fb3a675b7094b5836b85217015d"
     }
     ```
 -   Response:
+
     -   Status Code: 200 (OK)
     -   Body: `JSON` object containing information about the logged-in user, including name and role.
-        -   `JSON` example:
-        ```json
-        {
-            "status": "OK",
-            "message": "You are Logged in.",
-            "name": "Master",
-            "role": "user"
-        }
-        ```
+
+-   `JSON` example:
+    ```json
+    {
+        "status": "OK",
+        "message": "You are Logged in.",
+        "name": "Master",
+        "role": "user"
+    }
+    ```
 
 <a name="post-logout"></a>
-📥 POST /logout
 
--   Description: Logs out the user and clears the session.
+### 📥 POST /logout
+
+-   Logs out the user and clears the session.
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/logout
 -   Request Body:
+
     -   `userLoginSession`: Session ID of the user to be logged out.
-    -   `JSON` example:
+
+-   `JSON` example:
     ```json
     {
         "userLoginSession": "000e1fb3a675b7094b5836b85217015d"
