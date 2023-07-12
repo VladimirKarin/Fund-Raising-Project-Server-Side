@@ -37,8 +37,8 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 
 -   The server listens on port 3003.
 -   CORS (Cross-Origin Resource Sharing) is enabled to allow requests from http://localhost:3000.
--   Body parsing middleware is used for handling 'JSON' and URL-encoded data.
--   The server uses 'cookies' for session management.
+-   Body parsing middleware is used for handling JSON and URL-encoded data.
+-   The server uses cookies for session management.
 
 ---
 
