@@ -2,7 +2,7 @@
 
 ---
 
-This is a server side part of my fund raising project. Written in JavaScript using Node.JS, and Express.JS framework, includes various endpoints for managing ideas, users, donations, login, and logout functionality.
+This is a server side part of my fund raising project. Written in JavaScript using Node.js, and Express.js framework, includes various endpoints for managing ideas, users, donations, login, and logout functionality.
 The template for this documentation has been generated with the help of [ChatGPT](https://openai.com/).
 
 ## Table of Contents
