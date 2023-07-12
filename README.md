@@ -36,7 +36,7 @@ The template for this documentation has been generated with the help of [ChatGPT
 The server is set up using Node.js, Express.js framework and includes necessary middleware and configurations. Here are the important details regarding server setup:
 
 -   The server listens on port 3003.
--   'CORS' (Cross-Origin Resource Sharing) is enabled to allow requests from 'http://localhost:3000'.
+-   CORS (Cross-Origin Resource Sharing) is enabled to allow requests from http://localhost:3000.
 -   Body parsing middleware is used for handling 'JSON' and URL-encoded data.
 -   The server uses 'cookies' for session management.
 
