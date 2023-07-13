@@ -6,7 +6,7 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Darth",
         "lastName": "Vader",
-        "session": null,
+        "session": "a9d87fad94a20d66bfc40ffe10567b09",
         "role": "user"
     },
     {
@@ -388,5 +388,15 @@
         "lastName": null,
         "session": null,
         "role": "guest"
+    },
+    {
+        "id": "4e97bd2a-b0ec-41fc-92bd-a286360f8be1",
+        "picture": "./img/default_userpic.webp",
+        "username": "GreateJedi",
+        "password": "8051013a166f52c8a71d886353ec528e",
+        "firstName": "The Greatest",
+        "lastName": "Jedi",
+        "session": null,
+        "role": "user"
     }
 ]

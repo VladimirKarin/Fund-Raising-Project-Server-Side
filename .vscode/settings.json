@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/f53b2714-c8e6-4666-b77c-ff9e29700602/resourceGroups/Server/providers/Microsoft.Web/sites/fund-raising-project-server-side",
+    "appService.deploySubpath": "."
+}

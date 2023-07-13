@@ -412,5 +412,11 @@
         "sum": 25,
         "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
         "ideaId": "b8f40262-d265-419d-a769-e0299901b73b"
+    },
+    {
+        "id": "91dfc9ea-14fa-4f1b-b3c3-740ac1ce729d",
+        "sum": 250,
+        "userId": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
+        "ideaId": "55b27a57-394b-4df4-87f3-ea47dccb040e"
     }
 ]

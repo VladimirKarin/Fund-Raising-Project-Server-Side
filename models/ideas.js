@@ -89,7 +89,7 @@ function getIdeas() {
 }
 
 function getIdea(ideaId) {
-    const ideas = getIdeasUtil();
+    const ideas = getIdeas();
 
     const idea = ideas.find((idea) => ideaId === idea.id);
 
