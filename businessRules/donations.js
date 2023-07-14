@@ -55,7 +55,9 @@ function createDonationByRegisteredUser(ideaId, userId, sum) {
 function getTotalSumDonatedForIdea(ideaId) {
     const idea = getIdea(ideaId);
 
-    return idea.totalDonationSum;
+    return {
+        numberOfDonations: idea.totalDonationSum,
+    };
 }
 module.exports = {
     createDonationByUnregisteredUser,
