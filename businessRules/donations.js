@@ -65,7 +65,7 @@ function getDonationsForIdea(ideaId) {
     validateIdea(ideaId);
     const donations = getDonations();
     const donationsForIdea = donations.filter(
-        (donation) => ideaId == donation.ideaId
+        (donation) => ideaId === donation.ideaId
     );
     return donationsForIdea;
 }
@@ -74,7 +74,7 @@ function getUsersDonations(userId) {
     validateUserId(userId);
     const donations = getDonations();
     const usersDonations = donations.filter(
-        (donation) => userId == donation.userId
+        (donation) => userId === donation.userId
     );
     return usersDonations;
 }
