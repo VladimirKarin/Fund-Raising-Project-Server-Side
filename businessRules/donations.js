@@ -57,7 +57,7 @@ function getTotalSumDonatedForIdea(ideaId) {
     const idea = getIdea(ideaId);
 
     return {
-        numberOfDonations: idea.totalDonationSum,
+        totalSumDonatedForIdea: idea.totalDonationSum,
     };
 }
 
@@ -65,7 +65,7 @@ function getDonationsForIdea(ideaId) {
     validateIdea(ideaId);
     const donations = getDonations();
     const donationsForIdea = donations.filter(
-        (donation) => (donation.ideaId = ideaId)
+        (donation) => ideaId == donation.ideaId
     );
     return donationsForIdea;
 }
@@ -74,7 +74,7 @@ function getUsersDonations(userId) {
     validateUserId(userId);
     const donations = getDonations();
     const usersDonations = donations.filter(
-        (donation) => (donation.userId = userId)
+        (donation) => userId == donation.userId
     );
     return usersDonations;
 }
