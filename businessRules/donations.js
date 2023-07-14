@@ -2,9 +2,10 @@ const { v4 } = require('uuid');
 const { createDonation } = require('../models/donations');
 const { validateIdea } = require('../validations/ideas');
 const { validateSum } = require('../validations/donations');
-const { setUsers, getUsers } = require('../utils/storage');
-const { getUser } = require('../models/users');
+const { setUsers, getUsers, getDonations } = require('../utils/storage');
+const { getUser, findUser } = require('../models/users');
 const { getIdea } = require('../models/ideas');
+const { validateUserId } = require('../validations/users');
 
 function createAnonymousUser(firstName) {
     let users = getUsers();
@@ -59,8 +60,28 @@ function getTotalSumDonatedForIdea(ideaId) {
         numberOfDonations: idea.totalDonationSum,
     };
 }
+
+function getDonationsForIdea(ideaId) {
+    validateIdea(ideaId);
+    const donations = getDonations();
+    const donationsForIdea = donations.filter(
+        (donation) => (donation.ideaId = ideaId)
+    );
+    return donationsForIdea;
+}
+
+function getUsersDonations(userId) {
+    validateUserId(userId);
+    const donations = getDonations();
+    const usersDonations = donations.filter(
+        (donation) => (donation.userId = userId)
+    );
+    return usersDonations;
+}
 module.exports = {
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
     getTotalSumDonatedForIdea,
+    getDonationsForIdea,
+    getUsersDonations,
 };
