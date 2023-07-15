@@ -1,3 +1,5 @@
+const { getUsers } = require('../utils/storage');
+
 function validateUsername(username) {
     if (!username) {
         throw new Error('Error. There was no Username provided.');
@@ -30,7 +32,13 @@ function validateValue(value) {
 
 function validateUserId(userId) {
     if (!userId) {
-        throw new Error('Error. Please, check if you are logged in.');
+        throw new Error('Error. There was no userId provided.');
+    }
+    let users = getUsers();
+
+    const user = users.find((user) => userId === user.id);
+    if (!user) {
+        throw new Error('Error. No user with such ID found.');
     }
 }
 
