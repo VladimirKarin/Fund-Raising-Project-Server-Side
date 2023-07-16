@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.get('/donations', (req, res) => {
     try {
-        res.status(200).json(getUsersDonations(req.body.userId));
+        res.status(200).json(getUsersDonations(req.query.userId));
     } catch (error) {
         res.status(400).send(error.message);
     }
