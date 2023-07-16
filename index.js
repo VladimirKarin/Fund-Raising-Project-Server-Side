@@ -2,14 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const md5 = require('md5');
 const cookieParser = require('cookie-parser');
+const logoutRoute = require('./routes/logout');
 const {
     login,
     registerUser,
     updateUser,
-    logout,
     findLoggedInUser,
 } = require('./businessRules/users');
-const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
+const { getUsers } = require('./utils/storage');
 const { deleteUser, getUser } = require('./models/users');
 const {
     getTotalSumDonatedForIdea,
@@ -17,7 +17,7 @@ const {
     createDonationByRegisteredUser,
 } = require('./businessRules/donations');
 const bodyParser = require('body-parser');
-const { updateIdea, deleteIdea, getIdeas, getIdea } = require('./models/ideas');
+const { updateIdea, deleteIdea, getIdeas } = require('./models/ideas');
 const {
     sortIdeasByTotalDonationSum,
     getPendingIdeas,
@@ -217,21 +217,7 @@ app.get('/login', (req, res) => {
 });
 
 //Logout
-app.post('/logout', (req, res) => {
-    try {
-        logout(req.body.userLoginSession);
-
-        res.clearCookie('userLoginSession', {
-            sameSite: 'None',
-            secure: true,
-            httpOnly: true,
-            sameSite: 'None',
-        });
-    } catch (error) {
-        res.status(404).send(error.message);
-    }
-    res.status(200).send('You have successfully logged out.');
-});
+app.use('/logout', logoutRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
