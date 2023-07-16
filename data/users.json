@@ -370,26 +370,6 @@
         "role": "guest"
     },
     {
-        "id": "84d513ed-2d9b-4612-9ceb-ce7f7304ada4",
-        "picture": "./img/default_userpic.webp",
-        "userName": null,
-        "password": null,
-        "firstName": "Anonymous",
-        "lastName": null,
-        "session": null,
-        "role": "guest"
-    },
-    {
-        "id": "f7ea38c6-d4d5-4676-a58f-e4bf5255e996",
-        "picture": "./img/default_userpic.webp",
-        "userName": null,
-        "password": null,
-        "firstName": "Anonymous",
-        "lastName": null,
-        "session": null,
-        "role": "guest"
-    },
-    {
         "id": "4e97bd2a-b0ec-41fc-92bd-a286360f8be1",
         "picture": "./img/default_userpic.webp",
         "username": "GreateJedi",

@@ -40,9 +40,9 @@ router.put('/', (req, res) => {
     res.status(200).send('User successfully update.');
 });
 
-router.delete('/', (req, res) => {
+router.delete('/:userId', (req, res) => {
     try {
-        deleteUser(req.body.userId);
+        deleteUser(req.params.userId);
     } catch (error) {
         res.status(400).send(error.message);
     }
