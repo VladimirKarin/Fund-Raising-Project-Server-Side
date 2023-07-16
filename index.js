@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-
 const loginRoute = require('./routes/login');
 
 const { registerUser, updateUser, logout } = require('./businessRules/users');
@@ -183,21 +182,7 @@ app.post('/donations', (req, res) => {
 app.use('/login', loginRoute);
 
 //Logout
-app.post('/logout', (req, res) => {
-    try {
-        logout(req.body.userLoginSession);
-
-        res.clearCookie('userLoginSession', {
-            sameSite: 'None',
-            secure: true,
-            httpOnly: true,
-            sameSite: 'None',
-        });
-    } catch (error) {
-        res.status(404).send(error.message);
-    }
-    res.status(200).send('You have successfully logged out.');
-});
+app.use('/logout', logoutRoute);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
