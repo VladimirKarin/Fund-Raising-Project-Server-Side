@@ -2,15 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const md5 = require('md5');
 const cookieParser = require('cookie-parser');
-const {
-    login,
-    registerUser,
-    updateUser,
-    logout,
-    findLoggedInUser,
-} = require('./businessRules/users');
-const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
-const { deleteUser, getUser } = require('./models/users');
+const usersRoute = require('./routes/users');
+const { login, logout, findLoggedInUser } = require('./businessRules/users');
+const { getUser } = require('./models/users');
 const {
     getTotalSumDonatedForIdea,
     createDonationByUnregisteredUser,
@@ -118,41 +112,7 @@ app.delete('/ideas', (req, res) => {
 });
 
 //USER METHODS
-app.get('/users', (req, res) => {
-    res.status(200).json(getUsers());
-});
-
-app.post('/users', (req, res) => {
-    try {
-        registerUser(
-            req.body.username,
-            req.body.password,
-            req.body.firstName,
-            req.body.lastName
-        );
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-    res.status(200).send('User created successfully.');
-});
-
-app.put('/users', (req, res) => {
-    try {
-        updateUser(req.body.userId, req.body.key, req.body.value);
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-    res.status(200).send('User successfully update.');
-});
-
-app.delete('/users', (req, res) => {
-    try {
-        deleteUser(req.body.userId);
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-    res.status(200).send('User successfully deleted.');
-});
+app.use('/users', usersRoute);
 
 //DONATION METHODS
 
