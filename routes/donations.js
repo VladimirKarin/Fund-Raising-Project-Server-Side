@@ -9,11 +9,11 @@ const { getUser } = require('../models/users');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.status(200).json(getDonationsForIdea(req.body.ideaId));
+    res.status(200).json(getDonationsForIdea(req.query.ideaId));
 });
 
 router.get('/total', (req, res) => {
-    res.status(200).json(getTotalSumDonatedForIdea(req.body.ideaId));
+    res.status(200).json(getTotalSumDonatedForIdea(req.query.ideaId));
 });
 
 router.post('/', (req, res) => {
