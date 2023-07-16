@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const md5 = require('md5');
 const cookieParser = require('cookie-parser');
 
+const loginRoute = require('./routes/login');
 const donationsRoute = require('./routes/donations');
 const logoutRoute = require('./routes/logout');
 const {
@@ -13,6 +13,7 @@ const {
 } = require('./businessRules/users');
 const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
 const { deleteUser } = require('./models/users');
+
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea, getIdeas } = require('./models/ideas');
 const {
@@ -156,37 +157,7 @@ app.delete('/users', (req, res) => {
 app.use('/donations', donationsRoute);
 
 //Login
-
-app.post('/login', (req, res) => {
-    try {
-        const sessionId = login(req.body.username, md5(req.body.password));
-
-        res.cookie('userLoginSession', sessionId, {
-            sameSite: 'None',
-            secure: true,
-            httpOnly: true,
-            maxAge: 900000,
-        });
-    } catch (error) {
-        res.status(400).send(error.message);
-    }
-
-    res.status(200).send('Successfully logged in.');
-});
-
-app.get('/login', (req, res) => {
-    try {
-        const user = findLoggedInUser(req.body.userLoginSession);
-        res.status(200).json({
-            status: 'OK',
-            message: 'You are Logged in.',
-            name: user.firstName,
-            role: user.role,
-        });
-    } catch (error) {
-        res.status(404).send(error.message);
-    }
-});
+app.use('/login', loginRoute);
 
 //Logout
 app.use('/logout', logoutRoute);
