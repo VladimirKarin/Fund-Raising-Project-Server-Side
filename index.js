@@ -1,16 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const loginRoute = require('./routes/login');
 
-const { registerUser, updateUser, logout } = require('./businessRules/users');
-const { getUsers } = require('./utils/storage');
-const { deleteUser, getUser } = require('./models/users');
+const loginRoute = require('./routes/login');
+const donationsRoute = require('./routes/donations');
+const logoutRoute = require('./routes/logout');
 const {
-    getTotalSumDonatedForIdea,
-    createDonationByUnregisteredUser,
-    createDonationByRegisteredUser,
-} = require('./businessRules/donations');
+    login,
+    registerUser,
+    updateUser,
+    findLoggedInUser,
+} = require('./businessRules/users');
+const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
+const { deleteUser } = require('./models/users');
+
 const bodyParser = require('body-parser');
 const { updateIdea, deleteIdea, getIdeas } = require('./models/ideas');
 const {
@@ -151,32 +154,7 @@ app.delete('/users', (req, res) => {
 
 //DONATION METHODS
 
-app.get('/donations', (req, res) => {
-    res.status(200).json(getTotalSumDonatedForIdea(req.body.ideaId));
-});
-
-app.post('/donations', (req, res) => {
-    try {
-        let user = getUser(req.body.userId);
-
-        if (!user) {
-            createDonationByUnregisteredUser(
-                req.body.ideaId,
-                req.body.firstName,
-                req.body.sum
-            );
-        } else {
-            createDonationByRegisteredUser(
-                req.body.ideaId,
-                req.body.userId,
-                req.body.sum
-            );
-        }
-    } catch (error) {
-        res.status(404).send(error.message);
-    }
-    res.status(200).send('Donation created successfully.');
-});
+app.use('/donations', donationsRoute);
 
 //Login
 app.use('/login', loginRoute);
