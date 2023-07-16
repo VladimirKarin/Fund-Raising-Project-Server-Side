@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     try {
-        const user = findLoggedInUser(req.body.userLoginSession);
+        const user = findLoggedInUser(req.query.userLoginSession);
         res.status(200).json({
             status: 'OK',
             message: 'You are Logged in.',
