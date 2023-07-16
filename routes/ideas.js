@@ -67,9 +67,9 @@ router.put('/status', (req, res) => {
     res.status(200).send('Ideas status updated successfully.');
 });
 
-router.delete('/', (req, res) => {
+router.delete('/:ideaId', (req, res) => {
     try {
-        deleteIdea(req.body.ideaId);
+        deleteIdea(req.params.ideaId);
     } catch (error) {
         res.status(404).send(error.message);
     }
