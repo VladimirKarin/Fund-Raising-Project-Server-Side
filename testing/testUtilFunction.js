@@ -3,6 +3,8 @@ const {
     createDonationByUnregisteredUser,
     createDonationByRegisteredUser,
     getTotalSumDonatedForIdea,
+    getDonationsForIdea,
+    getUsersDonations,
 } = require('../businessRules/donations');
 const {
     createIdea,
@@ -360,4 +362,6 @@ console.log(getTotalSumDonatedForIdea('02196e3d-f4b0-4959-adc5-af36b7f6b5b9'));
 */
 // console.log(login('DVader', '202cb962ac59075b964b07152d234b70'));
 // console.log(findRegisteredUser('DVader', 123));
-console.log(getTotalSumDonatedForIdea('70c8e131-ac49-453f-85f6-d18160b7be19'));
+// console.log(getTotalSumDonatedForIdea('70c8e131-ac49-453f-85f6-d18160b7be19'));
+// console.log(getDonationsForIdea('5001b5d8-8b31-41d2-a02c-731e77d06d70'));
+// console.log(getUsersDonations('8f29d0e6-afda-4171-b309-84ece4f95cb7'));

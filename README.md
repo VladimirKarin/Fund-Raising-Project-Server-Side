@@ -398,7 +398,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/donations
 
--   Request Body:
+-   Query Parameters:
 
     -   `ideaId`: ID of the idea to get the total sum donated for.
 
@@ -505,7 +505,7 @@ The server is set up using Node.js, Express.js framework and includes necessary 
 -   Retrieves the information of the logged-in user.
     -   URL example:  
         https://fund-raising-project-server-side.azurewebsites.net/login
--   Request Body:
+-   Query Parameters:
 
     -   `userLoginSession`: Session ID of the logged-in user.
 

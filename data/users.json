@@ -6,7 +6,7 @@
         "password": "202cb962ac59075b964b07152d234b70",
         "firstName": "Darth",
         "lastName": "Vader",
-        "session": "a9d87fad94a20d66bfc40ffe10567b09",
+        "session": null,
         "role": "user"
     },
     {
@@ -365,26 +365,6 @@
         "userName": null,
         "password": null,
         "firstName": "Vovchik",
-        "lastName": null,
-        "session": null,
-        "role": "guest"
-    },
-    {
-        "id": "84d513ed-2d9b-4612-9ceb-ce7f7304ada4",
-        "picture": "./img/default_userpic.webp",
-        "userName": null,
-        "password": null,
-        "firstName": "Anonymous",
-        "lastName": null,
-        "session": null,
-        "role": "guest"
-    },
-    {
-        "id": "f7ea38c6-d4d5-4676-a58f-e4bf5255e996",
-        "picture": "./img/default_userpic.webp",
-        "userName": null,
-        "password": null,
-        "firstName": "Anonymous",
         "lastName": null,
         "session": null,
         "role": "guest"
