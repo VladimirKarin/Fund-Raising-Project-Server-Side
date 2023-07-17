@@ -2,28 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-const usersRoute = require('./routes/users');
+const bodyParser = require('body-parser');
+
 const donationsRoute = require('./routes/donations');
-const loginRoute = require('./routes/login');
-const logoutRoute = require('./routes/logout');
 const ideasRoute = require('./routes/ideas');
 const loginRoute = require('./routes/login');
+const logoutRoute = require('./routes/logout');
+const usersRoute = require('./routes/users');
 
 const usersRoute = require('./routes/users');
-const { login, logout, findLoggedInUser } = require('./businessRules/users');
-const { getUser } = require('./models/users');
-
-
-const {
-    login,
-    registerUser,
-    updateUser,
-    findLoggedInUser,
-} = require('./businessRules/users');
-const { getUsers, getIdeas: getIdeasUtil } = require('./utils/storage');
-const { deleteUser } = require('./models/users');
-
-const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3003;
@@ -42,19 +29,18 @@ const corsOptions = {
     origin: 'http://localhost:3000',
     credentials: true,
 };
+
 app.use(cors(corsOptions));
 
 app.use(express.json());
 
 // IDEAS METHODS
-
 app.use('/ideas', ideasRoute);
 
 //USER METHODS
 app.use('/users', usersRoute);
 
 //DONATION METHODS
-
 app.use('/donations', donationsRoute);
 
 //Login

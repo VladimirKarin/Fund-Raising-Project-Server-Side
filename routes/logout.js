@@ -1,6 +1,6 @@
 const express = require('express');
-const { logout } = require('../businessRules/users');
 const router = express.Router();
+const { logout } = require('../businessRules/users');
 
 router.post('/', (req, res) => {
     try {
