@@ -22,6 +22,8 @@ const {
     deleteUser,
     checkIfLoggedIn,
     findRegisteredUser,
+    findLoggedInUser,
+    checkIfAdmin,
 } = require('../businessRules/users');
 const { createDonation } = require('../models/donations');
 const { updateIdea, createNewIdea } = require('../models/ideas');
@@ -365,3 +367,4 @@ console.log(getTotalSumDonatedForIdea('02196e3d-f4b0-4959-adc5-af36b7f6b5b9'));
 // console.log(getTotalSumDonatedForIdea('70c8e131-ac49-453f-85f6-d18160b7be19'));
 // console.log(getDonationsForIdea('5001b5d8-8b31-41d2-a02c-731e77d06d70'));
 // console.log(getUsersDonations('8f29d0e6-afda-4171-b309-84ece4f95cb7'));
+console.log(checkIfAdmin('000e1fb3a675b7094b5836b85217015d'));
