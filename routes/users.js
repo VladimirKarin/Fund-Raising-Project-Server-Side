@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
             req.body.lastName
         );
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(500).send(error.message);
     }
     res.status(200).send('User created successfully.');
 });
@@ -62,7 +62,7 @@ router.put('/', (req, res) => {
         updateUser(userId, key, value);
         res.status(200).send('User successfully updated.');
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(500).send(error.message);
     }
 });
 
@@ -71,7 +71,7 @@ router.delete('/:userId', (req, res) => {
         deleteUser(req.params.userId);
         res.status(200).send('User successfully deleted.');
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(500).send(error.message);
     }
 });
 
