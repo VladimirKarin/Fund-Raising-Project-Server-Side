@@ -7,7 +7,7 @@
         "firstName": "Darth",
         "lastName": "Vader",
         "session": null,
-        "role": "user"
+        "role": "admin"
     },
     {
         "id": "a9670cd0-85fa-4847-966b-ab10d58e7a67",
@@ -17,7 +17,7 @@
         "firstName": "Master",
         "lastName": "Yoda",
         "session": "000e1fb3a675b7094b5836b85217015d",
-        "role": "user"
+        "role": "admin"
     },
     {
         "id": "388bd17f-0e66-4d2e-beed-5f7001b4b555",

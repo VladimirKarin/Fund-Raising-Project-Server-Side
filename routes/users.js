@@ -2,11 +2,27 @@ const express = require('express');
 const router = express.Router();
 const { getUsers } = require('../utils/storage');
 const { getUsersDonations } = require('../businessRules/donations');
-const { registerUser, updateUser } = require('../businessRules/users');
+const {
+    registerUser,
+    updateUser,
+    checkIfAdmin,
+} = require('../businessRules/users');
 const { deleteUser } = require('../models/users');
 
 router.get('/', (req, res) => {
-    res.status(200).json(getUsers());
+    if (req.body.userLoginSession) {
+        if (checkIfAdmin(req.body.userLoginSession)) {
+            res.status(200).json(getUsers());
+        } else {
+            res.status(403).send(
+                'Access Forbidden. Only Admin has the right to see the users list.'
+            );
+        }
+    } else {
+        res.status(403).send(
+            'Access Forbidden. Only Admin has the right to see the users list.'
+        );
+    }
 });
 
 router.get('/donations', (req, res) => {
