@@ -35,16 +35,16 @@ app.use(express.json());
 // IDEAS METHODS
 app.use('/ideas', ideasRoute);
 
-//USER METHODS
+// USERS METHODS
 app.use('/users', usersRoute);
 
-//DONATION METHODS
+// DONATIONS METHODS
 app.use('/donations', donationsRoute);
 
-//Login
+// LOGIN METHODS
 app.use('/login', loginRoute);
 
-//Logout
+// LOGOUT METHODS
 app.use('/logout', logoutRoute);
 
 app.listen(port, () => {

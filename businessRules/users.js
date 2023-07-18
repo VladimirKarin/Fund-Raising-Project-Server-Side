@@ -113,6 +113,15 @@ function deleteUser(userId) {
     setUsers(updatedUsers);
 }
 
+function checkIfAdmin(userLoginSession) {
+    let users = getUsers();
+
+    const user = userLoginSession
+        ? users.find((user) => user.session === userLoginSession)
+        : null;
+    return user && user.role === 'admin';
+}
+
 module.exports = {
     registerUser,
     findRegisteredUser,
@@ -121,4 +130,5 @@ module.exports = {
     updateUser,
     logout,
     deleteUser,
+    checkIfAdmin,
 };

@@ -9,11 +9,19 @@ const {
 const { getUser } = require('../models/users');
 
 router.get('/', (req, res) => {
-    res.status(200).json(getDonationsForIdea(req.query.ideaId));
+    try {
+        res.status(200).json(getDonationsForIdea(req.query.ideaId));
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 });
 
 router.get('/total', (req, res) => {
-    res.status(200).json(getTotalSumDonatedForIdea(req.query.ideaId));
+    try {
+        res.status(200).json(getTotalSumDonatedForIdea(req.query.ideaId));
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 });
 
 router.post('/', (req, res) => {
